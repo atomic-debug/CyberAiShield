@@ -44,7 +44,7 @@ export default function Hero() {
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
               AI-powered automation that handles the{' '}
-              <span className="text-rose-500 font-semibold">routine work</span>{' '}
+              <span className="text-rose-500 font-semibold">routine noise</span>{' '}
               across your entire infrastructure, so you can focus on what matters most.
             </p>
             
@@ -97,34 +97,34 @@ export default function Hero() {
             <div className="relative mx-auto w-96 h-96">
               <div className="absolute inset-0 bg-white rounded-3xl shadow-xl border border-gray-200 flex items-center justify-center">
                 <div className="grid grid-cols-3 gap-6 p-8">
-                  <div className="w-8 h-8 bg-pink-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-pink-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-gray-300 rounded-sm"></div>
                   </div>
-                  <div className="w-8 h-8 bg-sky-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-sky-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-blue-300 rounded-sm"></div>
                   </div>
-                  <div className="w-8 h-8 bg-violet-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-violet-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-slate-300 rounded-sm"></div>
                   </div>
-                  <div className="w-8 h-8 bg-lime-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-lime-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-gray-300 rounded-sm"></div>
                   </div>
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl flex items-center justify-center shadow-sm">
-                    <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl flex items-center justify-center shadow-sm">
+                    <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                   </div>
-                  <div className="w-8 h-8 bg-emerald-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-emerald-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-blue-300 rounded-sm"></div>
                   </div>
-                  <div className="w-8 h-8 bg-yellow-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-yellow-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-slate-300 rounded-sm"></div>
                   </div>
-                  <div className="w-8 h-8 bg-fuchsia-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-fuchsia-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-gray-300 rounded-sm"></div>
                   </div>
-                  <div className="w-8 h-8 bg-teal-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-teal-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-blue-300 rounded-sm"></div>
                   </div>
                 </div>
               </div>
