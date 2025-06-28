@@ -30,11 +30,27 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         <div 
           id="about" 
-          className="scroll-offset relative bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 py-16 px-8 rounded-3xl overflow-hidden"
+          className="scroll-offset relative py-16 px-8 rounded-3xl overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, rgb(17, 24, 39) 0%, rgb(88, 28, 135) 50%, rgb(67, 56, 202) 100%)',
+            backgroundAttachment: 'fixed'
+          }}
         >
           {/* Background Effects */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(120,119,198,0.3),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(167,139,250,0.2),transparent_50%)]"></div>
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(circle at 30% 40%, rgba(120,119,198,0.3) 0%, transparent 50%)',
+              backgroundAttachment: 'fixed'
+            }}
+          ></div>
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(circle at 70% 60%, rgba(167,139,250,0.2) 0%, transparent 50%)',
+              backgroundAttachment: 'fixed'
+            }}
+          ></div>
           
           <div className="max-w-5xl mx-auto text-center relative z-10">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
