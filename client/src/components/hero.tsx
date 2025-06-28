@@ -44,18 +44,18 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-gradient mb-6 leading-tight">
-            Scale Your MSP Operations
+            Revolutionizing MSP Operations
             <br />
-            <span className="text-4xl md:text-6xl">With Custom AI Automation</span>
+            <span className="text-4xl md:text-6xl">Through Intelligent Automation</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            We build intelligent automation solutions that help MSPs efficiently manage{' '}
-            <span className="text-indigo-400 font-semibold">multiple client environments</span>{' '}
-            - from user provisioning across dozens of endpoints to automated software deployments and compliance management.
+            We engineer breakthrough automation solutions that transform how MSPs manage{' '}
+            <span className="text-indigo-400 font-semibold">hundreds of endpoints across dozens of clients</span>.{' '}
+            Programmatic user provisioning, intelligent workflow orchestration, and seamless multi-environment management.
           </p>
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-            Stop spending hours on repetitive tasks. Our custom AI workflows handle the manual work{' '}
-            so you can focus on growing your MSP business and delivering exceptional client value.
+            From manual admin work to autonomous systems. Our AI identifies optimization opportunities{' '}
+            and builds custom solutions that scale your operations exponentially.
           </p>
           
           {/* Primary CTA */}
