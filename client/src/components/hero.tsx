@@ -67,7 +67,7 @@ export default function Hero() {
             {/* Trust indicators */}
             <div>
               <p className="text-sm text-gray-500 mb-6">
-                Trusted by millions worldwide — Ready to streamline your IT operations? Our team is currently onboarding new clients for 2025 implementation.
+                Trusted by millions worldwide
               </p>
               <div className="flex flex-wrap gap-3 opacity-70">
                 <div className="bg-indigo-50 border border-indigo-200 px-3 py-2 rounded-lg shadow-sm">
