@@ -121,11 +121,24 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel className="text-sm font-medium text-gray-700">Name *</FormLabel>
                       <FormControl>
-                        <Input 
-                          {...field}
-                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg"
-                          placeholder="Your full name"
-                        />
+                        <div className="relative group">
+                          <Input 
+                            {...field}
+                            className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg transition-all duration-300 pr-10 hover:border-purple-400"
+                            placeholder="Your full name"
+                            onFocus={(e) => {
+                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.add('text-purple-600', 'scale-110');
+                            }}
+                            onBlur={(e) => {
+                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.remove('text-purple-600', 'scale-110');
+                            }}
+                          />
+                          <div className="field-icon absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 transition-all duration-300">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                          </div>
+                        </div>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -139,12 +152,25 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel className="text-sm font-medium text-gray-700">Email *</FormLabel>
                       <FormControl>
-                        <Input 
-                          {...field}
-                          type="email"
-                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg"
-                          placeholder="your.email@company.com"
-                        />
+                        <div className="relative group">
+                          <Input 
+                            {...field}
+                            type="email"
+                            className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg transition-all duration-300 pr-10 hover:border-purple-400"
+                            placeholder="your.email@company.com"
+                            onFocus={(e) => {
+                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.add('text-purple-600', 'scale-110', 'rotate-12');
+                            }}
+                            onBlur={(e) => {
+                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.remove('text-purple-600', 'scale-110', 'rotate-12');
+                            }}
+                          />
+                          <div className="field-icon absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 transition-all duration-300">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                          </div>
+                        </div>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
