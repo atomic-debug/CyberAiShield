@@ -57,10 +57,10 @@ export default function Hero() {
                 Get started
               </button>
               <button 
-                onClick={() => scrollToSection('services')}
+                onClick={() => window.location.href = '/api/login'}
                 className="border-2 border-gray-300 text-gray-700 bg-transparent px-8 py-4 rounded-xl font-semibold text-lg hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300"
               >
-                Request demo
+                Log in
               </button>
             </div>
             
