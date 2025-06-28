@@ -24,7 +24,7 @@ export default function Header() {
       )}
     >
       <div className="mx-4 mt-4">
-        <nav className="bg-white/95 backdrop-blur-lg rounded-2xl px-6 py-3 mx-auto max-w-7xl border border-gray-200/50 shadow-xl shadow-indigo-500/10">
+        <nav className="bg-white/95 backdrop-blur-lg rounded-2xl px-6 py-3 mx-auto max-w-7xl border border-gray-300 shadow-xl shadow-gray-500/10 border-b-2 border-b-gray-300">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-3">
