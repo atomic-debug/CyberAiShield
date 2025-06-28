@@ -45,8 +45,6 @@ export default function Hero() {
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-black text-gradient mb-8 leading-tight tracking-tight">
             Automate it. Secure it. Scale it.
-            <br />
-            <span className="text-indigo-400">Side-by-side with AI agents.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
             AI-powered automation that handles the routine work across your entire infrastructure,{' '}
