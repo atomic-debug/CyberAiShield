@@ -99,149 +99,147 @@ export default function Contact() {
         
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Contact Form */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg border border-white/20 hover:bg-white/90 transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-700 rounded-xl flex items-center justify-center mr-3 shadow-xl">
-                <Target className="w-6 h-6 text-white drop-shadow-lg" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-black text-gray-900 leading-tight">Deploy Reactor Solutions</h3>
-                <p className="text-xs text-purple-700 font-semibold tracking-wide">ENTERPRISE COMMAND CENTER</p>
-              </div>
+          <div className="flex items-center mb-6">
+            <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-700 rounded-xl flex items-center justify-center mr-3 shadow-xl">
+              <Target className="w-6 h-6 text-white drop-shadow-lg" />
             </div>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Name *</FormLabel>
-                      <FormControl>
-                        <div className="relative group">
-                          <Input 
-                            {...field}
-                            className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg transition-all duration-300 pr-10 hover:border-purple-400"
-                            placeholder="Your full name"
-                            onFocus={(e) => {
-                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.add('text-purple-600');
-                            }}
-                            onBlur={(e) => {
-                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.remove('text-purple-600');
-                            }}
-                          />
-                          <div className="field-icon absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 transition-all duration-300">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                          </div>
-                        </div>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Email *</FormLabel>
-                      <FormControl>
-                        <div className="relative group">
-                          <Input 
-                            {...field}
-                            type="email"
-                            className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg transition-all duration-300 pr-10 hover:border-purple-400"
-                            placeholder="your.email@company.com"
-                            onFocus={(e) => {
-                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.add('text-purple-600', 'scale-110', 'rotate-12');
-                            }}
-                            onBlur={(e) => {
-                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.remove('text-purple-600', 'scale-110', 'rotate-12');
-                            }}
-                          />
-                          <div className="field-icon absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 transition-all duration-300">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                          </div>
-                        </div>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="company"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Company</FormLabel>
-                      <FormControl>
+            <div>
+              <h3 className="text-2xl font-black text-gray-900 leading-tight">Deploy Reactor Solutions</h3>
+              <p className="text-xs text-purple-700 font-semibold tracking-wide">ENTERPRISE COMMAND CENTER</p>
+            </div>
+          </div>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-medium text-gray-700">Name *</FormLabel>
+                    <FormControl>
+                      <div className="relative group">
                         <Input 
                           {...field}
-                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg"
-                          placeholder="Your company name"
+                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg transition-all duration-300 pr-10 hover:border-purple-400"
+                          placeholder="Your full name"
+                          onFocus={(e) => {
+                            e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.add('text-purple-600');
+                          }}
+                          onBlur={(e) => {
+                            e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.remove('text-purple-600');
+                          }}
                         />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Message *</FormLabel>
-                      <FormControl>
-                        <Textarea 
+                        <div className="field-icon absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 transition-all duration-300">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-medium text-gray-700">Email *</FormLabel>
+                    <FormControl>
+                      <div className="relative group">
+                        <Input 
                           {...field}
-                          rows={4}
-                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg resize-none"
-                          placeholder="Tell us about your IT challenges and goals..."
+                          type="email"
+                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg transition-all duration-300 pr-10 hover:border-purple-400"
+                          placeholder="your.email@company.com"
+                          onFocus={(e) => {
+                            e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.add('text-purple-600', 'scale-110', 'rotate-12');
+                          }}
+                          onBlur={(e) => {
+                            e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.remove('text-purple-600', 'scale-110', 'rotate-12');
+                          }}
                         />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <Button 
-                  type="submit" 
-                  disabled={submitConsultation.isPending}
-                  size="lg"
-                  className="reactive-button w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-6 text-xl font-black rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 disabled:opacity-50 group border-0 relative md:w-full thumb-zone-cta"
-                  onClick={(e) => {
-                    if (!submitConsultation.isPending) {
-                      // Create expanding circle effect
-                      const button = e.currentTarget;
-                      const circle = document.createElement('span');
-                      circle.classList.add('absolute', 'inset-0', 'bg-white/20', 'rounded-3xl', 'animate-ping');
-                      button.appendChild(circle);
-                      setTimeout(() => circle.remove(), 1000);
-                    }
-                  }}
-                >
-                  {submitConsultation.isPending ? (
-                    <div className="flex items-center justify-center">
-                      <div className="animate-spin rounded-full h-6 w-6 border-3 border-white border-t-transparent mr-3"></div>
-                      Deploying Access...
-                    </div>
-                  ) : (
-                    <span className="flex items-center justify-center">
-                      Claim Command Center Access
-                      <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-3 transition-transform duration-300" />
-                    </span>
-                  )}
-                </Button>
-              </form>
-            </Form>
-          </div>
+                        <div className="field-icon absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 transition-all duration-300">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="company"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-medium text-gray-700">Company</FormLabel>
+                    <FormControl>
+                      <Input 
+                        {...field}
+                        className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg"
+                        placeholder="Your company name"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-medium text-gray-700">Message *</FormLabel>
+                    <FormControl>
+                      <Textarea 
+                        {...field}
+                        rows={4}
+                        className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg resize-none"
+                        placeholder="Tell us about your IT challenges and goals..."
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <Button 
+                type="submit" 
+                disabled={submitConsultation.isPending}
+                size="lg"
+                className="reactive-button w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-6 text-xl font-black rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 disabled:opacity-50 group border-0 relative md:w-full thumb-zone-cta"
+                onClick={(e) => {
+                  if (!submitConsultation.isPending) {
+                    // Create expanding circle effect
+                    const button = e.currentTarget;
+                    const circle = document.createElement('span');
+                    circle.classList.add('absolute', 'inset-0', 'bg-white/20', 'rounded-3xl', 'animate-ping');
+                    button.appendChild(circle);
+                    setTimeout(() => circle.remove(), 1000);
+                  }
+                }}
+              >
+                {submitConsultation.isPending ? (
+                  <div className="flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-6 w-6 border-3 border-white border-t-transparent mr-3"></div>
+                    Deploying Access...
+                  </div>
+                ) : (
+                  <span className="flex items-center justify-center">
+                    Claim Command Center Access
+                    <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-3 transition-transform duration-300" />
+                  </span>
+                )}
+              </Button>
+            </form>
+          </Form>
           
           {/* Contact Information */}
           <div className="space-y-6">
