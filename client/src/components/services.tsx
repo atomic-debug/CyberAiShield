@@ -20,10 +20,10 @@ export default function Services() {
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-20">
-          <div className="max-w-4xl bg-gradient-to-r from-indigo-50/60 via-purple-50/60 to-pink-50/60 p-8 rounded-3xl border border-indigo-100/50">
+          <div className="max-w-4xl">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Next-Generation{' '}
-              <span className="inline-block w-20 text-center transition-all duration-500 text-indigo-600">
+              <span className="inline-block w-20 text-center transition-all duration-500 text-rose-500">
                 {words[currentWordIndex]}
               </span>{' '}
               Automation
@@ -34,8 +34,8 @@ export default function Services() {
         
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {/* Managed IT Services */}
-          <div className="bg-white bg-gradient-to-br from-indigo-50/30 via-white to-purple-50/20 rounded-3xl p-8 shadow-lg border border-indigo-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-            <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+          <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+            <div className="w-16 h-16 bg-rose-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
               </svg>
@@ -54,8 +54,8 @@ export default function Services() {
           </div>
           
           {/* Cybersecurity Solutions */}
-          <div className="bg-white bg-gradient-to-br from-emerald-50/30 via-white to-teal-50/20 rounded-3xl p-8 shadow-lg border border-emerald-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-            <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+          <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+            <div className="w-16 h-16 bg-emerald-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
               </svg>
@@ -74,8 +74,8 @@ export default function Services() {
           </div>
           
           {/* AI-Driven Automation */}
-          <div className="bg-white bg-gradient-to-br from-blue-50/30 via-white to-cyan-50/20 rounded-3xl p-8 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+          <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+            <div className="w-16 h-16 bg-blue-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
@@ -97,7 +97,7 @@ export default function Services() {
         
         
         {/* About Section */}
-        <div id="about" className="scroll-offset bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 py-12 px-8 rounded-3xl border border-indigo-100">
+        <div id="about" className="scroll-offset bg-rose-50/50 py-12 px-8 rounded-3xl border border-rose-100">
           <div className="max-w-4xl">
             <h3 className="text-3xl font-bold mb-6 text-gray-900">Built for You to Scale</h3>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">

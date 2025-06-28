@@ -151,7 +151,7 @@ export default function Header() {
               </a>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2.5 rounded-xl font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="bg-rose-500 text-white px-6 py-2.5 rounded-xl font-semibold hover:bg-rose-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 Get Started
               </button>
