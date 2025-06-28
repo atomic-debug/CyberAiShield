@@ -146,12 +146,12 @@ export default function Header() {
             
             {/* CTA Buttons */}
             <div className="flex items-center space-x-3">
-              <a href="/api/login" className="hidden md:inline-flex px-4 py-2 text-gray-700 hover:text-indigo-600 transition-colors font-medium">
+              <a href="/api/login" className="hidden md:inline-flex px-4 py-2 text-gray-700 hover:text-gray-900 transition-colors font-semibold">
                 Sign In
               </a>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-rose-500 text-white px-6 py-2.5 rounded-xl font-semibold hover:bg-rose-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="bg-rose-500 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-rose-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 Get Started
               </button>
