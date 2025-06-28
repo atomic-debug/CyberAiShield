@@ -72,8 +72,10 @@ export default function Hero() {
             
             {/* Trust indicators */}
             <div>
-              <p className="text-sm text-gray-400 mb-6">Trusted by thousands worldwide</p>
-              <div className="flex flex-wrap gap-4 opacity-60 mb-8">
+              <p className="text-sm text-gray-400 mb-6">
+                Trusted by thousands worldwide — Ready to streamline your IT operations? Our team is currently onboarding new clients for 2025 implementation.
+              </p>
+              <div className="flex flex-wrap gap-4 opacity-60">
                 <div className="glassmorphism px-4 py-2 rounded-lg">
                   <span className="text-gray-300 font-medium text-sm">TechFlow Solutions</span>
                 </div>
@@ -95,13 +97,6 @@ export default function Hero() {
                 <div className="glassmorphism px-4 py-2 rounded-lg">
                   <span className="text-gray-300 font-medium text-sm">CloudFirst IT</span>
                 </div>
-              </div>
-              
-              {/* Value statement */}
-              <div className="glassmorphism rounded-xl p-4 border border-indigo-400/20">
-                <p className="text-gray-300 text-sm">
-                  Ready to streamline your IT operations? Our team is currently onboarding new clients for 2025 implementation.
-                </p>
               </div>
             </div>
           </div>
