@@ -17,7 +17,10 @@ export default function Header() {
                   </linearGradient>
                 </defs>
               </svg>
-              <span className="text-lg font-semibold text-gray-900">RactorIX – Atomic Solution | AI-Driven IT Automation & Cybersecurity</span>
+              <span className="text-lg font-semibold text-gray-900">RactorIX</span>
+              <span className="hidden lg:block px-2 py-0.5 bg-gray-100 text-xs text-gray-600 rounded">
+                Atomic Solution.
+              </span>
             </div>
           </div>
             
