@@ -16,12 +16,12 @@ export default function Services() {
     <section id="services" className="py-20 px-4 scroll-offset">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
-            Next-Generation{' '}
-            <span className="inline-block w-[140px] text-center rainbow-text transition-opacity duration-500 font-bold">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-gradient block mb-2">Next-Generation</span>
+            <span className="rainbow-text text-5xl md:text-6xl transition-opacity duration-500 font-black block mb-2">
               {words[currentWordIndex]}
-            </span>{' '}
-            Automation
+            </span>
+            <span className="text-gradient block">Automation</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Advanced AI workflows engineered to transform complex multi-client operations into streamlined, autonomous systems
