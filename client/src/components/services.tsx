@@ -4,10 +4,10 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-            Custom Automation Solutions for MSPs
+            Next-Generation MSP Automation
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We build intelligent automation tools that help MSPs efficiently manage multiple client environments
+            Advanced AI workflows engineered to transform complex multi-client operations into streamlined, autonomous systems
           </p>
         </div>
         
