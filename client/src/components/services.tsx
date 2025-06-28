@@ -2,6 +2,28 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Shield, Cpu, Zap, Check, TrendingUp, Target } from 'lucide-react';
+import { useCounter } from '@/hooks/use-counter';
+
+// Animated Stat Component
+const AnimatedStat = ({ value, label, icon: Icon }: { value: string; label: string; icon: any }) => {
+  const numericValue = parseFloat(value.replace(/[^0-9.]/g, ''));
+  const suffix = value.replace(/[0-9.]/g, '');
+  const { count, ref } = useCounter(numericValue, 2000, true);
+  
+  return (
+    <div 
+      ref={ref as any}
+      className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105"
+    >
+      <Icon className="w-8 h-8 text-purple-300 mx-auto mb-3 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+      <div className="text-3xl font-black text-white mb-2">
+        {count}
+        {suffix}
+      </div>
+      <div className="text-sm text-gray-300 font-semibold tracking-wide">{label}</div>
+    </div>
+  );
+};
 
 export default function Services() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -93,8 +115,23 @@ export default function Services() {
           {services.map((service, index) => (
             <div 
               key={index}
-              className={`relative bg-gradient-to-br from-white via-gray-50/50 to-purple-50/30 backdrop-blur-lg rounded-3xl p-8 border-2 border-gray-200/30 hover:border-purple-300/50 hover:shadow-2xl transition-all duration-700 hover:-translate-y-3 group transform overflow-hidden ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
-              style={{ transitionDelay: `${index * 200}ms` }}
+              className={`interactive-card relative bg-gradient-to-br from-white via-gray-50/50 to-purple-50/30 backdrop-blur-lg rounded-3xl p-8 border-2 border-gray-200/30 hover:border-purple-300/50 hover:shadow-2xl transition-all duration-700 hover:-translate-y-3 group transform overflow-hidden ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
+              style={{ 
+                transitionDelay: `${index * 200}ms`,
+                transformStyle: 'preserve-3d' 
+              }}
+              onMouseMove={(e) => {
+                const card = e.currentTarget;
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
+                
+                card.style.transform = `perspective(1000px) rotateY(${(x - 0.5) * 10}deg) rotateX(${(0.5 - y) * 10}deg) translateY(-12px) scale(1.02)`;
+              }}
+              onMouseLeave={(e) => {
+                const card = e.currentTarget;
+                card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0px) scale(1)';
+              }}
             >
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-purple-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -184,11 +221,7 @@ export default function Services() {
                 { label: 'Efficiency Gain', value: '400%', icon: Zap },
                 { label: 'Uptime Guarantee', value: '99.9%', icon: Target }
               ].map((stat, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
-                  <stat.icon className="w-8 h-8 text-purple-300 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                  <div className="text-3xl font-black text-white mb-2">{stat.value}</div>
-                  <div className="text-sm text-gray-300 font-semibold tracking-wide">{stat.label}</div>
-                </div>
+                <AnimatedStat key={index} value={stat.value} label={stat.label} icon={stat.icon} />
               ))}
             </div>
             

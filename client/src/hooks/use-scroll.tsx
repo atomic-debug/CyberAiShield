@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export function useScrollDirection() {
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(null);
@@ -37,4 +37,43 @@ export function useScrollPosition() {
   }, []);
 
   return scrollPosition;
+}
+
+export function useScrollProgress() {
+  const [progress, setProgress] = useState(0);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      setProgress(scrolled);
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  return progress;
+}
+
+export function useParallax(speed = 0.5) {
+  const [offset, setOffset] = useState(0);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      requestAnimationFrame(() => {
+        setOffset(window.scrollY * speed);
+      });
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [speed]);
+  
+  return offset;
 }

@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Sparkles, Shield, Zap, Target } from 'lucide-react';
+import { useParallax } from '@/hooks/use-scroll';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentRole, setCurrentRole] = useState(0);
+  const parallaxOffset = useParallax(0.3);
   
   const roles = ['MSPs', 'MSSPs', 'IT Teams', 'Admins'];
 
