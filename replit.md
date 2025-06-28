@@ -100,6 +100,13 @@ The application is designed for scalability with a clear separation of concerns,
 - **Contact section**: Rebranded as demo request flow to align with CTA journey
 - **Typography**: Improved gradient text and spacing following modern SaaS patterns
 
+### Messaging Evolution (June 28, 2025)
+- **Audience expansion**: Shifted from MSP-only to broader IT organizations
+- **Hero messaging**: Changed from MSP-specific to general IT transformation language
+- **Services branding**: Updated to "Built for You to Scale" from "Built for MSP Scale"
+- **Removed statistics section**: Eliminated MSP-specific transformation results
+- **Universal positioning**: Appeals to MSPs, MSSPs, IT departments, and service providers
+
 ### Technical Features
 - **Rotating text animation**: Cycles through MSP, MSSP, IT, Admin with smooth transitions
 - **Database integration**: PostgreSQL with Drizzle ORM for consultation requests
