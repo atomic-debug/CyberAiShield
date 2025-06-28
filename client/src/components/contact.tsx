@@ -77,7 +77,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 scroll-offset relative">
+    <section id="contact" className="py-12 px-4 scroll-offset relative">
       {/* Glass morphism background */}
       <div className="absolute inset-0 bg-white/50 backdrop-blur-sm" />
       {/* Subtle background pattern */}
