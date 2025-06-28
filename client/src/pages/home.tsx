@@ -144,35 +144,7 @@ export default function Home() {
       
       {/* Floating Action Buttons */}
       <div className="fixed bottom-24 left-6 z-40 flex flex-col gap-3">
-        {/* Scroll Progress Indicator */}
-        <div className={`bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-xl transition-all duration-500 ${
-          showScrollTop ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
-        }`}>
-          <div className="w-12 h-12 relative">
-            <svg className="w-12 h-12 transform -rotate-90">
-              <circle
-                cx="24"
-                cy="24"
-                r="20"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="none"
-                className="text-gray-200"
-              />
-              <circle
-                cx="24"
-                cy="24"
-                r="20"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray={`${2 * Math.PI * 20}`}
-                strokeDashoffset={`${2 * Math.PI * 20 * (1 - (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)))}`}
-                className="text-purple-600 transition-all duration-150"
-              />
-            </svg>
-          </div>
-        </div>
+        
         
         {/* Scroll to Top Button */}
         <Button
