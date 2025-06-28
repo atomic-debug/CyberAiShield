@@ -24,9 +24,7 @@ export default function Footer() {
                 ReactorIX
               </h3>
             </div>
-            <p className="text-gray-600 mb-4 max-w-md">
-              Security @ Scale as if you had 1000 of you at your back. Reactor Solutions.
-            </p>
+            
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <a
