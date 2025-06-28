@@ -15,37 +15,16 @@ export default function Services() {
   return (
     <section id="services" className="py-20 px-4 scroll-offset">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-slide-up">
-          {/* Header with Background */}
-          <div className="relative glassmorphism rounded-3xl p-12 mb-8 overflow-hidden border border-white/10 backdrop-blur-xl">
-            {/* Modern geometric pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-8 left-8 w-32 h-32 border border-indigo-400/20 rounded-xl rotate-12"></div>
-              <div className="absolute bottom-8 right-8 w-24 h-24 border border-cyan-400/20 rounded-lg -rotate-12"></div>
-              <div className="absolute top-1/2 left-1/2 w-16 h-16 border border-purple-400/20 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-            </div>
-            
-            {/* Subtle grid overlay */}
-            <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-transparent via-indigo-400/10 to-transparent"></div>
-            
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 relative z-10">
-              <span className="text-white block mb-3">Next-Generation</span>
-              <span className="text-6xl md:text-7xl transition-all duration-500 font-black block mb-3 relative text-white">
-                <span className="bg-gradient-to-r from-indigo-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">
-                  {words[currentWordIndex]}
-                </span>
-                {/* Subtle glow effect */}
-                <span className="absolute inset-0 text-indigo-400 blur-md opacity-20 -z-10">
-                  {words[currentWordIndex]}
-                </span>
-              </span>
-              <span className="text-gradient block">Automation</span>
+        <div className="mb-20">
+          <div className="max-w-4xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Next-Generation{' '}
+              <span className="transition-all duration-500 text-indigo-400">
+                {words[currentWordIndex]}
+              </span>{' '}
+              Automation
             </h2>
-            
-            {/* Accent line */}
-            <div className="w-24 h-1 aurora-gradient rounded-full mx-auto mb-6"></div>
-            
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 leading-relaxed">
               Advanced AI workflows engineered to transform complex multi-client operations into streamlined, autonomous systems
             </p>
           </div>
@@ -115,19 +94,21 @@ export default function Services() {
         
         
         
-        {/* Competitive Differentiation */}
-        <div id="about" className="text-center glassmorphism rounded-3xl p-8 scroll-offset">
-          <h3 className="text-2xl font-bold mb-4 text-white">Built for You to Scale</h3>
-          <p className="text-lg text-gray-300 mb-6 leading-relaxed max-w-4xl mx-auto">
-            RactorIX specializes in building custom automation solutions specifically{' '}
-            for IT organizations managing complex multi-environment infrastructures. We understand the unique challenges of scaling{' '}
-            operations across diverse systems, requirements, and endpoints while maintaining security and efficiency.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <span className="glassmorphism px-4 py-2 rounded-full text-sm font-medium">Enterprise-Ready Solutions</span>
-            <span className="glassmorphism px-4 py-2 rounded-full text-sm font-medium">Multi-Environment Architecture</span>
-            <span className="glassmorphism px-4 py-2 rounded-full text-sm font-medium">Scalable Automation</span>
-            <span className="glassmorphism px-4 py-2 rounded-full text-sm font-medium">Custom Development</span>
+        {/* About Section */}
+        <div id="about" className="scroll-offset">
+          <div className="max-w-4xl">
+            <h3 className="text-3xl font-bold mb-6 text-white">Built for You to Scale</h3>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              RactorIX specializes in building custom automation solutions specifically{' '}
+              for IT organizations managing complex multi-environment infrastructures. We understand the unique challenges of scaling{' '}
+              operations across diverse systems, requirements, and endpoints while maintaining security and efficiency.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <span className="glassmorphism px-6 py-3 rounded-xl text-sm font-medium text-gray-300">Enterprise-Ready Solutions</span>
+              <span className="glassmorphism px-6 py-3 rounded-xl text-sm font-medium text-gray-300">Multi-Environment Architecture</span>
+              <span className="glassmorphism px-6 py-3 rounded-xl text-sm font-medium text-gray-300">Scalable Automation</span>
+              <span className="glassmorphism px-6 py-3 rounded-xl text-sm font-medium text-gray-300">Custom Development</span>
+            </div>
           </div>
         </div>
       </div>
