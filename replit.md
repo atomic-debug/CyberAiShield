@@ -120,6 +120,8 @@ The application is designed for scalability with a clear separation of concerns,
 - **Rotating text animation**: Cycles through MSP, MSSP, IT, Admin with smooth transitions
 - **Database integration**: PostgreSQL with Drizzle ORM for consultation requests
 - **Responsive design**: Mobile-first approach with cosmic/aurora theme
+- **AI Assistant scroll behavior**: Fades out when scrolling past 20% of page height, returns when scrolling back up or clicking "Jump to Top" button
+- **Smart visibility controls**: AI assistant responds to both scroll position and manual "Jump to Top" actions
 
 ### Design Enhancements (June 28, 2025)
 - **Asana-inspired aesthetic**: Clean white foundation with subtle rose/pink accent color

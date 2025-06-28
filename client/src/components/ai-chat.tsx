@@ -29,6 +29,7 @@ export default function AIChat() {
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null);
   const [inputMessage, setInputMessage] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [isVisible, setIsVisible] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const queryClient = useQueryClient();
   const { toast } = useToast();
@@ -37,6 +38,34 @@ export default function AIChat() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  // Handle scroll-based visibility (hide after 20% scroll)
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercentage = (scrollY / documentHeight) * 100;
+      
+      // Show AI assistant when at top or scrolled back up above 20%
+      if (scrollPercentage <= 20) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    const handleJumpToTop = () => {
+      setIsVisible(true);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('jumpToTop', handleJumpToTop);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('jumpToTop', handleJumpToTop);
+    };
+  }, []);
 
   // Create new chat session
   const createSessionMutation = useMutation({
@@ -137,14 +166,16 @@ export default function AIChat() {
 
   if (!isOpen) {
     return (
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className={`fixed bottom-6 right-6 z-50 transition-all duration-500 ${
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
+      }`}>
         <Button
           onClick={handleStartChat}
           size="lg"
           className="reactive-button rounded-full shadow-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-4 font-bold transition-all duration-300 group"
           onMouseEnter={(e) => {
             const button = e.currentTarget;
-            button.style.transform = 'scale(1.1) rotate(2deg)';
+            button.style.transform = 'scale(1.05) rotate(2deg)';
           }}
           onMouseLeave={(e) => {
             const button = e.currentTarget;
@@ -159,7 +190,9 @@ export default function AIChat() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 w-96 h-[600px] flex flex-col">
+    <div className={`fixed bottom-6 right-6 z-50 w-96 h-[600px] flex flex-col transition-all duration-500 ${
+      isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
+    }`}>
       <Card className="h-full flex flex-col shadow-2xl border-purple-200">
         <CardHeader className="flex-shrink-0 bg-gradient-to-r from-purple-600 to-purple-500 text-white rounded-t-lg">
           <div className="flex items-center justify-between">
