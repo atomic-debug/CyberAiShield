@@ -46,7 +46,7 @@ export default function Hero() {
           <h1 className="text-5xl md:text-7xl font-bold text-gradient mb-6 leading-tight">
             Revolutionizing MSP Operations
             <br />
-            <span className="text-4xl md:text-6xl">Through Intelligent Automation</span>
+            Through Intelligent Automation
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
             We engineer breakthrough automation solutions that transform how MSPs manage{' '}
