@@ -1,47 +1,83 @@
-import { useState, useEffect } from 'react';
-import Header from '@/components/header';
-import Hero from '@/components/hero';
-import About from '@/components/about';
-import Services from '@/components/services-new';
-import Contact from '@/components/contact';
-import Footer from '@/components/footer';
-import AIChat from '@/components/ai-chat';
-import { ChevronUp, MousePointer2 } from 'lucide-react';
+import { useState, useEffect, useCallback, useMemo, lazy, Suspense } from 'react';
+import { ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useDynamicBackground } from '@/hooks/use-dynamic-background';
+
+// Lazy load components for better performance
+const Header = lazy(() => import('@/components/header'));
+const Hero = lazy(() => import('@/components/hero'));
+const About = lazy(() => import('@/components/about'));
+const Services = lazy(() => import('@/components/services-new'));
+const Contact = lazy(() => import('@/components/contact'));
+const Footer = lazy(() => import('@/components/footer'));
+const AIChat = lazy(() => import('@/components/ai-chat'));
+const ErrorBoundary = lazy(() => import('@/components/error-boundary'));
+
+// Loading fallback component
+const LoadingFallback = ({ className = '' }: { className?: string }) => (
+  <div className={`flex items-center justify-center py-8 ${className}`}>
+    <div className="animate-spin rounded-full h-8 w-8 border-2 border-purple-600 border-t-transparent"></div>
+  </div>
+);
 
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isHoveringInteractive, setIsHoveringInteractive] = useState(false);
   const [ripples, setRipples] = useState<Array<{ x: number; y: number; id: number }>>([]);
-  const { colors, mousePosition, isInteracting, timeOfDay } = useDynamicBackground();
+  const { colors, mousePosition } = useDynamicBackground();
   
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
-    };
+  // Throttle scroll events for better performance
+  const handleScroll = useCallback(() => {
+    setShowScrollTop(window.scrollY > 400);
+  }, []);
+
+  // Throttle mouse move events
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    setCursorPosition({ x: e.clientX, y: e.clientY });
     
-    const handleMouseMove = (e: MouseEvent) => {
-      setCursorPosition({ x: e.clientX, y: e.clientY });
-      
-      // Check if hovering over interactive elements
-      const target = e.target as HTMLElement;
-      const isInteractive = target.closest('button, a, input, textarea, [role="button"]');
-      setIsHoveringInteractive(!!isInteractive);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('mousemove', handleMouseMove);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
+    // Check if hovering over interactive elements
+    const target = e.target as HTMLElement;
+    const isInteractive = target.closest('button, a, input, textarea, [role="button"]');
+    setIsHoveringInteractive(!!isInteractive);
   }, []);
   
-  // Handle click for ripple effect
-  const handlePageClick = (e: React.MouseEvent) => {
+  useEffect(() => {
+    // Throttle event listeners for performance
+    let scrollTimeout: NodeJS.Timeout | null = null;
+    let mouseTimeout: NodeJS.Timeout | null = null;
+    
+    const throttledScroll = () => {
+      if (scrollTimeout) return;
+      scrollTimeout = setTimeout(() => {
+        handleScroll();
+        clearTimeout(scrollTimeout!);
+        scrollTimeout = null;
+      }, 16); // ~60fps
+    };
+    
+    const throttledMouseMove = (e: MouseEvent) => {
+      if (mouseTimeout) return;
+      mouseTimeout = setTimeout(() => {
+        handleMouseMove(e);
+        clearTimeout(mouseTimeout!);
+        mouseTimeout = null;
+      }, 16);
+    };
+    
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+    window.addEventListener('mousemove', throttledMouseMove, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', throttledScroll);
+      window.removeEventListener('mousemove', throttledMouseMove);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      if (mouseTimeout) clearTimeout(mouseTimeout);
+    };
+  }, [handleScroll, handleMouseMove]);
+  
+  // Memoize ripple effect handler
+  const handlePageClick = useCallback((e: React.MouseEvent) => {
     const rippleId = Date.now();
     const newRipple = {
       x: e.clientX,
@@ -51,110 +87,157 @@ export default function Home() {
     
     setRipples(prev => [...prev, newRipple]);
     
-    // Remove ripple after animation
-    setTimeout(() => {
+    // Use RAF for better performance
+    const timeoutId = setTimeout(() => {
       setRipples(prev => prev.filter(r => r.id !== rippleId));
     }, 2000);
-  };
+    
+    return () => clearTimeout(timeoutId);
+  }, []);
   
-  const scrollToTop = () => {
+  const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Dispatch custom event to show AI assistant
     window.dispatchEvent(new CustomEvent('jumpToTop'));
-  };
+  }, []);
+
+  // Memoize particles array to prevent re-renders
+  const particles = useMemo(() => 
+    Array.from({ length: 6 }, (_, i) => ({ // Reduced from 8 to 6
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100
+    }))
+  , []);
+
+  // Memoize background styles
+  const backgroundStyle = useMemo(() => ({
+    background: `linear-gradient(135deg, ${colors.from} 0%, ${colors.to} 100%)`
+  }), [colors.from, colors.to]);
+
+  const overlayStyle = useMemo(() => ({
+    background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, ${colors.accent}10 0%, transparent 70%)`,
+    opacity: 0.15 // Reduced opacity for better performance
+  }), [mousePosition.x, mousePosition.y, colors.accent]);
   
   return (
     <div 
       className="text-gray-900 overflow-x-hidden min-h-screen relative transition-all duration-1000"
-      style={{
-        background: `linear-gradient(135deg, ${colors.from} 0%, ${colors.to} 100%)`
-      }}
+      style={backgroundStyle}
       onClick={handlePageClick}
     >
-      {/* Dynamic Background Overlay - Subtle */}
+      {/* Dynamic Background Overlay - Optimized */}
       <div 
-        className="fixed inset-0 pointer-events-none transition-opacity duration-3000"
-        style={{
-          background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, ${colors.accent}10 0%, transparent 70%)`,
-          opacity: 0.2
-        }}
+        className="fixed inset-0 pointer-events-none transition-opacity duration-1000"
+        style={overlayStyle}
       />
       
-      
-      
-      {/* Interactive Particles - Reduced */}
+      {/* Interactive Particles - Optimized and Reduced */}
       <div className="fixed inset-0 pointer-events-none">
-        {[...Array(8)].map((_, i) => (
+        {particles.map((particle) => (
           <div
-            key={i}
-            className="absolute w-1 h-1 bg-purple-600/10 rounded-full"
+            key={particle.id}
+            className="absolute w-1 h-1 bg-purple-600/8 rounded-full will-change-transform"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              transform: `translate(${(mousePosition.x - 0.5) * 20}px, ${(mousePosition.y - 0.5) * 20}px)`,
-              transition: 'transform 2s ease-out'
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
+              transform: `translate(${(mousePosition.x - 0.5) * 15}px, ${(mousePosition.y - 0.5) * 15}px)`,
+              transition: 'transform 1.5s ease-out'
             }}
           />
         ))}
       </div>
       
-      {/* Click Ripples - Subtle */}
-      <div className="fixed inset-0 pointer-events-none">
-        {ripples.map((ripple) => (
-          <div
-            key={ripple.id}
-            className="absolute rounded-full animate-ripple-expand-subtle"
-            style={{
-              left: ripple.x,
-              top: ripple.y,
-              width: '10px',
-              height: '10px',
-              transform: 'translate(-50%, -50%)',
-              backgroundColor: colors.accent,
-              opacity: 0.15
-            }}
-          />
-        ))}
-      </div>
+      {/* Click Ripples - Optimized */}
+      {ripples.length > 0 && (
+        <div className="fixed inset-0 pointer-events-none">
+          {ripples.map((ripple) => (
+            <div
+              key={ripple.id}
+              className="absolute rounded-full animate-ripple-expand-subtle will-change-transform"
+              style={{
+                left: ripple.x,
+                top: ripple.y,
+                width: '8px',
+                height: '8px',
+                transform: 'translate(-50%, -50%)',
+                backgroundColor: colors.accent,
+                opacity: 0.1
+              }}
+            />
+          ))}
+        </div>
+      )}
       
-      {/* Custom Cursor Trail - Subtle */}
+      {/* Custom Cursor Trail - Optimized */}
       <div 
-        className="fixed pointer-events-none z-[100] transition-all duration-300"
+        className="fixed pointer-events-none z-[100] transition-all duration-200 will-change-transform"
         style={{
           left: `${cursorPosition.x}px`,
           top: `${cursorPosition.y}px`,
           transform: 'translate(-50%, -50%)'
         }}
       >
-        <div className={`w-3 h-3 rounded-full transition-all duration-500 ${
-          isHoveringInteractive ? 'scale-125' : ''
+        <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
+          isHoveringInteractive ? 'scale-150' : ''
         }`} 
-        style={{ backgroundColor: `${colors.accent}15` }}
+        style={{ backgroundColor: `${colors.accent}12` }}
         />
       </div>
       
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Contact />
-      <Footer />
-      <AIChat />
+      {/* Lazy-loaded components with error boundaries */}
+      <Suspense fallback={<LoadingFallback className="h-20" />}>
+        <ErrorBoundary fallback={<div className="h-20 bg-gray-100 flex items-center justify-center">Header unavailable</div>}>
+          <Header />
+        </ErrorBoundary>
+      </Suspense>
       
-      {/* Floating Action Buttons */}
-      <div className="fixed bottom-24 left-6 z-40 flex flex-col gap-3">
-        
-        
-        {/* Scroll to Top Button */}
-        <Button
-          onClick={scrollToTop}
-          className={`rounded-full p-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg transition-all duration-700 hover:scale-105 hover:rotate-3 ${
-            showScrollTop ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0 pointer-events-none'
-          }`}
-        >
-          <ChevronUp className="w-6 h-6" />
-        </Button>
-      </div>
+      <Suspense fallback={<LoadingFallback className="h-screen" />}>
+        <ErrorBoundary fallback={<div className="h-screen bg-gray-100 flex items-center justify-center">Hero unavailable</div>}>
+          <Hero />
+        </ErrorBoundary>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback className="h-96" />}>
+        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">About unavailable</div>}>
+          <About />
+        </ErrorBoundary>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback className="h-96" />}>
+        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Services unavailable</div>}>
+          <Services />
+        </ErrorBoundary>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback className="h-96" />}>
+        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Contact unavailable</div>}>
+          <Contact />
+        </ErrorBoundary>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback className="h-32" />}>
+        <ErrorBoundary fallback={<div className="h-32 bg-gray-100 flex items-center justify-center">Footer unavailable</div>}>
+          <Footer />
+        </ErrorBoundary>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback className="h-16" />}>
+        <ErrorBoundary fallback={<div className="fixed bottom-6 right-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">AI unavailable</div>}>
+          <AIChat />
+        </ErrorBoundary>
+      </Suspense>
+      
+      {/* Optimized Scroll to Top Button */}
+      {showScrollTop && (
+        <div className="fixed bottom-24 left-6 z-40">
+          <Button
+            onClick={scrollToTop}
+            className="rounded-full p-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg transition-all duration-500 hover:scale-105 will-change-transform"
+          >
+            <ChevronUp className="w-5 h-5" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
