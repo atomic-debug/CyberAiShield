@@ -24,9 +24,7 @@ export default function Services() {
               </span>{' '}
               Automation
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Advanced AI workflows engineered to transform complex multi-client operations into streamlined, autonomous systems
-            </p>
+            
           </div>
         </div>
         
