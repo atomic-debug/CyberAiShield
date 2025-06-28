@@ -39,15 +39,15 @@ export default function Contact() {
     },
     onSuccess: (data) => {
       toast({
-        title: "Consultation Request Submitted",
-        description: data.message,
+        title: "Request Submitted Successfully",
+        description: "We'll get back to you within 24 hours!",
       });
       form.reset();
     },
     onError: (error: any) => {
       toast({
         title: "Submission Failed",
-        description: error.message || "Failed to submit consultation request. Please try again.",
+        description: error.message || "Please try again or contact support.",
         variant: "destructive",
       });
     },
@@ -58,179 +58,126 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 scroll-offset bg-gray-50 relative">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50"></div>
-      </div>
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-16">
-          <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              See RactorIX in Action
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Book a personalized demo and discover how our AI-powered automation transforms IT operations at scale.
-            </p>
-          </div>
-        </div>
-        
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Form */}
-          <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Request Your Demo</h3>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+    <section id="contact" className="py-24 px-4 bg-gray-50">
+      <div className="max-w-4xl mx-auto text-center">
+        {/* ClickUp-style Contact Header */}
+        <h2 className="text-5xl font-black text-gray-900 mb-8">
+          Ready to get started?
+        </h2>
+        <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+          Join thousands of IT teams who've transformed their security operations with RactorIX.
+        </p>
+
+        {/* Contact Form - ClickUp style */}
+        <div className="bg-white rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Name *</FormLabel>
+                      <FormLabel className="text-gray-700 font-medium">Full Name</FormLabel>
                       <FormControl>
                         <Input 
-                          {...field}
-                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 rounded-lg"
-                          placeholder="Your full name"
+                          {...field} 
+                          className="border-gray-300 focus:border-purple-500 focus:ring-purple-500 rounded-lg"
+                          placeholder="John Doe" 
                         />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Email *</FormLabel>
+                      <FormLabel className="text-gray-700 font-medium">Work Email</FormLabel>
                       <FormControl>
                         <Input 
-                          {...field}
+                          {...field} 
                           type="email"
-                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 rounded-lg"
-                          placeholder="your.email@company.com"
+                          className="border-gray-300 focus:border-purple-500 focus:ring-purple-500 rounded-lg"
+                          placeholder="john@company.com" 
                         />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
-                <FormField
-                  control={form.control}
-                  name="company"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Company</FormLabel>
-                      <FormControl>
-                        <Input 
-                          {...field}
-                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 rounded-lg"
-                          placeholder="Your company name"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-700">Message *</FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          {...field}
-                          rows={4}
-                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 rounded-lg resize-none"
-                          placeholder="Tell us about your IT challenges and goals..."
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <Button 
-                  type="submit" 
-                  disabled={submitConsultation.isPending}
-                  className="w-full bg-rose-500 text-white py-3 rounded-lg font-bold text-base hover:bg-rose-600 transition-colors duration-200 disabled:opacity-50"
-                >
-                  {submitConsultation.isPending ? 'Submitting...' : 'Schedule My Free Consultation'}
-                </Button>
-              </form>
-            </Form>
-          </div>
-          
-          {/* Contact Information */}
-          <div className="space-y-8">
-            {/* Contact Details */}
-            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Get in Touch</h3>
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Phone</div>
-                    <div className="text-gray-600">+1 (555) 123-4567</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Email</div>
-                    <div className="text-gray-600">contact@ractorix.com</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Address</div>
-                    <div className="text-gray-600">123 Innovation Drive<br />Tech City, CA 94105</div>
-                  </div>
-                </div>
               </div>
-            </div>
-            
-            {/* Call to Action */}
-            <div className="bg-rose-50 rounded-3xl p-8 text-center border border-rose-100">
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Ready to Get Started?</h3>
-              <p className="text-gray-600 mb-6">
-                Join hundreds of businesses that trust RactorIX for their mission-critical IT infrastructure.
-              </p>
-              <button 
-                onClick={() => {
-                  const element = document.getElementById('services');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-flex items-center text-rose-600 hover:text-rose-700 transition-colors font-medium"
+
+              <FormField
+                control={form.control}
+                name="company"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-700 font-medium">Company Name</FormLabel>
+                    <FormControl>
+                      <Input 
+                        {...field} 
+                        className="border-gray-300 focus:border-purple-500 focus:ring-purple-500 rounded-lg"
+                        placeholder="Your company name" 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-700 font-medium">Tell us about your needs</FormLabel>
+                    <FormControl>
+                      <Textarea 
+                        {...field} 
+                        className="border-gray-300 focus:border-purple-500 focus:ring-purple-500 rounded-lg min-h-[120px]"
+                        placeholder="What security challenges are you facing? How many endpoints do you manage?"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <Button 
+                type="submit" 
+                disabled={submitConsultation.isPending}
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-bold text-lg transition-colors"
               >
-                Learn More About Our Services
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                </svg>
-              </button>
-            </div>
+                {submitConsultation.isPending ? 'Sending...' : 'Get started. It\'s FREE'}
+              </Button>
+              
+              <p className="text-sm text-gray-500 mt-4">
+                Free Forever. No credit card required.
+              </p>
+            </form>
+          </Form>
+        </div>
+        
+        {/* ClickUp-style Additional Info */}
+        <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div className="text-3xl mb-4">⚡</div>
+            <h3 className="font-bold text-gray-900 mb-2">Setup in minutes</h3>
+            <p className="text-gray-600">Deploy across your infrastructure in under 30 minutes</p>
+          </div>
+          <div>
+            <div className="text-3xl mb-4">🛡️</div>
+            <h3 className="font-bold text-gray-900 mb-2">Enterprise secure</h3>
+            <p className="text-gray-600">SOC 2 Type II certified with zero-trust architecture</p>
+          </div>
+          <div>
+            <div className="text-3xl mb-4">📞</div>
+            <h3 className="font-bold text-gray-900 mb-2">24/7 support</h3>
+            <p className="text-gray-600">Expert security engineers available around the clock</p>
           </div>
         </div>
       </div>
