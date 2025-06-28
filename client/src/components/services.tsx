@@ -17,21 +17,25 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-slide-up">
           {/* Header with Background */}
-          <div className="relative glassmorphism rounded-3xl p-12 mb-8 overflow-hidden">
-            {/* Decorative background pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-4 left-4 w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
-              <div className="absolute top-8 right-12 w-1 h-1 bg-cyan-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-              <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-              <div className="absolute bottom-4 right-6 w-2 h-2 bg-emerald-400 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+          <div className="relative glassmorphism rounded-3xl p-12 mb-8 overflow-hidden border border-white/10 backdrop-blur-xl">
+            {/* Modern geometric pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-8 left-8 w-32 h-32 border border-indigo-400/20 rounded-xl rotate-12"></div>
+              <div className="absolute bottom-8 right-8 w-24 h-24 border border-cyan-400/20 rounded-lg -rotate-12"></div>
+              <div className="absolute top-1/2 left-1/2 w-16 h-16 border border-purple-400/20 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
             </div>
+            
+            {/* Subtle grid overlay */}
+            <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-transparent via-indigo-400/10 to-transparent"></div>
             
             <h2 className="text-4xl md:text-5xl font-bold mb-6 relative z-10">
               <span className="text-gradient block mb-3">Next-Generation</span>
-              <span className="rainbow-text text-6xl md:text-7xl transition-opacity duration-500 font-black block mb-3 relative">
-                {words[currentWordIndex]}
+              <span className="text-6xl md:text-7xl transition-all duration-500 font-black block mb-3 relative text-white">
+                <span className="bg-gradient-to-r from-indigo-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">
+                  {words[currentWordIndex]}
+                </span>
                 {/* Subtle glow effect */}
-                <span className="absolute inset-0 rainbow-text blur-lg opacity-30 -z-10">
+                <span className="absolute inset-0 text-indigo-400 blur-md opacity-20 -z-10">
                   {words[currentWordIndex]}
                 </span>
               </span>
