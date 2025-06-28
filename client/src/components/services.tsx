@@ -117,15 +117,15 @@ export default function Services() {
         
         {/* Competitive Differentiation */}
         <div id="about" className="text-center glassmorphism rounded-3xl p-8 scroll-offset">
-          <h3 className="text-2xl font-bold mb-4 text-gradient">Built for MSP Scale</h3>
+          <h3 className="text-2xl font-bold mb-4 text-gradient">Built for You to Scale</h3>
           <p className="text-lg text-gray-300 mb-6 leading-relaxed max-w-4xl mx-auto">
-            Unlike generic automation tools, RactorIX specializes in building custom solutions specifically{' '}
-            for MSPs managing multiple client environments. We understand the unique challenges of scaling{' '}
-            IT operations across dozens of companies with different systems, requirements, and endpoints.
+            RactorIX specializes in building custom automation solutions specifically{' '}
+            for IT organizations managing complex multi-environment infrastructures. We understand the unique challenges of scaling{' '}
+            operations across diverse systems, requirements, and endpoints while maintaining security and efficiency.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <span className="glassmorphism px-4 py-2 rounded-full text-sm font-medium">MSP-Focused Solutions</span>
-            <span className="glassmorphism px-4 py-2 rounded-full text-sm font-medium">Multi-Client Architecture</span>
+            <span className="glassmorphism px-4 py-2 rounded-full text-sm font-medium">Enterprise-Ready Solutions</span>
+            <span className="glassmorphism px-4 py-2 rounded-full text-sm font-medium">Multi-Environment Architecture</span>
             <span className="glassmorphism px-4 py-2 rounded-full text-sm font-medium">Scalable Automation</span>
             <span className="glassmorphism px-4 py-2 rounded-full text-sm font-medium">Custom Development</span>
           </div>

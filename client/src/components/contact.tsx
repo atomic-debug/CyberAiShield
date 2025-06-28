@@ -65,7 +65,7 @@ export default function Contact() {
             See RactorIX in Action
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Book a personalized demo and discover how our AI-powered automation transforms MSP operations at scale.
+            Book a personalized demo and discover how our AI-powered automation transforms IT operations at scale.
           </p>
         </div>
         

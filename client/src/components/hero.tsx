@@ -49,9 +49,9 @@ export default function Hero() {
             <span className="text-indigo-400">Side-by-side with AI agents.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Transform your MSP operations with intelligent automation that manages{' '}
-            <span className="text-indigo-400 font-semibold">hundreds of endpoints across dozens of clients</span>{' '}
-            while you focus on growing your business.
+            Transform your IT operations with intelligent automation that manages{' '}
+            <span className="text-indigo-400 font-semibold">complex multi-environment infrastructures</span>{' '}
+            while you focus on strategic growth and innovation.
           </p>
           
           {/* Primary CTA */}
@@ -72,7 +72,7 @@ export default function Hero() {
           
           {/* Trust indicators - MSP/MSSP partners */}
           <div className="text-center">
-            <p className="text-sm text-gray-400 mb-8">Trusted by leading MSPs and IT service providers</p>
+            <p className="text-sm text-gray-400 mb-8">Trusted by leading IT organizations and service providers</p>
             <div className="flex flex-wrap justify-center items-center gap-8 opacity-50">
               <div className="glassmorphism px-6 py-3 rounded-lg">
                 <span className="text-gray-300 font-semibold">ConnectWise</span>
