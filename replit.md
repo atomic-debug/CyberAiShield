@@ -113,6 +113,7 @@ The application is designed for scalability with a clear separation of concerns,
 - **Footer size reduction**: Reduced footer padding and spacing by 50% to prevent sticking issues and create more compact design
 - **Contact section container**: Added white rounded box container with shadow to match styling consistency with other sections
 - **Holistic color and text normalization**: Maintained purple/indigo color scheme while normalizing font weights and replacing aggressive language with professional enterprise messaging across all components
+- **Fixed background parallax effect**: Implemented background-attachment: fixed for About section gradients to create stationary background effect during scrolling
 
 ### UI Standardization (June 28, 2025)
 - **Hero section redesign**: Removed decorative floating illustration, replaced with trust indicators
