@@ -130,6 +130,18 @@ The application is designed for scalability with a clear separation of concerns,
 - **Typography hierarchy**: Clear, professional headings with strategic color accents
 - **Rapid7-style navigation**: Professional header with dropdown menus and smooth animations
 
+### Animation Intensity Reduction (June 28, 2025)
+- **User feedback**: Animations were too intense and "hurting everyone's eyes"
+- **Dynamic background**: Reduced overlay opacity from 80% to 20%, slower transitions (3s)
+- **Floating particles**: Reduced from 20 to 8 particles, smaller size (1px), slower movement
+- **Color shifts**: Changed to very subtle, almost white color variations for all time modes
+- **Cursor effects**: Smaller trail (3px), reduced opacity (15%), slower transitions
+- **Ripple effects**: Smaller size (10px to 150px), lower opacity (15%), slower expansion (3s)
+- **Hero animations**: Reduced movement distances (2-4px), longer durations (1.5s)
+- **Service cards**: Minimal 3D tilt (2deg), subtle scale (1.01), reduced hover elevation
+- **Parallax effects**: Reduced intensity from 0.3 to 0.1 for comfortable viewing
+- **Button animations**: Subtle scale (1.05) and rotation (3deg) on hover
+
 ### Comprehensive Look, Feel, and Logic Improvements (June 28, 2025)
 
 #### Visual Design Overhaul

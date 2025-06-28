@@ -77,7 +77,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 scroll-offset bg-gradient-to-br from-purple-50/30 via-white to-gray-50 relative">
+    <section id="contact" className="py-24 px-4 scroll-offset relative">
+      {/* Glass morphism background */}
+      <div className="absolute inset-0 bg-white/50 backdrop-blur-sm" />
       {/* Subtle background pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-30"></div>

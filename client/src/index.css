@@ -311,6 +311,24 @@
     animation: skeleton-loading 1.5s infinite;
   }
   
+  /* Ripple Expand Animation - Subtle */
+  @keyframes ripple-expand-subtle {
+    0% {
+      width: 10px;
+      height: 10px;
+      opacity: 0.15;
+    }
+    100% {
+      width: 150px;
+      height: 150px;
+      opacity: 0;
+    }
+  }
+  
+  .animate-ripple-expand-subtle {
+    animation: ripple-expand-subtle 3s ease-out forwards;
+  }
+  
   /* Feature icon styling */
   .feature-icon {
     @apply w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600;

@@ -13,9 +13,9 @@ const AnimatedStat = ({ value, label, icon: Icon }: { value: string; label: stri
   return (
     <div 
       ref={ref as any}
-      className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:scale-105"
+      className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-500 group hover:scale-[1.02]"
     >
-      <Icon className="w-8 h-8 text-purple-300 mx-auto mb-3 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+      <Icon className="w-8 h-8 text-purple-300 mx-auto mb-3 group-hover:scale-105 group-hover:rotate-3 transition-transform duration-500" />
       <div className="text-3xl font-black text-white mb-2">
         {count}
         {suffix}
@@ -81,7 +81,9 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-20 px-4 scroll-offset bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden">
+    <section id="services" className="py-20 px-4 scroll-offset relative overflow-hidden">
+      {/* Glass morphism background for readability */}
+      <div className="absolute inset-0 bg-white/40 backdrop-blur-sm" />
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px]"></div>
@@ -115,7 +117,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div 
               key={index}
-              className={`interactive-card relative bg-gradient-to-br from-white via-gray-50/50 to-purple-50/30 backdrop-blur-lg rounded-3xl p-8 border-2 border-gray-200/30 hover:border-purple-300/50 hover:shadow-2xl transition-all duration-700 hover:-translate-y-3 group transform overflow-hidden ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
+              className={`interactive-card relative bg-gradient-to-br from-white via-gray-50/50 to-purple-50/30 backdrop-blur-lg rounded-3xl p-8 border-2 border-gray-200/30 hover:border-purple-300/50 hover:shadow-lg transition-all duration-1000 hover:-translate-y-1 group transform overflow-hidden ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
               style={{ 
                 transitionDelay: `${index * 200}ms`,
                 transformStyle: 'preserve-3d' 
@@ -126,7 +128,7 @@ export default function Services() {
                 const x = (e.clientX - rect.left) / rect.width;
                 const y = (e.clientY - rect.top) / rect.height;
                 
-                card.style.transform = `perspective(1000px) rotateY(${(x - 0.5) * 10}deg) rotateX(${(0.5 - y) * 10}deg) translateY(-12px) scale(1.02)`;
+                card.style.transform = `perspective(1000px) rotateY(${(x - 0.5) * 2}deg) rotateX(${(0.5 - y) * 2}deg) translateY(-3px) scale(1.01)`;
               }}
               onMouseLeave={(e) => {
                 const card = e.currentTarget;
