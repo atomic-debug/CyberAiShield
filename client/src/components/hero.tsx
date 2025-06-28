@@ -67,7 +67,7 @@ export default function Hero() {
             {/* Trust indicators */}
             <div>
               <p className="text-sm text-gray-500 mb-6">
-                Trusted by thousands worldwide — Ready to streamline your IT operations? Our team is currently onboarding new clients for 2025 implementation.
+                Trusted by millions worldwide — Ready to streamline your IT operations? Our team is currently onboarding new clients for 2025 implementation.
               </p>
               <div className="flex flex-wrap gap-3 opacity-70">
                 <div className="bg-indigo-50 border border-indigo-200 px-3 py-2 rounded-lg shadow-sm">
@@ -75,36 +75,6 @@ export default function Hero() {
                 </div>
                 <div className="bg-emerald-50 border border-emerald-200 px-3 py-2 rounded-lg shadow-sm">
                   <span className="text-emerald-700 font-medium text-sm">Apex IT</span>
-                </div>
-                <div className="bg-purple-50 border border-purple-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-purple-700 font-medium text-sm">CyberGuard</span>
-                </div>
-                <div className="bg-blue-50 border border-blue-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-blue-700 font-medium text-sm">DataBridge</span>
-                </div>
-                <div className="bg-cyan-50 border border-cyan-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-cyan-700 font-medium text-sm">NetCore</span>
-                </div>
-                <div className="bg-rose-50 border border-rose-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-rose-700 font-medium text-sm">SecureLink MSP</span>
-                </div>
-                <div className="bg-amber-50 border border-amber-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-amber-700 font-medium text-sm">CloudFirst</span>
-                </div>
-                <div className="bg-teal-50 border border-teal-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-teal-700 font-medium text-sm">ProTech</span>
-                </div>
-                <div className="bg-orange-50 border border-orange-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-orange-700 font-medium text-sm">InfoSys</span>
-                </div>
-                <div className="bg-pink-50 border border-pink-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-pink-700 font-medium text-sm">CoreNet</span>
-                </div>
-                <div className="bg-sky-50 border border-sky-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-sky-700 font-medium text-sm">SecureIT</span>
-                </div>
-                <div className="bg-violet-50 border border-violet-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-violet-700 font-medium text-sm">TechLink</span>
                 </div>
               </div>
             </div>
