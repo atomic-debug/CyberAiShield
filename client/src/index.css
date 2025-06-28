@@ -116,15 +116,32 @@
     animation: particleFloat 8s linear infinite;
   }
 
-  /* Star effect animation */
-  @keyframes sparkle {
-    0%, 100% { 
+  /* Rainbow star effect animation */
+  @keyframes rainbowSparkle {
+    0% { 
       opacity: 0; 
       transform: scale(0) rotate(0deg);
+      filter: hue-rotate(0deg);
+    }
+    25% {
+      opacity: 1;
+      transform: scale(1.2) rotate(90deg);
+      filter: hue-rotate(90deg);
     }
     50% { 
       opacity: 1; 
       transform: scale(1) rotate(180deg);
+      filter: hue-rotate(180deg);
+    }
+    75% {
+      opacity: 1;
+      transform: scale(1.2) rotate(270deg);
+      filter: hue-rotate(270deg);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0) rotate(360deg);
+      filter: hue-rotate(360deg);
     }
   }
 
@@ -135,13 +152,14 @@
 
   .star {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: radial-gradient(circle, #fff 0%, #a855f7 50%, transparent 100%);
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, #fff 0%, #ff0080 30%, #00ff80 60%, #8000ff 100%);
     border-radius: 50%;
-    animation: sparkle 2s ease-in-out infinite;
+    animation: rainbowSparkle 3s ease-in-out infinite;
     pointer-events: none;
     z-index: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
 
   .star:before {
@@ -149,10 +167,17 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 1px;
-    height: 8px;
-    background: linear-gradient(to bottom, transparent, #fff, transparent);
+    width: 2px;
+    height: 12px;
+    background: linear-gradient(to bottom, 
+      transparent, 
+      #ff0080, 
+      #00ff80, 
+      #8000ff, 
+      transparent
+    );
     transform: translate(-50%, -50%);
+    border-radius: 1px;
   }
 
   .star:after {
@@ -160,10 +185,17 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 8px;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #fff, transparent);
+    width: 12px;
+    height: 2px;
+    background: linear-gradient(to right, 
+      transparent, 
+      #ff0080, 
+      #00ff80, 
+      #8000ff, 
+      transparent
+    );
     transform: translate(-50%, -50%);
+    border-radius: 1px;
   }
 
   .star-1 {
