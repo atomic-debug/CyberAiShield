@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
-import { ArrowRight, Sparkles, Shield, Zap, Target } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Zap, Target, FileCheck } from 'lucide-react';
 import { useParallax } from '@/hooks/use-scroll';
 
 export default function Hero() {
@@ -64,19 +64,23 @@ export default function Hero() {
           
           
           
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
-            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-6 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
+          {/* Power Metrics - Centered Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
+            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Shield className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">SOC 2 Compliant</span>
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">Fortress-Grade</span>
             </div>
-            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-6 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
+            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Zap className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">99.9% Uptime SLA</span>
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">Zero Downtime</span>
             </div>
-            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-6 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
+            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Target className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">Enterprise Ready</span>
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">Battle-Tested</span>
+            </div>
+            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <FileCheck className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">GDPR Ready</span>
             </div>
           </div>
         </div>
