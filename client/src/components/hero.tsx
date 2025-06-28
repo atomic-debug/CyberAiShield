@@ -81,7 +81,7 @@ export default function Hero() {
             {/* Primary CTA - Subtle Glow Effects */}
             <Button 
               size="lg"
-              className="reactive-button glow-button bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-12 py-6 text-xl font-black rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 group border-0 relative"
+              className="reactive-button bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-12 py-6 text-xl font-black rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 group border-0 relative"
               onMouseEnter={(e) => {
                 const button = e.currentTarget;
                 button.style.transform = 'translateY(-3px) scale(1.05)';
