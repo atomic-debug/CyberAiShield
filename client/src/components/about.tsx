@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+
 import { Badge } from "@/components/ui/badge";
-import { Shield, TrendingUp, Zap, Target, ArrowRight } from "lucide-react";
+import { Shield, TrendingUp, Zap, Target } from "lucide-react";
 
 interface AnimatedStatProps {
   value: string;
@@ -76,35 +76,7 @@ export default function About() {
               </div>
             </div>
             
-            <Button 
-              size="lg"
-              className="reactive-button bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-400 hover:to-indigo-400 text-white px-12 py-6 text-xl font-black rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 group border-0 relative"
-              onMouseEnter={(e) => {
-                const button = e.currentTarget;
-                button.style.transform = 'translateY(-2px) scale(1.02)';
-                button.style.filter = 'brightness(1.1)';
-              }}
-              onMouseLeave={(e) => {
-                const button = e.currentTarget;
-                button.style.transform = 'translateY(0) scale(1)';
-                button.style.filter = 'brightness(1)';
-              }}
-              onClick={(e) => {
-                // Lightning effect
-                const button = e.currentTarget;
-                const lightning = document.createElement('div');
-                lightning.className = 'absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent';
-                lightning.style.animation = 'slide-right 0.3s ease-out';
-                button.appendChild(lightning);
-                setTimeout(() => lightning.remove(), 300);
-                
-                const element = document.getElementById('contact');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Command Your Infrastructure
-              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
-            </Button>
+            
           </div>
         </div>
       </div>
