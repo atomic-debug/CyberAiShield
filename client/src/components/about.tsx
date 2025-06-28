@@ -30,7 +30,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         <div 
           id="about" 
-          className="scroll-offset relative bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 py-16 px-8 rounded-4xl overflow-hidden"
+          className="scroll-offset relative bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 py-16 px-8 rounded-3xl overflow-hidden"
         >
           {/* Background Effects */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(120,119,198,0.3),transparent_50%)]"></div>

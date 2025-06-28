@@ -93,6 +93,10 @@ The application is designed for scalability with a clear separation of concerns,
 
 ## Recent Changes
 
+### Visual Refinements (June 28, 2025)
+- **Corner rounding adjustment**: Changed about section container from rounded-4xl to rounded-3xl for softer, more modern appearance
+- **Section spacing optimization**: Reduced padding across all sections (hero pb-8, about/services/contact py-12) for better page flow
+
 ### UI Standardization (June 28, 2025)
 - **Hero section redesign**: Removed decorative floating illustration, replaced with trust indicators
 - **CTA improvements**: Updated secondary button to "Request demo" (industry standard)
