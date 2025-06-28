@@ -5,7 +5,7 @@ export default function Header() {
   const scrollDirection = useScrollDirection();
   const scrollPosition = useScrollPosition();
   
-  const isHidden = scrollDirection === 'down' && scrollPosition > 100;
+  const isHidden = scrollDirection === 'down' && scrollPosition > 50;
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-in-out",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-150 ease-out",
         isHidden && "header-hidden"
       )}
     >
