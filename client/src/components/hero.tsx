@@ -33,7 +33,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-24 pb-20 px-4 relative">
+    <section className="min-h-screen flex items-center justify-center pt-24 pb-8 px-4 relative">
       {/* Glass morphism background */}
       <div className="absolute inset-0 bg-white/20 backdrop-blur-sm" />
       <div className="max-w-7xl mx-auto relative z-10">

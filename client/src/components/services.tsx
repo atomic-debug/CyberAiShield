@@ -81,7 +81,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-20 px-4 scroll-offset relative overflow-hidden">
+    <section id="services" className="py-12 px-4 scroll-offset relative overflow-hidden">
       {/* Glass morphism background for readability */}
       <div className="absolute inset-0 bg-white/40 backdrop-blur-sm" />
       {/* Subtle pattern overlay */}
