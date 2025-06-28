@@ -196,9 +196,9 @@
     animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
   }
   
-  /* Glow Effect for Power Buttons */
+  /* Glow Effect for Power Buttons - Disabled */
   .glow-button {
-    animation: glow-pulse 2s ease-in-out infinite;
+    /* animation: glow-pulse 2s ease-in-out infinite; */
   }
   
   /* Ripple Click Effect */
