@@ -13,9 +13,9 @@ export default function Footer() {
   
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-6">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-6 mb-6">
           {/* Brand Section */}
           <div className="col-span-2">
             <div className="flex items-center mb-4">
@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
         
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-200 pt-4 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
             © 2025 ReactorIX. All rights reserved.
           </p>
