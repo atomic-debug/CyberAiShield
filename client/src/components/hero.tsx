@@ -88,23 +88,23 @@ export default function Hero() {
                 <div className="bg-rose-50 border border-rose-200 px-3 py-2 rounded-lg shadow-sm">
                   <span className="text-rose-700 font-medium text-sm">SecureLink MSP</span>
                 </div>
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">CloudFirst</span>
+                <div className="bg-amber-50 border border-amber-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-amber-700 font-medium text-sm">CloudFirst</span>
                 </div>
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">ProTech</span>
+                <div className="bg-teal-50 border border-teal-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-teal-700 font-medium text-sm">ProTech</span>
                 </div>
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">InfoSys</span>
+                <div className="bg-orange-50 border border-orange-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-orange-700 font-medium text-sm">InfoSys</span>
                 </div>
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">CoreNet</span>
+                <div className="bg-pink-50 border border-pink-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-pink-700 font-medium text-sm">CoreNet</span>
                 </div>
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">SecureIT</span>
+                <div className="bg-sky-50 border border-sky-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-sky-700 font-medium text-sm">SecureIT</span>
                 </div>
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">TechLink</span>
+                <div className="bg-violet-50 border border-violet-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-violet-700 font-medium text-sm">TechLink</span>
                 </div>
               </div>
             </div>
