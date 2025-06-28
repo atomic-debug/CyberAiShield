@@ -18,8 +18,14 @@ export default function Services() {
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
             Next-Generation{' '}
-            <span className="inline-block min-w-[120px] text-center text-indigo-400 transition-opacity duration-500">
+            <span className="star-container inline-block min-w-[120px] text-center text-indigo-400 transition-opacity duration-500">
               {words[currentWordIndex]}
+              <span className="star star-1"></span>
+              <span className="star star-2"></span>
+              <span className="star star-3"></span>
+              <span className="star star-4"></span>
+              <span className="star star-5"></span>
+              <span className="star star-6"></span>
             </span>{' '}
             Automation
           </h2>

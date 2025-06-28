@@ -115,6 +115,93 @@
     pointer-events: none;
     animation: particleFloat 8s linear infinite;
   }
+
+  /* Star effect animation */
+  @keyframes sparkle {
+    0%, 100% { 
+      opacity: 0; 
+      transform: scale(0) rotate(0deg);
+    }
+    50% { 
+      opacity: 1; 
+      transform: scale(1) rotate(180deg);
+    }
+  }
+
+  .star-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #fff 0%, #a855f7 50%, transparent 100%);
+    border-radius: 50%;
+    animation: sparkle 2s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .star:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 8px;
+    background: linear-gradient(to bottom, transparent, #fff, transparent);
+    transform: translate(-50%, -50%);
+  }
+
+  .star:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #fff, transparent);
+    transform: translate(-50%, -50%);
+  }
+
+  .star-1 {
+    top: -8px;
+    left: -8px;
+    animation-delay: 0s;
+  }
+
+  .star-2 {
+    top: -12px;
+    right: -8px;
+    animation-delay: 0.5s;
+  }
+
+  .star-3 {
+    bottom: -8px;
+    left: -12px;
+    animation-delay: 1s;
+  }
+
+  .star-4 {
+    bottom: -12px;
+    right: -12px;
+    animation-delay: 1.5s;
+  }
+
+  .star-5 {
+    top: 50%;
+    left: -16px;
+    animation-delay: 0.3s;
+    transform: translateY(-50%);
+  }
+
+  .star-6 {
+    top: 50%;
+    right: -16px;
+    animation-delay: 0.8s;
+    transform: translateY(-50%);
+  }
 }
 
 @layer utilities {
