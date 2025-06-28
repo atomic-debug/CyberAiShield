@@ -70,23 +70,23 @@ export default function Hero() {
                 Trusted by millions worldwide
               </p>
               <div className="flex flex-wrap gap-3 opacity-70">
-                <div className="bg-indigo-50 border border-indigo-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-indigo-700 font-medium text-sm">TechFlow</span>
+                <div className="bg-gray-100 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">TechFlow</span>
                 </div>
-                <div className="bg-emerald-50 border border-emerald-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-emerald-700 font-medium text-sm">Apex IT</span>
+                <div className="bg-blue-50 border border-blue-100 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-blue-600 font-medium text-sm">Apex IT</span>
                 </div>
-                <div className="bg-purple-50 border border-purple-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-purple-700 font-medium text-sm">CyberGuard</span>
+                <div className="bg-gray-100 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">CyberGuard</span>
                 </div>
-                <div className="bg-blue-50 border border-blue-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-blue-700 font-medium text-sm">DataBridge</span>
+                <div className="bg-slate-100 border border-slate-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-slate-700 font-medium text-sm">DataBridge</span>
                 </div>
-                <div className="bg-rose-50 border border-rose-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-rose-700 font-medium text-sm">SecureLink</span>
+                <div className="bg-blue-50 border border-blue-100 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-blue-600 font-medium text-sm">SecureLink</span>
                 </div>
-                <div className="bg-amber-50 border border-amber-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-amber-700 font-medium text-sm">CloudFirst</span>
+                <div className="bg-gray-100 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">CloudFirst</span>
                 </div>
               </div>
             </div>
@@ -97,31 +97,31 @@ export default function Hero() {
             <div className="relative mx-auto w-96 h-96">
               <div className="absolute inset-0 bg-white rounded-3xl shadow-xl border border-gray-200 flex items-center justify-center">
                 <div className="grid grid-cols-3 gap-6 p-8">
-                  <div className="w-8 h-8 bg-indigo-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-indigo-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-pink-50 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-pink-300 rounded-sm"></div>
                   </div>
-                  <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-blue-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-sky-50 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-sky-300 rounded-sm"></div>
                   </div>
-                  <div className="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-purple-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-violet-50 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-violet-300 rounded-sm"></div>
+                  </div>
+                  <div className="w-8 h-8 bg-lime-50 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-lime-300 rounded-sm"></div>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl flex items-center justify-center shadow-sm">
+                    <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
                   </div>
                   <div className="w-8 h-8 bg-emerald-50 rounded-lg flex items-center justify-center">
                     <div className="w-4 h-4 bg-emerald-300 rounded-sm"></div>
                   </div>
-                  <div className="w-12 h-12 bg-gradient-to-br from-rose-200 to-pink-200 rounded-xl flex items-center justify-center shadow-sm">
-                    <svg className="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                    </svg>
+                  <div className="w-8 h-8 bg-yellow-50 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-yellow-300 rounded-sm"></div>
                   </div>
-                  <div className="w-8 h-8 bg-rose-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-rose-300 rounded-sm"></div>
-                  </div>
-                  <div className="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-amber-300 rounded-sm"></div>
-                  </div>
-                  <div className="w-8 h-8 bg-cyan-50 rounded-lg flex items-center justify-center">
-                    <div className="w-4 h-4 bg-cyan-300 rounded-sm"></div>
+                  <div className="w-8 h-8 bg-fuchsia-50 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-fuchsia-300 rounded-sm"></div>
                   </div>
                   <div className="w-8 h-8 bg-teal-50 rounded-lg flex items-center justify-center">
                     <div className="w-4 h-4 bg-teal-300 rounded-sm"></div>
