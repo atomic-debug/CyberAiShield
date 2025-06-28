@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+
 import { ArrowRight, Sparkles, Shield, Zap, Target } from 'lucide-react';
 import { useParallax } from '@/hooks/use-scroll';
 
@@ -38,13 +38,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-white/20 backdrop-blur-sm" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Announcement Badge */}
-          <div className="mb-8">
-            <Badge variant="outline" className="bg-gradient-to-r from-purple-50 to-indigo-50 backdrop-blur-sm border-purple-300 text-purple-800 px-6 py-3 font-semibold text-sm tracking-wide">
-              <Shield className="w-4 h-4 mr-2" />
-              ENTERPRISE SECURITY AT SCALE
-            </Badge>
-          </div>
+          
 
           {/* Main Headline */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-[0.9] tracking-tight">
