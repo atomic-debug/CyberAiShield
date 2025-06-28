@@ -1,10 +1,27 @@
+import { useState, useEffect } from 'react';
+
 export default function Services() {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const words = ['MSP', 'MSSP', 'IT', 'Admin'];
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prev) => (prev + 1) % words.length);
+    }, 2000); // Change word every 2 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="services" className="py-20 px-4 scroll-offset">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-            Next-Generation MSP Automation
+            Next-Generation{' '}
+            <span className="inline-block min-w-[120px] text-left transition-all duration-500 ease-in-out transform">
+              {words[currentWordIndex]}
+            </span>{' '}
+            Automation
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Advanced AI workflows engineered to transform complex multi-client operations into streamlined, autonomous systems
