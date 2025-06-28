@@ -29,7 +29,7 @@ export default function Services() {
             <div className="absolute inset-0 opacity-5 bg-gradient-to-br from-transparent via-indigo-400/10 to-transparent"></div>
             
             <h2 className="text-4xl md:text-5xl font-bold mb-6 relative z-10">
-              <span className="text-gradient block mb-3">Next-Generation</span>
+              <span className="text-white block mb-3">Next-Generation</span>
               <span className="text-6xl md:text-7xl transition-all duration-500 font-black block mb-3 relative text-white">
                 <span className="bg-gradient-to-r from-indigo-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">
                   {words[currentWordIndex]}
@@ -117,7 +117,7 @@ export default function Services() {
         
         {/* Competitive Differentiation */}
         <div id="about" className="text-center glassmorphism rounded-3xl p-8 scroll-offset">
-          <h3 className="text-2xl font-bold mb-4 text-gradient">Built for You to Scale</h3>
+          <h3 className="text-2xl font-bold mb-4 text-white">Built for You to Scale</h3>
           <p className="text-lg text-gray-300 mb-6 leading-relaxed max-w-4xl mx-auto">
             RactorIX specializes in building custom automation solutions specifically{' '}
             for IT organizations managing complex multi-environment infrastructures. We understand the unique challenges of scaling{' '}
