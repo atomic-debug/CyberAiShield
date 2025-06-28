@@ -64,10 +64,7 @@ export default function Hero() {
             {' '}who demand excellence
           </div>
 
-          <p className={`text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium leading-relaxed transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            Deploy with the confidence of having 1000 experts at your back. 
-            <span className="text-purple-700 font-semibold">Secure everything. Scale infinitely. Deliver results.</span>
-          </p>
+          
 
           {/* Feature Pills */}
           <div className={`flex flex-wrap justify-center gap-6 mb-12 transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
