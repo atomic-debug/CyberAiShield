@@ -58,6 +58,8 @@ export default function Home() {
   
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Dispatch custom event to show AI assistant
+    window.dispatchEvent(new CustomEvent('jumpToTop'));
   };
   
   return (
