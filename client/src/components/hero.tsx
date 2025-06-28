@@ -41,51 +41,77 @@ export default function Hero() {
         className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
       />
       
-      <div className="max-w-7xl mx-auto text-center relative z-10">
-        <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight tracking-tight">
-            Automate it. Secure it. Scale it.
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            AI-powered automation that handles the{' '}
-            <span className="text-indigo-400 font-semibold">routine work</span>{' '}
-            across your entire infrastructure, so you can focus on what matters most.
-          </p>
-          
-          {/* Primary CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="aurora-gradient text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300 hover:-translate-y-1"
-            >
-              Get started
-            </button>
-            <button 
-              onClick={() => scrollToSection('services')}
-              className="border-2 border-indigo-400/30 text-indigo-400 bg-transparent px-8 py-4 rounded-xl font-semibold text-lg hover:bg-indigo-400/10 transition-all duration-300"
-            >
-              Request demo
-            </button>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Content */}
+          <div className="animate-fade-in">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight tracking-tight">
+              Automate it. Secure it. Scale it.
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+              AI-powered automation that handles the{' '}
+              <span className="text-indigo-400 font-semibold">routine work</span>{' '}
+              across your entire infrastructure, so you can focus on what matters most.
+            </p>
+            
+            {/* Primary CTA */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="aurora-gradient text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300 hover:-translate-y-1"
+              >
+                Get started
+              </button>
+              <button 
+                onClick={() => scrollToSection('services')}
+                className="border-2 border-indigo-400/30 text-indigo-400 bg-transparent px-8 py-4 rounded-xl font-semibold text-lg hover:bg-indigo-400/10 transition-all duration-300"
+              >
+                Request demo
+              </button>
+            </div>
+            
+            {/* Trust indicators */}
+            <div>
+              <p className="text-sm text-gray-400 mb-6">Trusted by leading IT organizations and service providers</p>
+              <div className="flex flex-wrap gap-6 opacity-60">
+                <div className="glassmorphism px-4 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">ConnectWise</span>
+                </div>
+                <div className="glassmorphism px-4 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">Kaseya</span>
+                </div>
+                <div className="glassmorphism px-4 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">SolarWinds</span>
+                </div>
+                <div className="glassmorphism px-4 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">Datto</span>
+                </div>
+                <div className="glassmorphism px-4 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">Microsoft</span>
+                </div>
+              </div>
+            </div>
           </div>
           
-          {/* Trust indicators - MSP/MSSP partners */}
-          <div className="text-center">
-            <p className="text-sm text-gray-400 mb-8">Trusted by leading IT organizations and service providers</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-50">
-              <div className="glassmorphism px-6 py-3 rounded-lg">
-                <span className="text-gray-300 font-semibold">ConnectWise</span>
-              </div>
-              <div className="glassmorphism px-6 py-3 rounded-lg">
-                <span className="text-gray-300 font-semibold">Kaseya</span>
-              </div>
-              <div className="glassmorphism px-6 py-3 rounded-lg">
-                <span className="text-gray-300 font-semibold">SolarWinds</span>
-              </div>
-              <div className="glassmorphism px-6 py-3 rounded-lg">
-                <span className="text-gray-300 font-semibold">Datto</span>
-              </div>
-              <div className="glassmorphism px-6 py-3 rounded-lg">
-                <span className="text-gray-300 font-semibold">Microsoft</span>
+          {/* Right Column - Visual Element */}
+          <div className="hidden lg:block">
+            <div className="relative mx-auto w-96 h-96 animate-float">
+              <div className="absolute inset-0 glassmorphism rounded-3xl flex items-center justify-center aurora-glow">
+                <div className="grid grid-cols-3 gap-6 p-8">
+                  <div className="w-6 h-6 bg-indigo-400 rounded-full animate-pulse"></div>
+                  <div className="w-6 h-6 bg-cyan-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                  <div className="w-6 h-6 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                  <div className="w-6 h-6 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                  <div className="w-8 h-8 aurora-gradient rounded-full animate-pulse-slow flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    </svg>
+                  </div>
+                  <div className="w-6 h-6 bg-emerald-400 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                  <div className="w-6 h-6 bg-rose-400 rounded-full animate-pulse" style={{animationDelay: '2.5s'}}></div>
+                  <div className="w-6 h-6 bg-amber-400 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
+                  <div className="w-6 h-6 bg-teal-400 rounded-full animate-pulse" style={{animationDelay: '3.5s'}}></div>
+                </div>
               </div>
             </div>
           </div>
