@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
-import { ArrowRight, Calendar, Mail, MapPin, Phone, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Calendar, Mail, MapPin, Phone, Sparkles, CheckCircle2, Shield, Target } from 'lucide-react';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -85,27 +85,32 @@ export default function Contact() {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-          <Badge variant="outline" className="bg-white/80 backdrop-blur-sm border-purple-200 text-purple-700 px-4 py-2 font-medium mb-6">
-            <Calendar className="w-4 h-4 mr-2" />
-            Book Your Demo
+          <Badge variant="outline" className="bg-gradient-to-r from-purple-50 to-indigo-50 backdrop-blur-sm border-purple-300 text-purple-800 px-6 py-3 font-bold text-sm tracking-wider mb-8">
+            <Shield className="w-4 h-4 mr-2" />
+            COMMAND CENTER ACCESS
           </Badge>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
-            See RactorIX in <span className="text-purple-600">Action</span>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-[0.9] tracking-tight">
+            Claim Your <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 bg-clip-text text-transparent">Atomic Advantage</span>
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            Book a personalized demo and discover how our AI-powered automation transforms IT operations at scale.
+          <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
+            Experience the power of <span className="text-purple-700 font-bold">1000 experts</span> working in perfect synchronization.
+            <br />
+            <span className="text-xl text-gray-600 font-normal">Deploy. Dominate. Scale infinitely.</span>
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
           <div className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/20 hover:bg-white/90 transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '200ms' }}>
-            <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4">
-                <Sparkles className="w-6 h-6 text-white" />
+            <div className="flex items-center mb-8">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-700 rounded-2xl flex items-center justify-center mr-4 shadow-xl">
+                <Target className="w-8 h-8 text-white drop-shadow-lg" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Request Your Demo</h3>
+              <div>
+                <h3 className="text-3xl font-black text-gray-900 leading-tight">Deploy Atomic Solutions</h3>
+                <p className="text-sm text-purple-700 font-semibold tracking-wide">ENTERPRISE COMMAND CENTER</p>
+              </div>
             </div>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -187,17 +192,17 @@ export default function Contact() {
                   type="submit" 
                   disabled={submitConsultation.isPending}
                   size="lg"
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 group"
+                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-6 text-xl font-black rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 disabled:opacity-50 group border-0"
                 >
                   {submitConsultation.isPending ? (
                     <div className="flex items-center">
-                      <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-2"></div>
-                      Submitting...
+                      <div className="animate-spin rounded-full h-6 w-6 border-3 border-white border-t-transparent mr-3"></div>
+                      Deploying Access...
                     </div>
                   ) : (
                     <>
-                      Schedule My Free Demo
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      Claim Command Center Access
+                      <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
                     </>
                   )}
                 </Button>
@@ -208,12 +213,15 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Contact Details */}
-            <div className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/20 hover:bg-white/90 transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '400ms' }}>
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
-                  <Mail className="w-6 h-6 text-white" />
+            <div className={`bg-gradient-to-br from-white via-gray-50/80 to-purple-50/50 backdrop-blur-lg rounded-3xl p-8 shadow-xl border-2 border-gray-200/30 hover:border-purple-300/50 hover:shadow-2xl transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '400ms' }}>
+              <div className="flex items-center mb-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl flex items-center justify-center mr-4 shadow-xl">
+                  <Shield className="w-8 h-8 text-white drop-shadow-lg" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Get in Touch</h3>
+                <div>
+                  <h3 className="text-3xl font-black text-gray-900 leading-tight">Direct Command Line</h3>
+                  <p className="text-sm text-purple-700 font-semibold tracking-wide">INSTANT ACCESS PROTOCOLS</p>
+                </div>
               </div>
               
               <div className="space-y-6">
@@ -250,29 +258,38 @@ export default function Contact() {
             </div>
             
             {/* Call to Action */}
-            <div className={`bg-gradient-to-br from-purple-50 to-indigo-50/50 rounded-3xl p-8 text-center border border-purple-100/50 backdrop-blur-sm transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '600ms' }}>
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4">
-                  <CheckCircle2 className="w-6 h-6 text-white" />
+            <div className={`relative bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 rounded-3xl p-8 text-center overflow-hidden transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '600ms' }}>
+              {/* Background Effects */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.3),transparent_70%)]"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4 shadow-xl">
+                    <CheckCircle2 className="w-8 h-8 text-white drop-shadow-lg" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black text-white leading-tight">Ready for Atomic Dominance?</h3>
+                    <p className="text-sm text-purple-300 font-semibold tracking-wide">JOIN THE ELITE</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Ready to Get Started?</h3>
+                
+                <p className="text-xl text-gray-200 mb-8 font-medium">
+                  Join <span className="text-purple-300 font-bold">elite organizations</span> that command their infrastructure with atomic precision.
+                  <br />
+                  <span className="text-lg">Scale without limits. Secure without compromise.</span>
+                </p>
+                
+                <Button
+                  onClick={() => {
+                    const element = document.getElementById('services');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-400 hover:to-indigo-400 text-white font-bold px-8 py-4 text-lg rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 group border-0"
+                >
+                  Explore Atomic Solutions
+                  <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+                </Button>
               </div>
-              
-              <p className="text-gray-600 mb-6">
-                Join hundreds of businesses that trust RactorIX for their mission-critical IT infrastructure.
-              </p>
-              
-              <Button
-                onClick={() => {
-                  const element = document.getElementById('services');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
-                }}
-                variant="outline" 
-                className="border-purple-200 text-purple-700 hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-300 group"
-              >
-                Learn More About Our Services
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
             </div>
           </div>
         </div>

@@ -36,66 +36,81 @@ export default function Hero() {
         <div className="text-center max-w-4xl mx-auto">
           {/* Announcement Badge */}
           <div className={`mb-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-            <Badge variant="outline" className="bg-white/80 backdrop-blur-sm border-purple-200 text-purple-700 px-4 py-2 font-medium">
-              <Sparkles className="w-4 h-4 mr-2" />
-              Now with AI Assistant Integration
+            <Badge variant="outline" className="bg-gradient-to-r from-purple-50 to-indigo-50 backdrop-blur-sm border-purple-300 text-purple-800 px-6 py-3 font-semibold text-sm tracking-wide">
+              <Shield className="w-4 h-4 mr-2" />
+              ENTERPRISE SECURITY AT SCALE
             </Badge>
           </div>
 
           {/* Main Headline */}
-          <h1 className={`text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            The everything app,{' '}
-            <span className="text-purple-600">for IT.</span>
+          <h1 className={`text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-[0.9] tracking-tight transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            Security & Scale.{' '}
+            <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 bg-clip-text text-transparent">
+              Atomic Solutions.
+            </span>
           </h1>
 
           {/* Dynamic Subtitle */}
-          <div className={`text-xl md:text-2xl text-gray-600 mb-2 max-w-3xl mx-auto transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <div className={`text-2xl md:text-3xl text-gray-700 mb-3 max-w-4xl mx-auto font-medium transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             Built for{' '}
-            <span className="font-semibold text-purple-600 transition-all duration-500">
+            <span className="font-bold text-purple-700 transition-all duration-500 relative">
               {roles[currentRole]}
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 to-indigo-600"></div>
             </span>
-            {' '}to scale securely
+            {' '}who demand excellence
           </div>
 
-          <p className={`text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            One platform for automation, security, monitoring, and more. 
-            Secure it. Automate it. Take Control—together.
+          <p className={`text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto font-medium leading-relaxed transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            Deploy with the confidence of having 1000 experts at your back. 
+            <span className="text-purple-700 font-semibold">Secure everything. Scale infinitely. Deliver results.</span>
           </p>
 
           {/* Feature Pills */}
-          <div className={`flex flex-wrap justify-center gap-4 mb-12 transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <div className={`flex flex-wrap justify-center gap-6 mb-12 transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             {features.map((feature, index) => (
-              <div key={index} className="flex items-center bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-2">
-                <feature.icon className="w-4 h-4 text-purple-600 mr-2" />
-                <span className="text-sm font-medium text-gray-700">{feature.text}</span>
+              <div key={index} className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-6 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
+                <feature.icon className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-110 transition-transform" />
+                <span className="text-sm font-semibold text-gray-800 tracking-wide">{feature.text}</span>
               </div>
             ))}
           </div>
           
           {/* CTA Buttons */}
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-8 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <div className={`flex flex-col sm:flex-row gap-6 justify-center mb-8 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <Button 
               onClick={() => scrollToSection('contact')}
               size="lg"
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-10 py-5 text-xl font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group border-0"
             >
-              Get started for FREE
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              Deploy Now
+              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" />
             </Button>
             <Button 
               onClick={() => scrollToSection('services')}
               variant="outline"
               size="lg"
-              className="border-purple-200 text-purple-700 hover:bg-purple-50 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+              className="border-2 border-purple-300 text-purple-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50 px-10 py-5 text-xl font-bold rounded-2xl transition-all duration-300 group"
             >
-              See how it works
+              Explore Solutions
+              <Target className="w-5 h-5 ml-3 group-hover:rotate-90 transition-transform duration-500" />
             </Button>
           </div>
           
           {/* Trust Indicators */}
-          <p className={`text-sm text-gray-400 transform transition-all duration-1000 delay-800 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            Free Forever • No Credit Card Required • Enterprise Grade Security
-          </p>
+          <div className={`flex flex-wrap justify-center gap-8 text-sm text-gray-500 font-medium transform transition-all duration-1000 delay-800 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            <div className="flex items-center">
+              <Shield className="w-4 h-4 mr-2 text-purple-600" />
+              SOC 2 Compliant
+            </div>
+            <div className="flex items-center">
+              <Zap className="w-4 h-4 mr-2 text-purple-600" />
+              99.9% Uptime SLA
+            </div>
+            <div className="flex items-center">
+              <Target className="w-4 h-4 mr-2 text-purple-600" />
+              Enterprise Ready
+            </div>
+          </div>
         </div>
       </div>
     </section>
