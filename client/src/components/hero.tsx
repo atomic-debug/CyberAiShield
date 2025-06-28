@@ -39,9 +39,9 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Secure it.<br />
-              Automate<br />
+              Automate.<br />
               Take Control.
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
