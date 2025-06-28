@@ -1,0 +1,33 @@
+Design a professional, responsive landing page for a Cyber Consulting / IT MSP AI Automation Agency business named "RactorIX". The company motto is "Atomic Solution".
+
+Include the following clearly defined sections:
+
+Hero Section:
+- A compelling headline and subheadline clearly conveying the unique value proposition of RactorIX (Revolutionizing IT management through advanced AI-driven automation).
+
+Service Overview:
+- Concise descriptions of the services offered (Managed IT Services, Cybersecurity Solutions, AI-driven Automation and Workflow Optimization).
+- Highlight key benefits (Reduced downtime, Enhanced cybersecurity, Increased operational efficiency, Cost savings).
+- Differentiate clearly from competitors (Leverage proprietary AI technology to provide proactive, predictive IT solutions).
+
+Call-to-Action (CTA):
+- A prominent, persuasive button encouraging visitors to "Schedule a Hassle-Free Consultation".
+- Position this CTA clearly for maximum visibility and interaction.
+
+Contact Information:
+- Clearly present the business contact details (Phone: 123-456-7890, Email: info@ractorix.com, Address: 123 Innovation Drive, Tech City).
+- Include a simple, user-friendly contact form (Name, Email, Message).
+
+Design Specifications:
+- Overall aesthetic: Clean, modern, professional.
+- Background imagery should evoke the feeling of the night sky (dark-themed gradients or subtle starry imagery).
+- Content blocks should have a minimalistic and structured feel similar to Notion’s interface design.
+- Utilize placeholder text (Lorem Ipsum) and placeholder images where specific content is unavailable.
+
+Technical Requirements:
+- Ensure the layout is fully responsive and optimized for mobile devices.
+- Prioritize fast page load speeds (optimize assets, lightweight code, use modern web standards).
+
+Deliverables:
+- Provide complete HTML, CSS, and minimal JavaScript as needed to fulfill interactivity and responsiveness requirements.
+- Clearly comment code structure for easy future customization.
