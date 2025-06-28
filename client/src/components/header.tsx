@@ -91,10 +91,10 @@ export default function Header() {
                 </svg>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors">RactorIX</span>
+                <span className="text-xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors">ReactorIX</span>
                 <Badge variant="secondary" className="hidden lg:flex text-xs bg-purple-50 text-purple-600 border-purple-200 px-2 py-0">
                   <Zap className="w-3 h-3 mr-1" />
-                  Atomic Solution
+                  Reactor Solution
                 </Badge>
               </div>
             </div>

@@ -28,14 +28,14 @@ export default function Footer() {
             <div className="flex items-center justify-center md:justify-start mb-4 group cursor-pointer">
               <Shield className="w-10 h-10 mr-2 text-purple-400 group-hover:rotate-12 transition-transform duration-300" />
               <h3 className="text-3xl font-black bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                RactorIX
+                ReactorIX
               </h3>
             </div>
             <p className="text-gray-300 mb-4">
               Security & scale as if you had 1000 of you at your back.
             </p>
             <p className="text-purple-400 font-bold">
-              Atomic Solutions.
+              Reactor Solutions.
             </p>
           </div>
           
