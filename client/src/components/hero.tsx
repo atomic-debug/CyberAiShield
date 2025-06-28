@@ -64,25 +64,19 @@ export default function Hero() {
           
           
           
-          {/* Trust Indicators - Dark Glassmorphism Style */}
+          {/* Trust Indicators */}
           <div className="flex flex-wrap justify-center gap-6 mb-8">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 hover:bg-white/15 transition-all duration-300">
-              <div className="flex items-center">
-                <Shield className="w-4 h-4 mr-2 text-purple-400" />
-                <span className="text-sm font-medium text-gray-700">SOC 2 Compliant</span>
-              </div>
+            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-6 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <Shield className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">SOC 2 Compliant</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 hover:bg-white/15 transition-all duration-300">
-              <div className="flex items-center">
-                <Zap className="w-4 h-4 mr-2 text-purple-400" />
-                <span className="text-sm font-medium text-gray-700">99.9% Uptime SLA</span>
-              </div>
+            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-6 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <Zap className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">99.9% Uptime SLA</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 hover:bg-white/15 transition-all duration-300">
-              <div className="flex items-center">
-                <Target className="w-4 h-4 mr-2 text-purple-400" />
-                <span className="text-sm font-medium text-gray-700">Enterprise Ready</span>
-              </div>
+            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-6 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <Target className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">Enterprise Ready</span>
             </div>
           </div>
         </div>
