@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Announcement Badge */}
-          <div className={`mb-8 transform transition-all duration-1500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}>
+          <div className="mb-8">
             <Badge variant="outline" className="bg-gradient-to-r from-purple-50 to-indigo-50 backdrop-blur-sm border-purple-300 text-purple-800 px-6 py-3 font-semibold text-sm tracking-wide">
               <Shield className="w-4 h-4 mr-2" />
               ENTERPRISE SECURITY AT SCALE
@@ -47,7 +47,7 @@ export default function Hero() {
           </div>
 
           {/* Main Headline */}
-          <h1 className={`text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-[0.9] tracking-tight transform transition-all duration-1500 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-[0.9] tracking-tight">
             Security & Scale.{' '}
             <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 bg-clip-text text-transparent">
               Atomic Solutions.
@@ -55,7 +55,7 @@ export default function Hero() {
           </h1>
 
           {/* Dynamic Subtitle */}
-          <div className={`text-2xl md:text-3xl text-gray-700 mb-3 max-w-4xl mx-auto font-medium transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <div className="text-2xl md:text-3xl text-gray-700 mb-3 max-w-4xl mx-auto font-medium">
             Built for{' '}
             <span className="font-bold text-purple-700 transition-all duration-500 relative">
               {roles[currentRole]}
@@ -67,24 +67,24 @@ export default function Hero() {
           
 
           {/* Feature Pills */}
-          <div className={`flex flex-wrap justify-center gap-6 mb-12 transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <div className="flex flex-wrap justify-center gap-6 mb-12">
             {features.map((feature, index) => (
               <div key={index} className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-6 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
-                <feature.icon className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-110 transition-transform" />
+                <feature.icon className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
                 <span className="text-sm font-semibold text-gray-800 tracking-wide">{feature.text}</span>
               </div>
             ))}
           </div>
           
           {/* CTA Buttons - Optimal Center Placement Above Fold */}
-          <div className={`flex flex-col sm:flex-row gap-6 justify-center mb-8 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
             {/* Primary CTA - Subtle Glow Effects */}
             <Button 
               size="lg"
               className="reactive-button bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-12 py-6 text-xl font-black rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 group border-0 relative"
               onMouseEnter={(e) => {
                 const button = e.currentTarget;
-                button.style.transform = 'translateY(-3px) scale(1.05)';
+                button.style.transform = 'translateY(-1px) scale(1.02)';
               }}
               onMouseLeave={(e) => {
                 const button = e.currentTarget;
@@ -111,7 +111,7 @@ export default function Hero() {
               }}
             >
               Deploy Now
-              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-3 transition-transform duration-300" />
+              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
             </Button>
             
             {/* Secondary CTA - Magnetic Hover Effect */}
@@ -120,25 +120,22 @@ export default function Hero() {
               variant="outline"
               size="lg"
               className="reactive-button border-2 border-purple-400 text-purple-800 hover:bg-gradient-to-r hover:from-purple-100 hover:to-indigo-100 px-12 py-6 text-xl font-bold rounded-3xl transition-all duration-300 group backdrop-blur-sm hover:border-purple-600"
-              onMouseMove={(e) => {
+              onMouseEnter={(e) => {
                 const button = e.currentTarget;
-                const rect = button.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.02)`;
+                button.style.transform = 'scale(1.01)';
               }}
               onMouseLeave={(e) => {
                 const button = e.currentTarget;
-                button.style.transform = 'translate(0, 0) scale(1)';
+                button.style.transform = 'scale(1)';
               }}
             >
               Explore Solutions
-              <Target className="w-5 h-5 ml-3 group-hover:rotate-90 transition-transform duration-700" />
+              <Target className="w-5 h-5 ml-3 group-hover:rotate-12 transition-transform duration-200" />
             </Button>
           </div>
           
           {/* Trust Indicators */}
-          <div className={`flex flex-wrap justify-center gap-8 text-sm text-gray-500 font-medium transform transition-all duration-1000 delay-800 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-500 font-medium">
             <div className="flex items-center">
               <Shield className="w-4 h-4 mr-2 text-purple-600" />
               SOC 2 Compliant

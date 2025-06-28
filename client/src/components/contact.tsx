@@ -86,7 +86,7 @@ export default function Contact() {
       </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+        <div className="text-center mb-16">
           <Badge variant="outline" className="bg-gradient-to-r from-purple-50 to-indigo-50 backdrop-blur-sm border-purple-300 text-purple-800 px-6 py-3 font-bold text-sm tracking-wider mb-8">
             <Shield className="w-4 h-4 mr-2" />
             COMMAND CENTER ACCESS
@@ -104,7 +104,7 @@ export default function Contact() {
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/20 hover:bg-white/90 transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '200ms' }}>
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/20 hover:bg-white/90 transition-all duration-300">
             <div className="flex items-center mb-8">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-700 rounded-2xl flex items-center justify-center mr-4 shadow-xl">
                 <Target className="w-8 h-8 text-white drop-shadow-lg" />
@@ -129,10 +129,10 @@ export default function Contact() {
                             className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-lg transition-all duration-300 pr-10 hover:border-purple-400"
                             placeholder="Your full name"
                             onFocus={(e) => {
-                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.add('text-purple-600', 'scale-110');
+                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.add('text-purple-600');
                             }}
                             onBlur={(e) => {
-                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.remove('text-purple-600', 'scale-110');
+                              e.currentTarget.parentElement?.querySelector('.field-icon')?.classList.remove('text-purple-600');
                             }}
                           />
                           <div className="field-icon absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 transition-all duration-300">

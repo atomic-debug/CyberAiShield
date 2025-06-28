@@ -144,6 +144,15 @@ The application is designed for scalability with a clear separation of concerns,
 - **Parallax effects**: Reduced intensity from 0.3 to 0.1 for comfortable viewing
 - **Button animations**: Subtle scale (1.05) and rotation (3deg) on hover
 
+### Staggered Animation Removal (June 28, 2025)
+- **Entrance effects removed**: Eliminated all delayed fade-in/slide-in animations from hero, services, and contact sections
+- **Button interactions simplified**: Reduced scale effects from 1.05 to 1.02, rotation from 90deg to 12deg
+- **Icon bounce removal**: Removed all animate-bounce classes from AI chat and other components
+- **Hover effects toned down**: Reduced all scaling, rotation, and translation distances by 50-70%
+- **Form field effects**: Removed scale transformations from input field icons, kept only color changes
+- **Magnetic effects disabled**: Replaced complex mouse-following animations with simple hover states
+- **Transition speeds**: Reduced durations from 1000ms to 200-300ms for immediate feedback
+
 ### Comprehensive Look, Feel, and Logic Improvements (June 28, 2025)
 
 #### Visual Design Overhaul

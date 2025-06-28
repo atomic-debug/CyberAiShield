@@ -91,7 +91,7 @@ export default function Services() {
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
-        <div className={`text-center mb-20 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+        <div className="text-center mb-20">
           <Badge variant="outline" className="bg-gradient-to-r from-purple-50 to-indigo-50 backdrop-blur-sm border-purple-300 text-purple-800 px-6 py-3 font-bold text-sm tracking-wider mb-8">
             <TrendingUp className="w-4 h-4 mr-2" />
             ENTERPRISE ATOMIC SOLUTIONS
@@ -117,9 +117,8 @@ export default function Services() {
           {services.map((service, index) => (
             <div 
               key={index}
-              className={`interactive-card relative bg-gradient-to-br from-white via-gray-50/50 to-purple-50/30 backdrop-blur-lg rounded-3xl p-8 border-2 border-gray-200/30 hover:border-purple-300/50 hover:shadow-lg transition-all duration-1000 hover:-translate-y-1 group transform overflow-hidden ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
+              className="interactive-card relative bg-gradient-to-br from-white via-gray-50/50 to-purple-50/30 backdrop-blur-lg rounded-3xl p-8 border-2 border-gray-200/30 hover:border-purple-300/50 hover:shadow-lg transition-all duration-500 hover:-translate-y-1 group transform overflow-hidden"
               style={{ 
-                transitionDelay: `${index * 200}ms`,
                 transformStyle: 'preserve-3d' 
               }}
               onMouseMove={(e) => {
