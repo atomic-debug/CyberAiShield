@@ -1,4 +1,6 @@
 import { users, consultationRequests, type User, type InsertUser, type InsertConsultationRequest, type ConsultationRequest } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -8,52 +10,42 @@ export interface IStorage {
   getConsultationRequests(): Promise<ConsultationRequest[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private consultationRequests: Map<number, ConsultationRequest>;
-  private currentUserId: number;
-  private currentConsultationId: number;
-
-  constructor() {
-    this.users = new Map();
-    this.consultationRequests = new Map();
-    this.currentUserId = 1;
-    this.currentConsultationId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async createConsultationRequest(request: InsertConsultationRequest): Promise<ConsultationRequest> {
-    const id = this.currentConsultationId++;
-    const consultationRequest: ConsultationRequest = {
-      ...request,
-      id,
-      submittedAt: new Date(),
-    };
-    this.consultationRequests.set(id, consultationRequest);
+    const [consultationRequest] = await db
+      .insert(consultationRequests)
+      .values({
+        ...request,
+        company: request.company || null,
+      })
+      .returning();
     return consultationRequest;
   }
 
   async getConsultationRequests(): Promise<ConsultationRequest[]> {
-    return Array.from(this.consultationRequests.values()).sort(
-      (a, b) => b.submittedAt.getTime() - a.submittedAt.getTime()
-    );
+    return await db
+      .select()
+      .from(consultationRequests)
+      .orderBy(consultationRequests.submittedAt);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
