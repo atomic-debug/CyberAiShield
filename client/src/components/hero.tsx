@@ -59,17 +59,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          {/* Feature Pills */}
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-6 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
-                <feature.icon className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-                <span className="text-sm font-semibold text-gray-800 tracking-wide">{feature.text}</span>
-              </div>
-            ))}
-          </div>
-          
-          {/* Power Metrics - Three Key Badges */}
+          {/* Key Value Propositions - Top 3 Most Impactful */}
           <div className="flex justify-center gap-6 max-w-2xl mx-auto mb-6">
             <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Shield className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
@@ -77,11 +67,11 @@ export default function Hero() {
             </div>
             <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Zap className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">Zero Downtime</span>
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">AI Automation</span>
             </div>
             <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Target className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">Battle-Tested</span>
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">Zero Downtime</span>
             </div>
           </div>
         </div>
