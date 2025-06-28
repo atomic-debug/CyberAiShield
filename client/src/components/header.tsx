@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { useScrollDirection, useScrollPosition } from '@/hooks/use-scroll';
 import { cn } from '@/lib/utils';
 
 export default function Header() {
   const scrollDirection = useScrollDirection();
   const scrollPosition = useScrollPosition();
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   
   const isHidden = scrollDirection === 'down' && scrollPosition > 50;
 
@@ -22,57 +24,137 @@ export default function Header() {
       )}
     >
       <div className="mx-4 mt-4">
-        <nav className="glassmorphism bg-gradient-to-r from-indigo-50/80 via-purple-50/80 to-pink-50/80 backdrop-blur-md rounded-2xl px-6 py-4 mx-auto max-w-7xl border border-white/20 shadow-2xl shadow-black/20">
+        <nav className="bg-white/95 backdrop-blur-lg rounded-2xl px-6 py-3 mx-auto max-w-7xl border border-gray-200/50 shadow-xl shadow-indigo-500/10">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 aurora-gradient rounded-lg flex items-center justify-center aurora-glow">
+              <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                 <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
               </div>
               <div>
                 <div className="text-xl font-bold text-gray-900">RactorIX</div>
-                <div className="text-xs text-gray-600">Atomic Solution</div>
+                <div className="text-xs text-gray-500">Atomic Solution</div>
               </div>
             </div>
             
             {/* Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="text-gray-700 hover:text-indigo-600 transition-colors font-medium"
-              >
-                Services
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="text-gray-700 hover:text-indigo-600 transition-colors font-medium"
-              >
-                About
-              </button>
+            <div className="hidden lg:flex items-center space-x-1">
+              {/* Services Dropdown */}
+              <div className="relative"
+                   onMouseEnter={() => setActiveDropdown('services')}
+                   onMouseLeave={() => setActiveDropdown(null)}>
+                <button className="flex items-center space-x-1 px-4 py-2 text-gray-700 hover:text-indigo-600 transition-colors font-medium rounded-xl hover:bg-indigo-50">
+                  <span>Solutions</span>
+                  <svg className={`w-4 h-4 transition-transform ${activeDropdown === 'services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                
+                {activeDropdown === 'services' && (
+                  <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-2xl shadow-xl border border-gray-200/50 overflow-hidden z-50">
+                    <div className="p-6">
+                      <div className="grid gap-4">
+                        <div className="group p-4 rounded-xl hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all cursor-pointer">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
+                              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                              </svg>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-semibold text-gray-900 group-hover:text-indigo-600">IT Automation</h3>
+                              <p className="text-sm text-gray-500 mt-1">Streamline operations across environments</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="group p-4 rounded-xl hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition-all cursor-pointer">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
+                              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                              </svg>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-semibold text-gray-900 group-hover:text-emerald-600">Cybersecurity</h3>
+                              <p className="text-sm text-gray-500 mt-1">AI-powered security management</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="group p-4 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all cursor-pointer">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                              </svg>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">Custom Development</h3>
+                              <p className="text-sm text-gray-500 mt-1">Tailored automation workflows</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Company Dropdown */}
+              <div className="relative"
+                   onMouseEnter={() => setActiveDropdown('company')}
+                   onMouseLeave={() => setActiveDropdown(null)}>
+                <button className="flex items-center space-x-1 px-4 py-2 text-gray-700 hover:text-indigo-600 transition-colors font-medium rounded-xl hover:bg-indigo-50">
+                  <span>Company</span>
+                  <svg className={`w-4 h-4 transition-transform ${activeDropdown === 'company' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                
+                {activeDropdown === 'company' && (
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-2xl shadow-xl border border-gray-200/50 overflow-hidden z-50">
+                    <div className="p-4">
+                      <div className="space-y-2">
+                        <button 
+                          onClick={() => scrollToSection('about')}
+                          className="w-full text-left px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 text-gray-700 hover:text-indigo-600 transition-all"
+                        >
+                          About Us
+                        </button>
+                        <a href="#" className="block px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 text-gray-700 hover:text-indigo-600 transition-all">
+                          Careers
+                        </a>
+                        <a href="#" className="block px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 text-gray-700 hover:text-indigo-600 transition-all">
+                          Blog
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="text-gray-700 hover:text-indigo-600 transition-colors font-medium"
+                className="px-4 py-2 text-gray-700 hover:text-indigo-600 transition-colors font-medium rounded-xl hover:bg-indigo-50"
               >
                 Contact
               </button>
-              <a href="#" className="text-gray-700 hover:text-indigo-600 transition-colors font-medium">Blog</a>
-              <a href="#" className="text-indigo-600 hover:text-indigo-700 transition-colors font-medium">Sign In</a>
             </div>
             
-            {/* Social Links */}
-            <div className="flex items-center space-x-4">
-              <a href="#" className="text-gray-600 hover:text-indigo-600 transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                </svg>
+            {/* CTA Buttons */}
+            <div className="flex items-center space-x-3">
+              <a href="/api/login" className="hidden md:inline-flex px-4 py-2 text-gray-700 hover:text-indigo-600 transition-colors font-medium">
+                Sign In
               </a>
-              <a href="#" className="text-gray-600 hover:text-indigo-600 transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2.5 rounded-xl font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              >
+                Get Started
+              </button>
             </div>
           </div>
         </nav>
