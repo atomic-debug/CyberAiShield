@@ -17,12 +17,12 @@ export default function Header() {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-in-out",
         isHidden && "header-hidden"
       )}
     >
       <div className="mx-4 mt-4">
-        <nav className="glassmorphism bg-gradient-to-r from-indigo-50/80 via-purple-50/80 to-pink-50/80 backdrop-blur-md rounded-2xl px-6 py-4 mx-auto max-w-7xl border border-white/20">
+        <nav className="glassmorphism bg-gradient-to-r from-indigo-50/80 via-purple-50/80 to-pink-50/80 backdrop-blur-md rounded-2xl px-6 py-4 mx-auto max-w-7xl border border-white/20 shadow-2xl shadow-black/20">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-3">
