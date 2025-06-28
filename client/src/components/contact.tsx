@@ -61,7 +61,7 @@ export default function Contact() {
     <section id="contact" className="py-20 px-4 scroll-offset">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             See RactorIX in Action
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
