@@ -75,24 +75,64 @@ export default function Hero() {
             ))}
           </div>
           
-          {/* CTA Buttons */}
+          {/* CTA Buttons - Optimal Center Placement Above Fold */}
           <div className={`flex flex-col sm:flex-row gap-6 justify-center mb-8 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            {/* Primary CTA - Subtle Glow Effects */}
             <Button 
-              onClick={() => scrollToSection('contact')}
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-10 py-5 text-xl font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group border-0"
+              className="reactive-button glow-button bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-12 py-6 text-xl font-black rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 group border-0 relative"
+              onMouseEnter={(e) => {
+                const button = e.currentTarget;
+                button.style.transform = 'translateY(-3px) scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                const button = e.currentTarget;
+                button.style.transform = 'translateY(0) scale(1)';
+              }}
+              onClick={(e) => {
+                // Create ripple effect
+                const button = e.currentTarget;
+                const ripple = document.createElement('span');
+                const rect = button.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                button.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+                
+                scrollToSection('contact');
+              }}
             >
               Deploy Now
-              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" />
+              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-3 transition-transform duration-300" />
             </Button>
+            
+            {/* Secondary CTA - Magnetic Hover Effect */}
             <Button 
               onClick={() => scrollToSection('services')}
               variant="outline"
               size="lg"
-              className="border-2 border-purple-300 text-purple-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50 px-10 py-5 text-xl font-bold rounded-2xl transition-all duration-300 group"
+              className="reactive-button border-2 border-purple-400 text-purple-800 hover:bg-gradient-to-r hover:from-purple-100 hover:to-indigo-100 px-12 py-6 text-xl font-bold rounded-3xl transition-all duration-300 group backdrop-blur-sm hover:border-purple-600"
+              onMouseMove={(e) => {
+                const button = e.currentTarget;
+                const rect = button.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.02)`;
+              }}
+              onMouseLeave={(e) => {
+                const button = e.currentTarget;
+                button.style.transform = 'translate(0, 0) scale(1)';
+              }}
             >
               Explore Solutions
-              <Target className="w-5 h-5 ml-3 group-hover:rotate-90 transition-transform duration-500" />
+              <Target className="w-5 h-5 ml-3 group-hover:rotate-90 transition-transform duration-700" />
             </Button>
           </div>
           
