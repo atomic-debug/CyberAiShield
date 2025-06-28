@@ -60,7 +60,7 @@ export default function Hero() {
           </h1>
 
           {/* Key Value Propositions - Top 3 Most Impactful */}
-          <div className="flex justify-center gap-6 max-w-2xl mx-auto mb-6">
+          <div className="flex justify-center gap-6 max-w-2xl mx-auto mb-2">
             <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Shield className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide">Enterprise Security</span>
