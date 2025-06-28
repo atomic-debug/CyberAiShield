@@ -19,7 +19,7 @@ export default function Services() {
           <div className="max-w-4xl">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Next-Generation{' '}
-              <span className="transition-all duration-500 text-indigo-400">
+              <span className="inline-block w-20 text-center transition-all duration-500 text-indigo-400">
                 {words[currentWordIndex]}
               </span>{' '}
               Automation
