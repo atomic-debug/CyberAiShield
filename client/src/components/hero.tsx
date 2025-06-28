@@ -44,7 +44,7 @@ export default function Hero() {
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
               AI-powered automation that handles the{' '}
-              <span className="text-rose-500 font-semibold">routine noise</span>{' '}
+              <span className="text-rose-500 font-bold">routine noise</span>{' '}
               across your entire infrastructure, so you can focus on what matters most.
             </p>
             
@@ -52,13 +52,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-rose-500 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-rose-600 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                className="bg-rose-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-rose-600 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
               >
                 Get started
               </button>
               <button 
                 onClick={() => window.location.href = '/api/login'}
-                className="border-2 border-gray-300 text-gray-700 bg-transparent px-8 py-4 rounded-xl font-semibold text-lg hover:border-rose-300 hover:text-rose-600 transition-all duration-300"
+                className="border-2 border-gray-300 text-gray-700 bg-transparent px-8 py-4 rounded-xl font-medium text-lg hover:border-rose-300 hover:text-rose-600 hover:font-semibold transition-all duration-300"
               >
                 Log in
               </button>

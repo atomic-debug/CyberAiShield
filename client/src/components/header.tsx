@@ -34,8 +34,8 @@ export default function Header() {
                 </svg>
               </div>
               <div>
-                <div className="text-xl font-bold text-gray-900">RactorIX</div>
-                <div className="text-xs text-gray-500">Atomic Solution</div>
+                <div className="text-xl font-black text-gray-900">RactorIX</div>
+                <div className="text-xs font-medium text-gray-500">Atomic Solution</div>
               </div>
             </div>
             

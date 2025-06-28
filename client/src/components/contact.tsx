@@ -159,7 +159,7 @@ export default function Contact() {
                 <Button 
                   type="submit" 
                   disabled={submitConsultation.isPending}
-                  className="w-full bg-rose-500 text-white py-3 rounded-lg font-medium text-base hover:bg-rose-600 transition-colors duration-200 disabled:opacity-50"
+                  className="w-full bg-rose-500 text-white py-3 rounded-lg font-bold text-base hover:bg-rose-600 transition-colors duration-200 disabled:opacity-50"
                 >
                   {submitConsultation.isPending ? 'Submitting...' : 'Schedule My Free Consultation'}
                 </Button>
