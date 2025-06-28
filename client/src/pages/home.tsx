@@ -3,6 +3,7 @@ import Hero from '@/components/hero';
 import Services from '@/components/services';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
+import AIChat from '@/components/ai-chat';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Services />
       <Contact />
       <Footer />
+      <AIChat />
     </div>
   );
 }
