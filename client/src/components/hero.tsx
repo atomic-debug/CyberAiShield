@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
-import { ArrowRight, Sparkles, Shield, Zap, Target, FileCheck } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Zap, Target, FileCheck, Lock, Cpu } from 'lucide-react';
 import { useParallax } from '@/hooks/use-scroll';
 
 export default function Hero() {
@@ -26,6 +26,17 @@ export default function Hero() {
     }
   };
 
+  // All 6 available features - choose 3 most impactful
+  const allFeatures = [
+    { icon: Shield, text: 'Enterprise Security' },
+    { icon: Zap, text: 'AI Automation' },
+    { icon: Target, text: 'Precision Monitoring' },
+    { icon: Lock, text: 'Zero-Trust Architecture' },
+    { icon: Cpu, text: 'Real-Time Intelligence' },
+    { icon: FileCheck, text: 'Compliance Ready' }
+  ];
+  
+  // Select the 3 most impactful features
   const features = [
     { icon: Shield, text: 'Enterprise Security' },
     { icon: Zap, text: 'AI Automation' },
