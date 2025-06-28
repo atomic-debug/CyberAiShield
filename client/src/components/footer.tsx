@@ -12,10 +12,11 @@ export default function Footer() {
   ];
   
   return (
-    <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        {/* Main Footer Content */}
-        <div className="grid md:grid-cols-4 gap-6 mb-6">
+    <footer className="bg-gray-50 px-4 py-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200">
+          {/* Main Footer Content */}
+          <div className="grid md:grid-cols-4 gap-6 mb-6">
           {/* Brand Section */}
           <div className="col-span-2">
             <div className="flex items-center mb-4">
@@ -72,21 +73,22 @@ export default function Footer() {
           </div>
         </div>
         
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-200 pt-4 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
-            © 2025 ReactorIX. All rights reserved.
-          </p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors duration-200 text-sm">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors duration-200 text-sm">
-              Terms of Service
-            </a>
-            <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors duration-200 text-sm">
-              Cookies
-            </a>
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-200 pt-4 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-500 text-sm">
+              © 2025 ReactorIX. All rights reserved.
+            </p>
+            <div className="flex gap-6 mt-4 md:mt-0">
+              <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors duration-200 text-sm">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors duration-200 text-sm">
+                Terms of Service
+              </a>
+              <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors duration-200 text-sm">
+                Cookies
+              </a>
+            </div>
           </div>
         </div>
       </div>
