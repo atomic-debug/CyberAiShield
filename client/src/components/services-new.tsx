@@ -6,25 +6,36 @@ export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      if (!sectionRef.current) return;
+      if (ticking) return;
       
-      const rect = sectionRef.current.getBoundingClientRect();
-      const sectionHeight = rect.height;
-      const viewportHeight = window.innerHeight;
-      
-      // Calculate progress based on how much of the section has been scrolled through
-      let progress = 0;
-      if (rect.top < viewportHeight && rect.bottom > 0) {
-        const visibleTop = Math.max(0, viewportHeight - rect.top);
-        const visibleHeight = Math.min(sectionHeight, visibleTop);
-        progress = Math.min(1, visibleHeight / (sectionHeight * 0.7));
-      }
-      
-      setScrollProgress(progress);
+      ticking = true;
+      requestAnimationFrame(() => {
+        if (!sectionRef.current) {
+          ticking = false;
+          return;
+        }
+        
+        const rect = sectionRef.current.getBoundingClientRect();
+        const sectionHeight = rect.height;
+        const viewportHeight = window.innerHeight;
+        
+        // Calculate progress based on how much of the section has been scrolled through
+        let progress = 0;
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          const visibleTop = Math.max(0, viewportHeight - rect.top);
+          const visibleHeight = Math.min(sectionHeight, visibleTop);
+          progress = Math.min(1, visibleHeight / (sectionHeight * 0.7));
+        }
+        
+        setScrollProgress(progress);
+        ticking = false;
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial calculation
     
     return () => window.removeEventListener('scroll', handleScroll);

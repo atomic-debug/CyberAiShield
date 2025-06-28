@@ -39,26 +39,35 @@ export default function AIChat() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // Handle scroll-based visibility (hide after 20% scroll)
+  // Handle scroll-based visibility with throttling
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercentage = (scrollY / documentHeight) * 100;
+      if (ticking) return;
       
-      // Show AI assistant when at top or scrolled back up above 20%
-      if (scrollPercentage <= 20) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      ticking = true;
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollY / documentHeight) * 100;
+        
+        // Show AI assistant when at top or scrolled back up above 20%
+        if (scrollPercentage <= 20) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+        
+        ticking = false;
+      });
     };
 
     const handleJumpToTop = () => {
       setIsVisible(true);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('jumpToTop', handleJumpToTop);
     
     return () => {
