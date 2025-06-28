@@ -62,17 +62,17 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-            Ready to Transform Your IT Infrastructure?
+            See RactorIX in Action
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Schedule your hassle-free consultation today and discover how RactorIX can revolutionize your business operations.
+            Book a personalized demo and discover how our AI-powered automation transforms MSP operations at scale.
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
           <div className="glassmorphism rounded-3xl p-8">
-            <h3 className="text-2xl font-bold mb-6 text-white">Get Your Free Consultation</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Request Your Demo</h3>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
