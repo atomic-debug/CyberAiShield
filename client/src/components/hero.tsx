@@ -34,23 +34,17 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-32 pb-20 px-4 relative">
-      {/* Animated Background Particles */}
-      <div 
-        ref={particlesRef}
-        className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
-      />
-      
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section className="min-h-screen flex items-center justify-center pt-32 pb-20 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
               Automate it. Secure it. Scale it.
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
               AI-powered automation that handles the{' '}
-              <span className="text-indigo-400 font-semibold">routine work</span>{' '}
+              <span className="text-indigo-600 font-semibold">routine work</span>{' '}
               across your entire infrastructure, so you can focus on what matters most.
             </p>
             
@@ -58,13 +52,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="aurora-gradient text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300 hover:-translate-y-1"
+                className="bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-indigo-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
               >
                 Get started
               </button>
               <button 
                 onClick={() => scrollToSection('services')}
-                className="border-2 border-indigo-400/30 text-indigo-400 bg-transparent px-8 py-4 rounded-xl font-semibold text-lg hover:bg-indigo-400/10 transition-all duration-300"
+                className="border-2 border-gray-300 text-gray-700 bg-transparent px-8 py-4 rounded-xl font-semibold text-lg hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300"
               >
                 Request demo
               </button>
@@ -72,45 +66,45 @@ export default function Hero() {
             
             {/* Trust indicators */}
             <div>
-              <p className="text-sm text-gray-400 mb-6">
+              <p className="text-sm text-gray-500 mb-6">
                 Trusted by thousands worldwide — Ready to streamline your IT operations? Our team is currently onboarding new clients for 2025 implementation.
               </p>
-              <div className="flex flex-wrap gap-3 opacity-60">
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">TechFlow</span>
+              <div className="flex flex-wrap gap-3 opacity-70">
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">TechFlow</span>
                 </div>
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">Apex IT</span>
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">Apex IT</span>
                 </div>
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">CyberGuard</span>
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">CyberGuard</span>
                 </div>
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">DataBridge</span>
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">DataBridge</span>
                 </div>
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">NetCore</span>
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">NetCore</span>
                 </div>
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">SecureLink MSP</span>
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">SecureLink MSP</span>
                 </div>
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">CloudFirst</span>
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">CloudFirst</span>
                 </div>
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">ProTech</span>
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">ProTech</span>
                 </div>
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">InfoSys</span>
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">InfoSys</span>
                 </div>
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">CoreNet</span>
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">CoreNet</span>
                 </div>
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">SecureIT</span>
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">SecureIT</span>
                 </div>
-                <div className="glassmorphism px-3 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">TechLink</span>
+                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-gray-700 font-medium text-sm">TechLink</span>
                 </div>
               </div>
             </div>
@@ -118,22 +112,38 @@ export default function Hero() {
           
           {/* Right Column - Visual Element */}
           <div className="hidden lg:block">
-            <div className="relative mx-auto w-96 h-96 animate-float">
-              <div className="absolute inset-0 glassmorphism rounded-3xl flex items-center justify-center aurora-glow">
+            <div className="relative mx-auto w-96 h-96">
+              <div className="absolute inset-0 bg-white rounded-3xl shadow-xl border border-gray-200 flex items-center justify-center">
                 <div className="grid grid-cols-3 gap-6 p-8">
-                  <div className="w-6 h-6 bg-indigo-400 rounded-full animate-pulse"></div>
-                  <div className="w-6 h-6 bg-cyan-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                  <div className="w-6 h-6 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                  <div className="w-6 h-6 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-                  <div className="w-8 h-8 aurora-gradient rounded-full animate-pulse-slow flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-indigo-600 rounded-sm"></div>
+                  </div>
+                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-blue-600 rounded-sm"></div>
+                  </div>
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-purple-600 rounded-sm"></div>
+                  </div>
+                  <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-emerald-600 rounded-sm"></div>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                   </div>
-                  <div className="w-6 h-6 bg-emerald-400 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-                  <div className="w-6 h-6 bg-rose-400 rounded-full animate-pulse" style={{animationDelay: '2.5s'}}></div>
-                  <div className="w-6 h-6 bg-amber-400 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
-                  <div className="w-6 h-6 bg-teal-400 rounded-full animate-pulse" style={{animationDelay: '3.5s'}}></div>
+                  <div className="w-8 h-8 bg-rose-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-rose-600 rounded-sm"></div>
+                  </div>
+                  <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-amber-600 rounded-sm"></div>
+                  </div>
+                  <div className="w-8 h-8 bg-cyan-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-cyan-600 rounded-sm"></div>
+                  </div>
+                  <div className="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-teal-600 rounded-sm"></div>
+                  </div>
                 </div>
               </div>
             </div>
