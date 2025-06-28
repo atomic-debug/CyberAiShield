@@ -16,16 +16,35 @@ export default function Services() {
     <section id="services" className="py-20 px-4 scroll-offset">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gradient block mb-2">Next-Generation</span>
-            <span className="rainbow-text text-5xl md:text-6xl transition-opacity duration-500 font-black block mb-2">
-              {words[currentWordIndex]}
-            </span>
-            <span className="text-gradient block">Automation</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Advanced AI workflows engineered to transform complex multi-client operations into streamlined, autonomous systems
-          </p>
+          {/* Header with Background */}
+          <div className="relative glassmorphism rounded-3xl p-12 mb-8 overflow-hidden">
+            {/* Decorative background pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-4 left-4 w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
+              <div className="absolute top-8 right-12 w-1 h-1 bg-cyan-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute bottom-4 right-6 w-2 h-2 bg-emerald-400 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 relative z-10">
+              <span className="text-gradient block mb-3">Next-Generation</span>
+              <span className="rainbow-text text-6xl md:text-7xl transition-opacity duration-500 font-black block mb-3 relative">
+                {words[currentWordIndex]}
+                {/* Subtle glow effect */}
+                <span className="absolute inset-0 rainbow-text blur-lg opacity-30 -z-10">
+                  {words[currentWordIndex]}
+                </span>
+              </span>
+              <span className="text-gradient block">Automation</span>
+            </h2>
+            
+            {/* Accent line */}
+            <div className="w-24 h-1 aurora-gradient rounded-full mx-auto mb-6"></div>
+            
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Advanced AI workflows engineered to transform complex multi-client operations into streamlined, autonomous systems
+            </p>
+          </div>
         </div>
         
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
