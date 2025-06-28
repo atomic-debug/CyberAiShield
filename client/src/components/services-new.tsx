@@ -32,17 +32,26 @@ export default function Services() {
   }, []);
 
   const getItemStyle = (index: number) => {
-    const baseTransform = scrollProgress * 60; // Max collapse distance
-    const itemOffset = index * 20; // Stagger effect
-    const transform = Math.max(0, baseTransform - itemOffset);
+    // Calculate how much each item should compress
+    const compressionFactor = Math.min(scrollProgress, 0.8); // Max 80% compression
+    const itemSpacing = 12; // Original spacing in rem (from space-y-12)
+    const compressedSpacing = itemSpacing * (1 - compressionFactor * 0.8); // Reduce spacing as we scroll
     
-    const shadowIntensity = Math.min(scrollProgress * 3, 1);
-    const shadow = `0 ${4 + transform/10}px ${12 + transform/5}px rgba(0,0,0,${0.1 + shadowIntensity * 0.2})`;
+    // Shadow gets more intense as items get closer
+    const shadowIntensity = compressionFactor;
+    const shadowBlur = 8 + shadowIntensity * 12;
+    const shadowY = 2 + shadowIntensity * 4;
+    const shadow = `0 ${shadowY}px ${shadowBlur}px rgba(0,0,0,${0.08 + shadowIntensity * 0.12})`;
+    
+    // Scale items slightly as they compress
+    const scale = 1 - (compressionFactor * 0.05 * (2 - index)); // Later items scale less
     
     return {
-      transform: `translateY(-${transform}px)`,
+      marginTop: index === 0 ? '0' : `${compressedSpacing}rem`,
+      transform: `scale(${scale})`,
+      transformOrigin: 'left center',
       boxShadow: shadow,
-      zIndex: 3 - index,
+      opacity: 1 - (compressionFactor * 0.1), // Slight fade as they compress
       transition: 'none' // Smooth real-time updates
     };
   };
@@ -56,7 +65,7 @@ export default function Services() {
         </h2>
         
         {/* Clean Text-Based Services with Dynamic Shadows */}
-        <div className="space-y-12 text-left relative">
+        <div className="text-left relative">
           
           <div 
             className="border-l-4 border-purple-600 pl-8 py-4 rounded-l-xl bg-white/50 backdrop-blur-sm relative"
