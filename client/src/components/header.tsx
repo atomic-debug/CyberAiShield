@@ -118,13 +118,6 @@ export default function Header() {
           {/* Right side CTAs */}
           <div className="hidden md:flex items-center space-x-3">
             <Button 
-              variant="ghost"
-              onClick={() => scrollToSection('contact')}
-              className="text-gray-600 hover:text-purple-700 hover:bg-purple-50 font-medium transition-all duration-200"
-            >
-              Contact Sales
-            </Button>
-            <Button 
               variant="outline"
               className="border-purple-200 text-purple-700 hover:bg-purple-50 font-medium transition-all duration-200"
             >
