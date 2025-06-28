@@ -24,17 +24,17 @@ export default function Header() {
       )}
     >
       <div className="mx-4 mt-4">
-        <nav className="bg-white/95 backdrop-blur-lg rounded-2xl px-6 py-3 mx-auto max-w-7xl border border-gray-300 shadow-xl shadow-gray-500/10 border-b-2 border-b-gray-300">
+        <nav className="bg-white/95 backdrop-blur-lg rounded-2xl px-6 py-3 mx-auto max-w-7xl border border-gray-200/50 shadow-lg">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-rose-200 to-pink-200 rounded-xl flex items-center justify-center shadow-sm">
-                <svg className="w-6 h-6 text-rose-600" fill="currentColor" viewBox="0 0 24 24">
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center shadow-sm">
+                <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
               </div>
               <div>
-                <div className="text-xl font-black text-gray-900">RactorIX</div>
+                <div className="text-xl font-black text-dark">RactorIX</div>
                 <div className="text-xs font-medium text-gray-500">Atomic Solution</div>
               </div>
             </div>
@@ -148,7 +148,7 @@ export default function Header() {
             <div className="flex items-center space-x-3">
               <a 
                 href="/api/login"
-                className="bg-rose-500 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-rose-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="bg-purple-600 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-purple-500 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 Log In
               </a>

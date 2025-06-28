@@ -34,19 +34,19 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-24 pb-20 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+    <section className="min-h-screen flex items-center justify-center pt-24 pb-20 px-4 purple-gradient-bg">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-dark mb-6 leading-tight tracking-tight">
               Secure it.<br />
               Automate it<br />
               Take Control.
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-medium mb-8 leading-relaxed">
               AI-powered automation that handles the{' '}
-              <span className="text-rose-500 font-bold">routine noise</span>{' '}
+              <span className="text-purple-600 font-bold">routine noise</span>{' '}
               across your entire infrastructure, so you can focus on what matters most.
             </p>
             
@@ -54,9 +54,9 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-rose-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-rose-600 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                className="bg-purple-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-purple-500 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
               >
-                Get started
+                Get started. It's FREE!
               </button>
             </div>
             
