@@ -58,10 +58,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 px-4 scroll-offset bg-white relative">
-      {/* Geometric accent shapes */}
-      <div className="absolute top-0 right-0 -mt-12 -mr-12 w-64 h-64 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full opacity-50 blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-gradient-to-tr from-blue-100 to-cyan-100 rounded-full opacity-40 blur-3xl"></div>
+    <section id="contact" className="py-24 px-4 scroll-offset bg-gray-50 relative">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50"></div>
+      </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-16">
@@ -77,8 +78,8 @@ export default function Contact() {
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div className="glassmorphism rounded-3xl p-8">
-            <h3 className="text-2xl font-bold mb-6 text-white">Request Your Demo</h3>
+          <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+            <h3 className="text-2xl font-bold mb-6 text-gray-900">Request Your Demo</h3>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
@@ -86,11 +87,11 @@ export default function Contact() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-300">Name *</FormLabel>
+                      <FormLabel className="text-sm font-medium text-gray-700">Name *</FormLabel>
                       <FormControl>
                         <Input 
                           {...field}
-                          className="glassmorphism border-0 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500"
+                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 rounded-lg"
                           placeholder="Your full name"
                         />
                       </FormControl>
@@ -104,12 +105,12 @@ export default function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-300">Email *</FormLabel>
+                      <FormLabel className="text-sm font-medium text-gray-700">Email *</FormLabel>
                       <FormControl>
                         <Input 
                           {...field}
                           type="email"
-                          className="glassmorphism border-0 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500"
+                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 rounded-lg"
                           placeholder="your.email@company.com"
                         />
                       </FormControl>
@@ -123,11 +124,11 @@ export default function Contact() {
                   name="company"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-300">Company</FormLabel>
+                      <FormLabel className="text-sm font-medium text-gray-700">Company</FormLabel>
                       <FormControl>
                         <Input 
                           {...field}
-                          className="glassmorphism border-0 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500"
+                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 rounded-lg"
                           placeholder="Your company name"
                         />
                       </FormControl>
@@ -141,12 +142,12 @@ export default function Contact() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-gray-300">Message *</FormLabel>
+                      <FormLabel className="text-sm font-medium text-gray-700">Message *</FormLabel>
                       <FormControl>
                         <Textarea 
                           {...field}
                           rows={4}
-                          className="glassmorphism border-0 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 resize-none"
+                          className="bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 rounded-lg resize-none"
                           placeholder="Tell us about your IT challenges and goals..."
                         />
                       </FormControl>
@@ -158,7 +159,7 @@ export default function Contact() {
                 <Button 
                   type="submit" 
                   disabled={submitConsultation.isPending}
-                  className="w-full aurora-gradient text-white py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300 hover:-translate-y-1 aurora-glow"
+                  className="w-full bg-rose-500 text-white py-3 rounded-lg font-medium text-base hover:bg-rose-600 transition-colors duration-200 disabled:opacity-50"
                 >
                   {submitConsultation.isPending ? 'Submitting...' : 'Schedule My Free Consultation'}
                 </Button>
@@ -169,52 +170,52 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Contact Details */}
-            <div className="glassmorphism bg-gradient-to-r from-indigo-50/20 via-purple-50/20 to-pink-50/20 rounded-3xl p-8 border border-indigo-100/30">
-              <h3 className="text-2xl font-bold mb-6 text-white">Get in Touch</h3>
+            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Get in Touch</h3>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 aurora-gradient rounded-xl flex items-center justify-center aurora-glow">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-white">Phone</div>
-                    <div className="text-gray-300">+1 (555) 123-4567</div>
+                    <div className="font-semibold text-gray-900">Phone</div>
+                    <div className="text-gray-600">+1 (555) 123-4567</div>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 aurora-gradient rounded-xl flex items-center justify-center aurora-glow">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-white">Email</div>
-                    <div className="text-gray-300">contact@ractorix.com</div>
+                    <div className="font-semibold text-gray-900">Email</div>
+                    <div className="text-gray-600">contact@ractorix.com</div>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 aurora-gradient rounded-xl flex items-center justify-center aurora-glow">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-white">Address</div>
-                    <div className="text-gray-300">123 Innovation Drive<br />Tech City, CA 94105</div>
+                    <div className="font-semibold text-gray-900">Address</div>
+                    <div className="text-gray-600">123 Innovation Drive<br />Tech City, CA 94105</div>
                   </div>
                 </div>
               </div>
             </div>
             
             {/* Call to Action */}
-            <div className="glassmorphism rounded-3xl p-8 text-center">
-              <h3 className="text-xl font-bold mb-4 text-white">Ready to Get Started?</h3>
-              <p className="text-gray-300 mb-6">
+            <div className="bg-rose-50 rounded-3xl p-8 text-center border border-rose-100">
+              <h3 className="text-xl font-bold mb-4 text-gray-900">Ready to Get Started?</h3>
+              <p className="text-gray-600 mb-6">
                 Join hundreds of businesses that trust RactorIX for their mission-critical IT infrastructure.
               </p>
               <button 
@@ -222,7 +223,7 @@ export default function Contact() {
                   const element = document.getElementById('services');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors font-medium"
+                className="inline-flex items-center text-rose-600 hover:text-rose-700 transition-colors font-medium"
               >
                 Learn More About Our Services
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
