@@ -13,8 +13,12 @@ export default function Services() {
   }, [words.length]);
 
   return (
-    <section id="services" className="py-20 px-4 scroll-offset bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="py-12 px-4 scroll-offset bg-gradient-to-br from-gray-50 to-blue-50/30 relative overflow-hidden">
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-20">
           <div className="max-w-4xl">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -93,7 +97,7 @@ export default function Services() {
         
         
         {/* About Section */}
-        <div id="about" className="scroll-offset bg-white py-16 px-8 rounded-3xl shadow-lg border border-gray-200">
+        <div id="about" className="scroll-offset bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 py-12 px-8 rounded-3xl border border-indigo-100">
           <div className="max-w-4xl">
             <h3 className="text-3xl font-bold mb-6 text-gray-900">Built for You to Scale</h3>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">

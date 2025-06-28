@@ -58,14 +58,18 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 scroll-offset">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="py-12 px-4 scroll-offset bg-white relative">
+      {/* Geometric accent shapes */}
+      <div className="absolute top-0 right-0 -mt-12 -mr-12 w-64 h-64 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full opacity-50 blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-gradient-to-tr from-blue-100 to-cyan-100 rounded-full opacity-40 blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-16">
           <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               See RactorIX in Action
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-gray-600 leading-relaxed">
               Book a personalized demo and discover how our AI-powered automation transforms IT operations at scale.
             </p>
           </div>

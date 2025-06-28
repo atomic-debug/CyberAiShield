@@ -28,6 +28,9 @@
   
   /* Custom RactorIX colors - SaaS Style */
   --saas-bg: hsl(220, 13%, 97%);
+  --section-alt: hsl(210, 40%, 98%); /* Subtle blue-gray for alternating sections */
+  --section-accent: hsl(220, 20%, 96%); /* Slightly deeper for emphasis */
+  --pattern-overlay: hsla(224, 70%, 50%, 0.02); /* Very subtle blue overlay */
   --saas-accent: hsl(231, 48%, 48%);
   --saas-gradient: linear-gradient(135deg, hsl(231, 48%, 48%) 0%, hsl(262, 52%, 47%) 100%);
   --glassmorphism-bg: hsla(255, 255%, 255%, 0.1);
