@@ -121,13 +121,13 @@ The application is designed for scalability with a clear separation of concerns,
 - **Responsive design**: Mobile-first approach with cosmic/aurora theme
 
 ### Design Enhancements (June 28, 2025)
-- **Colorful gradient accents**: Applied gradient backgrounds (indigo/purple/pink) throughout key sections
-- **Air tag style badges**: Trust indicators use colorful backgrounds with matching text colors
-- **Enhanced navigation**: Added gradient background with shadow for better visibility
-- **Faster header animation**: Reduced transition time to 150ms for responsive hiding
-- **Minimal footer**: Simplified to just copyright and links
-- **Gradient service cards**: Each service card has unique gradient treatment
-- **Unified color scheme**: Consistent use of soft gradients while maintaining modern SaaS aesthetic
+- **Asana-inspired aesthetic**: Clean white foundation with subtle rose/pink accent color
+- **Minimalist approach**: Light shadows, simple borders, strategic white space
+- **Professional color palette**: Rose (primary), emerald, and blue with muted tones
+- **Clean form design**: White backgrounds with gray borders and rose focus states
+- **Subtle backgrounds**: Light gray (gray-50) for sections with gentle grid patterns
+- **Typography hierarchy**: Clear, professional headings with strategic color accents
+- **Rapid7-style navigation**: Professional header with dropdown menus and smooth animations
 
 ## User Preferences
 
