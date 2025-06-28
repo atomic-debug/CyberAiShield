@@ -55,7 +55,7 @@ export default function Hero() {
           </p>
           
           {/* Primary CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
             <button 
               onClick={() => scrollToSection('contact')}
               className="aurora-gradient text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300 hover:-translate-y-1"
@@ -66,27 +66,28 @@ export default function Hero() {
               onClick={() => scrollToSection('services')}
               className="border-2 border-indigo-400/30 text-indigo-400 bg-transparent px-8 py-4 rounded-xl font-semibold text-lg hover:bg-indigo-400/10 transition-all duration-300"
             >
-              See our solutions
+              Request demo
             </button>
           </div>
           
-          {/* Floating illustration */}
-          <div className="relative mx-auto w-80 h-80 animate-float">
-            <div className="absolute inset-0 glassmorphism rounded-full flex items-center justify-center aurora-glow">
-              <div className="grid grid-cols-3 gap-4 p-8">
-                <div className="w-4 h-4 bg-indigo-400 rounded-full animate-pulse"></div>
-                <div className="w-4 h-4 bg-cyan-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                <div className="w-4 h-4 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                <div className="w-4 h-4 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-                <div className="w-6 h-6 aurora-gradient rounded-full animate-pulse-slow flex items-center justify-center">
-                  <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                  </svg>
-                </div>
-                <div className="w-4 h-4 bg-emerald-400 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-                <div className="w-4 h-4 bg-rose-400 rounded-full animate-pulse" style={{animationDelay: '2.5s'}}></div>
-                <div className="w-4 h-4 bg-amber-400 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
-                <div className="w-4 h-4 bg-teal-400 rounded-full animate-pulse" style={{animationDelay: '3.5s'}}></div>
+          {/* Trust indicators - MSP/MSSP partners */}
+          <div className="text-center">
+            <p className="text-sm text-gray-400 mb-8">Trusted by leading MSPs and IT service providers</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-50">
+              <div className="glassmorphism px-6 py-3 rounded-lg">
+                <span className="text-gray-300 font-semibold">ConnectWise</span>
+              </div>
+              <div className="glassmorphism px-6 py-3 rounded-lg">
+                <span className="text-gray-300 font-semibold">Kaseya</span>
+              </div>
+              <div className="glassmorphism px-6 py-3 rounded-lg">
+                <span className="text-gray-300 font-semibold">SolarWinds</span>
+              </div>
+              <div className="glassmorphism px-6 py-3 rounded-lg">
+                <span className="text-gray-300 font-semibold">Datto</span>
+              </div>
+              <div className="glassmorphism px-6 py-3 rounded-lg">
+                <span className="text-gray-300 font-semibold">Microsoft</span>
               </div>
             </div>
           </div>
