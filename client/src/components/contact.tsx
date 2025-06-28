@@ -87,10 +87,7 @@ export default function Contact() {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="bg-gradient-to-r from-purple-50 to-indigo-50 backdrop-blur-sm border-purple-300 text-purple-800 px-6 py-3 font-bold text-sm tracking-wider mb-8">
-            <Shield className="w-4 h-4 mr-2" />
-            COMMAND CENTER ACCESS
-          </Badge>
+          
           
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-[0.9] tracking-tight">
             Claim Your <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 bg-clip-text text-transparent">Atomic Advantage</span>
