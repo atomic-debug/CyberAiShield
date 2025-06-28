@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -6,9 +6,11 @@ import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Badge } from '@/components/ui/badge';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
+import { ArrowRight, Calendar, Mail, MapPin, Phone, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -21,6 +23,23 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function Contact() {
   const { toast } = useToast();
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const element = document.getElementById('contact');
+    if (element) observer.observe(element);
+    
+    return () => observer.disconnect();
+  }, []);
   
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -58,28 +77,36 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 scroll-offset bg-gray-50 relative">
+    <section id="contact" className="py-24 px-4 scroll-offset bg-gradient-to-br from-purple-50/30 via-white to-gray-50 relative">
       {/* Subtle background pattern */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-30"></div>
       </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-16">
-          <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              See RactorIX in Action
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Book a personalized demo and discover how our AI-powered automation transforms IT operations at scale.
-            </p>
-          </div>
+        <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <Badge variant="outline" className="bg-white/80 backdrop-blur-sm border-purple-200 text-purple-700 px-4 py-2 font-medium mb-6">
+            <Calendar className="w-4 h-4 mr-2" />
+            Book Your Demo
+          </Badge>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
+            See RactorIX in <span className="text-purple-600">Action</span>
+          </h2>
+          <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Book a personalized demo and discover how our AI-powered automation transforms IT operations at scale.
+          </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Request Your Demo</h3>
+          <div className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/20 hover:bg-white/90 transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '200ms' }}>
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4">
+                <Sparkles className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900">Request Your Demo</h3>
+            </div>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
@@ -159,9 +186,20 @@ export default function Contact() {
                 <Button 
                   type="submit" 
                   disabled={submitConsultation.isPending}
-                  className="w-full bg-purple-600 text-white py-3 rounded-lg font-bold text-base hover:bg-purple-700 transition-colors duration-200 disabled:opacity-50"
+                  size="lg"
+                  className="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 group"
                 >
-                  {submitConsultation.isPending ? 'Submitting...' : 'Schedule My Free Consultation'}
+                  {submitConsultation.isPending ? (
+                    <div className="flex items-center">
+                      <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-2"></div>
+                      Submitting...
+                    </div>
+                  ) : (
+                    <>
+                      Schedule My Free Demo
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
                 </Button>
               </form>
             </Form>
@@ -170,14 +208,18 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Contact Details */}
-            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Get in Touch</h3>
+            <div className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/20 hover:bg-white/90 transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '400ms' }}>
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
+                  <Mail className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Get in Touch</h3>
+              </div>
+              
               <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                    </svg>
+                <div className="flex items-center space-x-4 group hover:bg-purple-50/50 p-3 rounded-xl transition-colors">
+                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                    <Phone className="w-6 h-6 text-purple-600" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Phone</div>
@@ -185,11 +227,9 @@ export default function Contact() {
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                    </svg>
+                <div className="flex items-center space-x-4 group hover:bg-purple-50/50 p-3 rounded-xl transition-colors">
+                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                    <Mail className="w-6 h-6 text-purple-600" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Email</div>
@@ -197,12 +237,9 @@ export default function Contact() {
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
+                <div className="flex items-center space-x-4 group hover:bg-purple-50/50 p-3 rounded-xl transition-colors">
+                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                    <MapPin className="w-6 h-6 text-purple-600" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Address</div>
@@ -213,23 +250,29 @@ export default function Contact() {
             </div>
             
             {/* Call to Action */}
-            <div className="bg-purple-50 rounded-3xl p-8 text-center border border-purple-100">
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Ready to Get Started?</h3>
+            <div className={`bg-gradient-to-br from-purple-50 to-indigo-50/50 rounded-3xl p-8 text-center border border-purple-100/50 backdrop-blur-sm transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '600ms' }}>
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4">
+                  <CheckCircle2 className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Ready to Get Started?</h3>
+              </div>
+              
               <p className="text-gray-600 mb-6">
                 Join hundreds of businesses that trust RactorIX for their mission-critical IT infrastructure.
               </p>
-              <button 
+              
+              <Button
                 onClick={() => {
                   const element = document.getElementById('services');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center text-rose-600 hover:text-rose-700 transition-colors font-medium"
+                variant="outline" 
+                className="border-purple-200 text-purple-700 hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-300 group"
               >
                 Learn More About Our Services
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                </svg>
-              </button>
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </div>
           </div>
         </div>
