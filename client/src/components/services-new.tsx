@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 
 export default function Services() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -102,20 +101,7 @@ export default function Services() {
           
         </div>
         
-        {/* Simple CTA */}
-        <div className="mt-16">
-          <Button 
-            onClick={() => {
-              const element = document.getElementById('contact');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
-            size="lg"
-            className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-12 py-6 text-xl font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
-          >
-            Deploy All Three
-            <ArrowRight className="w-6 h-6 ml-3" />
-          </Button>
-        </div>
+        
         
       </div>
     </section>
