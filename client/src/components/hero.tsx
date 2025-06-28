@@ -7,7 +7,7 @@ import { useParallax } from '@/hooks/use-scroll';
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentRole, setCurrentRole] = useState(0);
-  const parallaxOffset = useParallax(0.3);
+  const parallaxOffset = useParallax(0.1); // Reduced parallax effect
   
   const roles = ['MSPs', 'MSSPs', 'IT Teams', 'Admins'];
 
@@ -33,11 +33,13 @@ export default function Hero() {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-24 pb-20 px-4 bg-gradient-to-br from-white via-purple-50/30 to-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="min-h-screen flex items-center justify-center pt-24 pb-20 px-4 relative">
+      {/* Glass morphism background */}
+      <div className="absolute inset-0 bg-white/20 backdrop-blur-sm" />
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Announcement Badge */}
-          <div className={`mb-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+          <div className={`mb-8 transform transition-all duration-1500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'}`}>
             <Badge variant="outline" className="bg-gradient-to-r from-purple-50 to-indigo-50 backdrop-blur-sm border-purple-300 text-purple-800 px-6 py-3 font-semibold text-sm tracking-wide">
               <Shield className="w-4 h-4 mr-2" />
               ENTERPRISE SECURITY AT SCALE
@@ -45,7 +47,7 @@ export default function Hero() {
           </div>
 
           {/* Main Headline */}
-          <h1 className={`text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-[0.9] tracking-tight transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <h1 className={`text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-[0.9] tracking-tight transform transition-all duration-1500 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
             Security & Scale.{' '}
             <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 bg-clip-text text-transparent">
               Atomic Solutions.
