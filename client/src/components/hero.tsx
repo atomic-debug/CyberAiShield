@@ -34,7 +34,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-32 pb-20 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+    <section className="min-h-screen flex items-center justify-center pt-24 pb-20 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
