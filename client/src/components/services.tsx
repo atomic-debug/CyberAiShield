@@ -106,10 +106,10 @@ export default function Services() {
               operations across diverse systems, requirements, and endpoints while maintaining security and efficiency.
             </p>
             <div className="flex flex-wrap gap-4">
-              <span className="bg-indigo-50 border border-indigo-200 px-6 py-3 rounded-xl text-sm font-medium text-indigo-700">Enterprise-Ready Solutions</span>
-              <span className="bg-emerald-50 border border-emerald-200 px-6 py-3 rounded-xl text-sm font-medium text-emerald-700">Multi-Environment Architecture</span>
-              <span className="bg-blue-50 border border-blue-200 px-6 py-3 rounded-xl text-sm font-medium text-blue-700">Scalable Automation</span>
-              <span className="bg-purple-50 border border-purple-200 px-6 py-3 rounded-xl text-sm font-medium text-purple-700">Custom Development</span>
+              <span className="bg-violet-50 border border-violet-200 px-6 py-3 rounded-xl text-sm font-medium text-violet-700">Enterprise-Ready Solutions</span>
+              <span className="bg-lime-50 border border-lime-200 px-6 py-3 rounded-xl text-sm font-medium text-lime-700">Multi-Environment Architecture</span>
+              <span className="bg-orange-50 border border-orange-200 px-6 py-3 rounded-xl text-sm font-medium text-orange-700">Scalable Automation</span>
+              <span className="bg-sky-50 border border-sky-200 px-6 py-3 rounded-xl text-sm font-medium text-sky-700">Custom Development</span>
             </div>
           </div>
         </div>
