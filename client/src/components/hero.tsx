@@ -72,22 +72,28 @@ export default function Hero() {
             
             {/* Trust indicators */}
             <div>
-              <p className="text-sm text-gray-400 mb-6">Trusted by leading IT organizations and service providers</p>
-              <div className="flex flex-wrap gap-6 opacity-60">
+              <p className="text-sm text-gray-400 mb-6">Trusted by thousands worldwide</p>
+              <div className="flex flex-wrap gap-4 opacity-60">
                 <div className="glassmorphism px-4 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">ConnectWise</span>
+                  <span className="text-gray-300 font-medium text-sm">TechFlow Solutions</span>
                 </div>
                 <div className="glassmorphism px-4 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">Kaseya</span>
+                  <span className="text-gray-300 font-medium text-sm">Apex IT Services</span>
                 </div>
                 <div className="glassmorphism px-4 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">SolarWinds</span>
+                  <span className="text-gray-300 font-medium text-sm">CyberGuard Systems</span>
                 </div>
                 <div className="glassmorphism px-4 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">Datto</span>
+                  <span className="text-gray-300 font-medium text-sm">DataBridge Partners</span>
                 </div>
                 <div className="glassmorphism px-4 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">Microsoft</span>
+                  <span className="text-gray-300 font-medium text-sm">NetCore Technologies</span>
+                </div>
+                <div className="glassmorphism px-4 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">SecureLink MSP</span>
+                </div>
+                <div className="glassmorphism px-4 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">CloudFirst IT</span>
                 </div>
               </div>
             </div>
