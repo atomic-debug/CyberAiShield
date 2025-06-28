@@ -50,15 +50,19 @@ export default function About() {
               We <span className="text-purple-300 font-bold">obliterate limitations</span>. Nuclear precision. Total supremacy.
             </p>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {[
-                { label: 'Threat Prevention', value: '99.99%', icon: Shield },
-                { label: 'Scale Multiplier', value: '1000x', icon: TrendingUp },
-                { label: 'Efficiency Gain', value: '400%', icon: Zap },
-                { label: 'Uptime Guarantee', value: '99.9%', icon: Target }
-              ].map((stat, index) => (
-                <AnimatedStat key={index} value={stat.value} label={stat.label} icon={stat.icon} />
-              ))}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
+                <span className="font-bold text-purple-300">99.99%</span> Threat Prevention
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
+                <span className="font-bold text-purple-300">1000x</span> Scale Multiplier
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
+                <span className="font-bold text-purple-300">400%</span> Efficiency Gain
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
+                <span className="font-bold text-purple-300">99.9%</span> Uptime
+              </div>
             </div>
             
             <Button 
