@@ -75,27 +75,42 @@ export default function Hero() {
               <p className="text-sm text-gray-400 mb-6">
                 Trusted by thousands worldwide — Ready to streamline your IT operations? Our team is currently onboarding new clients for 2025 implementation.
               </p>
-              <div className="flex flex-wrap gap-4 opacity-60">
-                <div className="glassmorphism px-4 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">TechFlow Solutions</span>
+              <div className="flex flex-wrap gap-3 opacity-60">
+                <div className="glassmorphism px-3 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">TechFlow</span>
                 </div>
-                <div className="glassmorphism px-4 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">Apex IT Services</span>
+                <div className="glassmorphism px-3 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">Apex IT</span>
                 </div>
-                <div className="glassmorphism px-4 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">CyberGuard Systems</span>
+                <div className="glassmorphism px-3 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">CyberGuard</span>
                 </div>
-                <div className="glassmorphism px-4 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">DataBridge Partners</span>
+                <div className="glassmorphism px-3 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">DataBridge</span>
                 </div>
-                <div className="glassmorphism px-4 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">NetCore Technologies</span>
+                <div className="glassmorphism px-3 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">NetCore</span>
                 </div>
-                <div className="glassmorphism px-4 py-2 rounded-lg">
+                <div className="glassmorphism px-3 py-2 rounded-lg">
                   <span className="text-gray-300 font-medium text-sm">SecureLink MSP</span>
                 </div>
-                <div className="glassmorphism px-4 py-2 rounded-lg">
-                  <span className="text-gray-300 font-medium text-sm">CloudFirst IT</span>
+                <div className="glassmorphism px-3 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">CloudFirst</span>
+                </div>
+                <div className="glassmorphism px-3 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">ProTech</span>
+                </div>
+                <div className="glassmorphism px-3 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">InfoSys</span>
+                </div>
+                <div className="glassmorphism px-3 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">CoreNet</span>
+                </div>
+                <div className="glassmorphism px-3 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">SecureIT</span>
+                </div>
+                <div className="glassmorphism px-3 py-2 rounded-lg">
+                  <span className="text-gray-300 font-medium text-sm">TechLink</span>
                 </div>
               </div>
             </div>
