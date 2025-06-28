@@ -113,32 +113,7 @@ export default function Services() {
           </div>
         </div>
         
-        {/* Key Benefits Section */}
-        <div className="glassmorphism rounded-3xl p-8 mb-16">
-          <h3 className="text-3xl font-bold text-center mb-8 text-gradient">MSP Transformation Results</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-indigo-400 mb-2">80%</div>
-              <div className="text-gray-300 font-semibold">Time Saved</div>
-              <div className="text-sm text-gray-400 mt-1">On repetitive admin tasks</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-cyan-400 mb-2">5x</div>
-              <div className="text-gray-300 font-semibold">More Clients</div>
-              <div className="text-sm text-gray-400 mt-1">Same team size, expanded capacity</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-400 mb-2">90%</div>
-              <div className="text-gray-300 font-semibold">Faster Deployment</div>
-              <div className="text-sm text-gray-400 mt-1">Automated user provisioning</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-emerald-400 mb-2">60%</div>
-              <div className="text-gray-300 font-semibold">Higher Margins</div>
-              <div className="text-sm text-gray-400 mt-1">Reduced operational overhead</div>
-            </div>
-          </div>
-        </div>
+        
         
         {/* Competitive Differentiation */}
         <div id="about" className="text-center glassmorphism rounded-3xl p-8 scroll-offset">
