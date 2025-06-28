@@ -79,10 +79,7 @@ export default function Home() {
         }}
       />
       
-      {/* Time of Day Indicator */}
-      <div className="fixed top-20 right-6 z-40 text-xs font-medium text-purple-800/60 bg-white/50 backdrop-blur-sm px-3 py-1 rounded-full">
-        {timeOfDay} mode
-      </div>
+      
       
       {/* Interactive Particles - Reduced */}
       <div className="fixed inset-0 pointer-events-none">
