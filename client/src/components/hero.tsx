@@ -43,34 +43,30 @@ export default function Hero() {
       
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <div className="animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-black text-gradient mb-6 leading-tight tracking-tight">
-            Shop Secured AI Powered
+          <h1 className="text-5xl md:text-7xl font-black text-gradient mb-8 leading-tight tracking-tight">
+            Automate it. Secure it. Scale it.
             <br />
-            MSP Optimization
+            <span className="text-indigo-400">Side-by-side with AI agents.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            We engineer breakthrough automation solutions that transform how MSPs manage{' '}
-            <span className="text-indigo-400 font-semibold">hundreds of endpoints across dozens of clients</span>.{' '}
-            Programmatic user provisioning, intelligent workflow orchestration, and seamless multi-environment management.
-          </p>
-          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-            From manual admin work to autonomous systems. Our AI identifies optimization opportunities{' '}
-            and builds custom solutions that scale your operations exponentially.
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Transform your MSP operations with intelligent automation that manages{' '}
+            <span className="text-indigo-400 font-semibold">hundreds of endpoints across dozens of clients</span>{' '}
+            while you focus on growing your business.
           </p>
           
           {/* Primary CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <button 
               onClick={() => scrollToSection('contact')}
-              className="aurora-gradient text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300 hover:-translate-y-1 aurora-glow"
+              className="aurora-gradient text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300 hover:-translate-y-1"
             >
-              Schedule a Hassle-Free Consultation
+              Get started
             </button>
             <button 
               onClick={() => scrollToSection('services')}
-              className="glassmorphism text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/10 transition-all duration-300"
+              className="border-2 border-indigo-400/30 text-indigo-400 bg-transparent px-8 py-4 rounded-xl font-semibold text-lg hover:bg-indigo-400/10 transition-all duration-300"
             >
-              Explore Our Solutions
+              See our solutions
             </button>
           </div>
           
