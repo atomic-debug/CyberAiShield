@@ -14,7 +14,7 @@ export default function Services() {
         {/* Clean Text-Based Services */}
         <div className="space-y-12 text-left">
           
-          <div className="border-l-4 border-purple-600 pl-8">
+          <div className="border-l-4 border-purple-600 pl-8 py-4 rounded-l-xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Fortress Security</h3>
             <p className="text-lg text-gray-700 leading-relaxed">
               Military-grade protection that adapts, learns, and eliminates threats before they reach your infrastructure. 
@@ -22,7 +22,7 @@ export default function Services() {
             </p>
           </div>
           
-          <div className="border-l-4 border-purple-600 pl-8">
+          <div className="border-l-4 border-purple-600 pl-8 py-4 rounded-l-xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Infinite Scale</h3>
             <p className="text-lg text-gray-700 leading-relaxed">
               Seamless expansion that grows with your ambitions. From startup to enterprise, 
@@ -30,7 +30,7 @@ export default function Services() {
             </p>
           </div>
           
-          <div className="border-l-4 border-purple-600 pl-8">
+          <div className="border-l-4 border-purple-600 pl-8 py-4 rounded-l-xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Total Automation</h3>
             <p className="text-lg text-gray-700 leading-relaxed">
               AI-powered systems that operate your infrastructure with precision and intelligence. 
