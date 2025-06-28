@@ -191,11 +191,7 @@ export default function Home() {
         </ErrorBoundary>
       </Suspense>
       
-      <Suspense fallback={<LoadingFallback className="h-96" />}>
-        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Services unavailable</div>}>
-          <Services />
-        </ErrorBoundary>
-      </Suspense>
+
       
       <Suspense fallback={<LoadingFallback className="h-96" />}>
         <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Contact unavailable</div>}>
