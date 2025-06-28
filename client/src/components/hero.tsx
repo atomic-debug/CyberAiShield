@@ -42,10 +42,7 @@ export default function Hero() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
               Automate it.<br />
               Secure it.<br />
-              <span className="relative inline-block transform hover:scale-105 transition-transform duration-200">
-                <span className="absolute inset-0 bg-gradient-to-r from-gray-900 to-slate-800 bg-clip-text text-transparent blur-sm opacity-30"></span>
-                <span className="relative tracking-widest font-extrabold">Dominate</span>
-              </span> it.
+              <span className="tracking-wider">Dominate</span> it.
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
               AI-powered automation that handles the{' '}
