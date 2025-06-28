@@ -41,19 +41,15 @@ export default function Hero() {
           
 
           {/* Main Headline */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-[0.9] tracking-tight">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-4 leading-[0.9] tracking-tight">
             Security <span className="sm:inline block"><span className="text-5xl md:text-6xl lg:text-7xl text-purple-600">@</span><br className="sm:hidden" /> Scale</span>{' '}
             <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 bg-clip-text text-transparent">
               Reactor Solutions.
             </span>
           </h1>
 
-          
-
-          
-
           {/* Feature Pills */}
-          <div className="flex flex-wrap justify-center gap-6 mb-12">
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
             {features.map((feature, index) => (
               <div key={index} className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-6 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
                 <feature.icon className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
@@ -62,10 +58,8 @@ export default function Hero() {
             ))}
           </div>
           
-          
-          
           {/* Power Metrics - Centered Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto mb-6">
             <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Shield className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide">Fortress-Grade</span>
