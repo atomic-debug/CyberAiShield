@@ -43,10 +43,10 @@ export default function Hero() {
       
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-gradient mb-6 leading-tight">
-            Revolutionizing MSP Operations
+          <h1 className="text-6xl md:text-8xl font-black text-gradient mb-6 leading-tight tracking-tight">
+            AI-Powered MSP
             <br />
-            Through Intelligent Automation
+            Automation
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
             We engineer breakthrough automation solutions that transform how MSPs manage{' '}
