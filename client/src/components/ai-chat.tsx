@@ -141,7 +141,7 @@ export default function AIChat() {
         <Button
           onClick={handleStartChat}
           size="lg"
-          className="rounded-full shadow-lg bg-rose-500 hover:bg-rose-600 text-white"
+          className="rounded-full shadow-lg bg-purple-600 hover:bg-purple-700 text-white"
         >
           <MessageCircle className="w-5 h-5 mr-2" />
           AI Assistant
@@ -152,8 +152,8 @@ export default function AIChat() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 w-96 h-[600px] flex flex-col">
-      <Card className="h-full flex flex-col shadow-2xl border-rose-200">
-        <CardHeader className="flex-shrink-0 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-t-lg">
+      <Card className="h-full flex flex-col shadow-2xl border-purple-200">
+        <CardHeader className="flex-shrink-0 bg-gradient-to-r from-purple-600 to-purple-500 text-white rounded-t-lg">
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center text-lg">
               <Bot className="w-6 h-6 mr-2" />
@@ -174,7 +174,7 @@ export default function AIChat() {
           <ScrollArea className="flex-1 p-4">
             {messages.length === 0 && currentSessionId && (
               <div className="text-center text-gray-500 py-8">
-                <Sparkles className="w-12 h-12 mx-auto mb-4 text-rose-300" />
+                <Sparkles className="w-12 h-12 mx-auto mb-4 text-purple-300" />
                 <p className="text-lg font-medium mb-2">Welcome to RactorIX AI!</p>
                 <p className="text-sm">
                   Ask me about cybersecurity, IT automation, or any technical questions.
@@ -190,7 +190,7 @@ export default function AIChat() {
                 <div
                   className={`max-w-[80%] rounded-lg px-3 py-2 ${
                     message.role === "user"
-                      ? "bg-rose-500 text-white"
+                      ? "bg-purple-600 text-white"
                       : "bg-gray-100 text-gray-900"
                   }`}
                 >
@@ -240,7 +240,7 @@ export default function AIChat() {
                 onClick={handleSendMessage}
                 disabled={!inputMessage.trim() || !currentSessionId || sendMessageMutation.isPending}
                 size="sm"
-                className="bg-rose-500 hover:bg-rose-600"
+                className="bg-purple-600 hover:bg-purple-700"
               >
                 <Send className="w-4 h-4" />
               </Button>

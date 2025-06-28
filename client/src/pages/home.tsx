@@ -7,7 +7,7 @@ import AIChat from '@/components/ai-chat';
 
 export default function Home() {
   return (
-    <div className="cosmic-bg text-white overflow-x-hidden min-h-screen">
+    <div className="bg-white text-gray-900 overflow-x-hidden min-h-screen">
       <Header />
       <Hero />
       <Services />
