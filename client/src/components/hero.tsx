@@ -66,15 +66,15 @@ export default function Hero() {
           <div className="flex justify-center gap-4 max-w-2xl mx-auto mb-8">
             <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Shield className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">Enterprise Security</span>
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">Fortress-Grade Protection</span>
             </div>
             <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Zap className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">AI Automation</span>
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">Atomic Precision</span>
             </div>
             <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Target className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">99.9% Uptime</span>
+              <span className="text-sm font-semibold text-gray-800 tracking-wide">Infinite Scale</span>
             </div>
           </div>
         </div>
