@@ -47,8 +47,7 @@ export default function About() {
             </h3>
             
             <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto font-medium">
-              RactorIX doesn't just solve problems—we <span className="text-purple-300 font-bold">obliterate limitations</span>. 
-              Every atomic solution is precision-engineered for organizations that refuse to accept anything less than total operational supremacy.
+              We <span className="text-purple-300 font-bold">obliterate limitations</span>. Atomic precision. Total supremacy.
             </p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
