@@ -110,7 +110,7 @@ export default function Contact() {
                 <Target className="w-8 h-8 text-white drop-shadow-lg" />
               </div>
               <div>
-                <h3 className="text-3xl font-black text-gray-900 leading-tight">Deploy Atomic Solutions</h3>
+                <h3 className="text-3xl font-black text-gray-900 leading-tight">Deploy Reactor Solutions</h3>
                 <p className="text-sm text-purple-700 font-semibold tracking-wide">ENTERPRISE COMMAND CENTER</p>
               </div>
             </div>
@@ -306,13 +306,13 @@ export default function Contact() {
                     <CheckCircle2 className="w-8 h-8 text-white drop-shadow-lg" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-black text-white leading-tight">Ready for Atomic Dominance?</h3>
+                    <h3 className="text-2xl font-black text-white leading-tight">Ready for Reactor Dominance?</h3>
                     <p className="text-sm text-purple-300 font-semibold tracking-wide">JOIN THE ELITE</p>
                   </div>
                 </div>
                 
                 <p className="text-xl text-gray-200 mb-8 font-medium">
-                  Join <span className="text-purple-300 font-bold">elite organizations</span> that command their infrastructure with atomic precision.
+                  Join <span className="text-purple-300 font-bold">elite organizations</span> that command their infrastructure with reactor precision.
                   <br />
                   <span className="text-lg">Scale without limits. Secure without compromise.</span>
                 </p>
@@ -324,7 +324,7 @@ export default function Contact() {
                   }}
                   className="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-400 hover:to-indigo-400 text-white font-bold px-8 py-4 text-lg rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 group border-0"
                 >
-                  Explore Atomic Solutions
+                  Explore Reactor Solutions
                   <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
                 </Button>
               </div>

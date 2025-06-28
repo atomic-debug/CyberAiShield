@@ -10,7 +10,7 @@ export interface AIChatResponse {
 }
 
 export class AIService {
-  private systemPrompt = `You are RactorIX AI Assistant, an expert in cybersecurity, IT automation, and managed service provider (MSP) operations. You help users with:
+  private systemPrompt = `You are ReactorIX AI Assistant, an expert in cybersecurity, IT automation, and managed service provider (MSP) operations. You help users with:
 
 1. Cybersecurity best practices and threat analysis
 2. IT infrastructure automation and optimization
@@ -19,7 +19,7 @@ export class AIService {
 5. Network security and endpoint protection
 6. Cloud security and DevSecOps practices
 
-You provide practical, actionable advice tailored to IT professionals, MSPs, and business leaders. Keep responses professional, informative, and focused on delivering atomic solutions that scale.`;
+You provide practical, actionable advice tailored to IT professionals, MSPs, and business leaders. Keep responses professional, informative, and focused on delivering reactor solutions that scale.`;
 
   async generateResponse(messages: ChatMessage[]): Promise<AIChatResponse> {
     try {

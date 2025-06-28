@@ -1,8 +1,8 @@
-# RactorIX - AI-Driven IT Automation & Cybersecurity Platform
+# ReactorIX - AI-Driven IT Automation & Cybersecurity Platform
 
 ## Overview
 
-RactorIX is a modern web application for a Cyber Consulting/IT MSP AI Automation Agency. The platform serves as a professional landing page showcasing the company's AI-driven IT management and cybersecurity services, with the motto "Atomic Solution." The application features a responsive design with a cosmic/night sky theme and provides consultation request functionality.
+ReactorIX is a modern web application for a Cyber Consulting/IT MSP AI Automation Agency. The platform serves as a professional landing page showcasing the company's AI-driven IT management and cybersecurity services, with the motto "Reactor Solution." The application features a responsive design with a cosmic/night sky theme and provides consultation request functionality.
 
 ## System Architecture
 
@@ -96,6 +96,12 @@ The application is designed for scalability with a clear separation of concerns,
 ### Visual Refinements (June 28, 2025)
 - **Corner rounding adjustment**: Changed about section container from rounded-4xl to rounded-3xl for softer, more modern appearance
 - **Section spacing optimization**: Reduced padding across all sections (hero pb-8, about/services/contact py-12) for better page flow
+
+### Branding & Messaging Updates (June 28, 2025)
+- **Company name correction**: Fixed spelling from "RactorIX" to "ReactorIX" throughout application
+- **Terminology evolution**: Replaced "Atomic" with "Reactor" across all content (Reactor Solutions, reactor precision, etc.)
+- **Hero messaging update**: Changed "Security & Scale" to "Security @ Scale" for modern tech aesthetic
+- **About section refinement**: Simplified text to concise power phrases: "We obliterate limitations. Nuclear precision. Total supremacy."
 
 ### UI Standardization (June 28, 2025)
 - **Hero section redesign**: Removed decorative floating illustration, replaced with trust indicators
