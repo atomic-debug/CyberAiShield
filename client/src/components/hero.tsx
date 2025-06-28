@@ -52,15 +52,18 @@ export default function Hero() {
           
 
           {/* Main Headline */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-4 leading-[0.9] tracking-tight">
-            Security <span className="sm:inline block"><span className="text-5xl md:text-6xl lg:text-7xl text-purple-600">@</span><br className="sm:hidden" /> Scale</span>{' '}
-            <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 bg-clip-text text-transparent">
-              Reactor Solutions.
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            Security <span className="sm:inline block"><span className="text-purple-600">@</span><br className="sm:hidden" /> Scale</span>{' '}
+            <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              Solutions.
             </span>
           </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Enterprise-grade IT automation and cybersecurity that scales with your organization.
+          </p>
 
-          {/* Key Value Propositions - Top 3 Most Impactful */}
-          <div className="flex justify-center gap-6 max-w-2xl mx-auto mb-2">
+          {/* Key Features */}
+          <div className="flex justify-center gap-4 max-w-2xl mx-auto mb-8">
             <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
               <Shield className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
               <span className="text-sm font-semibold text-gray-800 tracking-wide">Enterprise Security</span>
