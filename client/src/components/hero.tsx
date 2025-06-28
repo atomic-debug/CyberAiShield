@@ -68,8 +68,8 @@ export default function Hero() {
       ></div>
       {/* Glass morphism overlay */}
       <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10 px-4">
+        <div className="text-center max-w-4xl mx-auto bg-white/40 backdrop-blur-md rounded-3xl p-12 border border-white/50 shadow-xl">
           
 
           {/* Main Headline */}
