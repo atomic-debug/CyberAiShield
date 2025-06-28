@@ -29,8 +29,8 @@
   /* Custom RactorIX colors */
   --cosmic-bg: linear-gradient(135deg, hsl(234, 75%, 9%) 0%, hsl(234, 55%, 18%) 50%, hsl(257, 54%, 26%) 100%);
   --aurora-gradient: linear-gradient(45deg, hsl(246, 85%, 63%), hsl(276, 85%, 71%), hsl(189, 94%, 43%));
-  --glassmorphism-bg: hsla(0, 0%, 100%, 0.05);
-  --glassmorphism-border: hsla(0, 0%, 100%, 0.1);
+  --glassmorphism-bg: hsla(0, 0%, 100%, 0.02);
+  --glassmorphism-border: hsla(0, 0%, 100%, 0.05);
   --text-gradient: linear-gradient(45deg, hsl(0, 0%, 100%), hsl(246, 85%, 63%));
 }
 
