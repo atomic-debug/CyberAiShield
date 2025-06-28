@@ -37,10 +37,7 @@ export default function About() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(167,139,250,0.2),transparent_50%)]"></div>
           
           <div className="max-w-5xl mx-auto text-center relative z-10">
-            <Badge variant="outline" className="bg-white/10 backdrop-blur-sm border-white/20 text-white px-6 py-3 font-bold text-sm tracking-wider mb-8">
-              <Shield className="w-4 h-4 mr-2" />
-              ATOMIC PRECISION ENGINEERING
-            </Badge>
+            
             
             <h3 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 text-white leading-[0.9] tracking-tight">
               Built for Dominance.{' '}
