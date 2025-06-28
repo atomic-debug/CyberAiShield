@@ -169,7 +169,7 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Contact Details */}
-            <div className="glassmorphism rounded-3xl p-8">
+            <div className="glassmorphism bg-gradient-to-r from-indigo-50/20 via-purple-50/20 to-pink-50/20 rounded-3xl p-8 border border-indigo-100/30">
               <h3 className="text-2xl font-bold mb-6 text-white">Get in Touch</h3>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">

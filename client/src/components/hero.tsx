@@ -70,23 +70,23 @@ export default function Hero() {
                 Trusted by thousands worldwide — Ready to streamline your IT operations? Our team is currently onboarding new clients for 2025 implementation.
               </p>
               <div className="flex flex-wrap gap-3 opacity-70">
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">TechFlow</span>
+                <div className="bg-indigo-50 border border-indigo-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-indigo-700 font-medium text-sm">TechFlow</span>
                 </div>
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">Apex IT</span>
+                <div className="bg-emerald-50 border border-emerald-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-emerald-700 font-medium text-sm">Apex IT</span>
                 </div>
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">CyberGuard</span>
+                <div className="bg-purple-50 border border-purple-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-purple-700 font-medium text-sm">CyberGuard</span>
                 </div>
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">DataBridge</span>
+                <div className="bg-blue-50 border border-blue-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-blue-700 font-medium text-sm">DataBridge</span>
                 </div>
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">NetCore</span>
+                <div className="bg-cyan-50 border border-cyan-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-cyan-700 font-medium text-sm">NetCore</span>
                 </div>
-                <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
-                  <span className="text-gray-700 font-medium text-sm">SecureLink MSP</span>
+                <div className="bg-rose-50 border border-rose-200 px-3 py-2 rounded-lg shadow-sm">
+                  <span className="text-rose-700 font-medium text-sm">SecureLink MSP</span>
                 </div>
                 <div className="bg-white/80 border border-gray-200 px-3 py-2 rounded-lg shadow-sm">
                   <span className="text-gray-700 font-medium text-sm">CloudFirst</span>
