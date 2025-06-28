@@ -42,7 +42,7 @@ export default function Hero() {
 
           {/* Main Headline */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-[0.9] tracking-tight">
-            Security <span className="text-5xl md:text-6xl lg:text-7xl text-purple-600">@</span> Scale{' '}
+            Security<br className="sm:hidden" /> <span className="text-5xl md:text-6xl lg:text-7xl text-purple-600">@</span> Scale{' '}
             <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 bg-clip-text text-transparent">
               Reactor Solutions.
             </span>
