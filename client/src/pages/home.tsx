@@ -27,54 +27,42 @@ export default function Home() {
   const [ripples, setRipples] = useState<Array<{ x: number; y: number; id: number }>>([]);
   const { colors, mousePosition } = useDynamicBackground();
   
-  // Throttle scroll events for better performance
-  const handleScroll = useCallback(() => {
-    setShowScrollTop(window.scrollY > 400);
-  }, []);
-
-  // Throttle mouse move events
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    setCursorPosition({ x: e.clientX, y: e.clientY });
-    
-    // Check if hovering over interactive elements
-    const target = e.target as HTMLElement;
-    const isInteractive = target.closest('button, a, input, textarea, [role="button"]');
-    setIsHoveringInteractive(!!isInteractive);
-  }, []);
-  
   useEffect(() => {
-    // Throttle event listeners for performance
-    let scrollTimeout: NodeJS.Timeout | null = null;
-    let mouseTimeout: NodeJS.Timeout | null = null;
+    let ticking = false;
     
-    const throttledScroll = () => {
-      if (scrollTimeout) return;
-      scrollTimeout = setTimeout(() => {
-        handleScroll();
-        clearTimeout(scrollTimeout!);
-        scrollTimeout = null;
-      }, 16); // ~60fps
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setShowScrollTop(window.scrollY > 400);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     
-    const throttledMouseMove = (e: MouseEvent) => {
-      if (mouseTimeout) return;
-      mouseTimeout = setTimeout(() => {
-        handleMouseMove(e);
-        clearTimeout(mouseTimeout!);
-        mouseTimeout = null;
-      }, 16);
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setCursorPosition({ x: e.clientX, y: e.clientY });
+          
+          // Check if hovering over interactive elements
+          const target = e.target as HTMLElement;
+          const isInteractive = target.closest('button, a, input, textarea, [role="button"]');
+          setIsHoveringInteractive(!!isInteractive);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     
-    window.addEventListener('scroll', throttledScroll, { passive: true });
-    window.addEventListener('mousemove', throttledMouseMove, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     
     return () => {
-      window.removeEventListener('scroll', throttledScroll);
-      window.removeEventListener('mousemove', throttledMouseMove);
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-      if (mouseTimeout) clearTimeout(mouseTimeout);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [handleScroll, handleMouseMove]);
+  }, []);
   
   // Memoize ripple effect handler
   const handlePageClick = useCallback((e: React.MouseEvent) => {
