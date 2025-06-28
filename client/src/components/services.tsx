@@ -10,7 +10,7 @@ export default function Services() {
     }, 2000); // Change word every 2 seconds
     
     return () => clearInterval(interval);
-  }, []);
+  }, [words.length]);
 
   return (
     <section id="services" className="py-20 px-4 scroll-offset">
@@ -18,7 +18,7 @@ export default function Services() {
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
             Next-Generation{' '}
-            <span className="inline-block min-w-[120px] text-left transition-all duration-500 ease-in-out transform">
+            <span className="inline-block min-w-[120px] text-center transition-all duration-500 ease-in-out transform text-indigo-400 animate-pulse">
               {words[currentWordIndex]}
             </span>{' '}
             Automation
