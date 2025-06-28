@@ -49,9 +49,8 @@ export default function Hero() {
             <span className="text-indigo-400">Side-by-side with AI agents.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Transform your IT operations with intelligent automation that manages{' '}
-            <span className="text-indigo-400 font-semibold">complex multi-environment infrastructures</span>{' '}
-            while you focus on strategic growth and innovation.
+            AI-powered automation that handles the routine work across your entire infrastructure,{' '}
+            <span className="text-indigo-400 font-semibold">so you can focus on what matters most</span>.
           </p>
           
           {/* Primary CTA */}
