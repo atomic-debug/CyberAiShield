@@ -47,7 +47,7 @@ export default function About() {
             </h3>
             
             <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto font-medium">
-              We <span className="text-purple-300 font-bold">obliterate limitations</span>. Atomic precision. Total supremacy.
+              We <span className="text-purple-300 font-bold">obliterate limitations</span>. Nuclear precision. Total supremacy.
             </p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
