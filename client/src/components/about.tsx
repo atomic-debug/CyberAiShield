@@ -26,11 +26,11 @@ function AnimatedStat({ value, label, icon: Icon }: AnimatedStatProps) {
 export default function About() {
 
   return (
-    <section className="py-12 px-4 relative">
+    <section className="py-8 px-4 relative">
       <div className="max-w-7xl mx-auto">
         <div 
           id="about" 
-          className="scroll-offset relative py-16 px-8 rounded-3xl overflow-hidden"
+          className="scroll-offset relative py-12 px-8 rounded-3xl overflow-hidden"
           style={{
             background: 'linear-gradient(135deg, rgb(17, 24, 39) 0%, rgb(88, 28, 135) 50%, rgb(67, 56, 202) 100%)',
             backgroundAttachment: 'fixed'
