@@ -64,24 +64,24 @@ export default function Hero() {
           
           
           
-          {/* Trust Badges - Modern Floating Style */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-all duration-300 backdrop-blur-sm">
+          {/* Trust Indicators - Dark Glassmorphism Style */}
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 hover:bg-white/15 transition-all duration-300">
               <div className="flex items-center">
-                <Shield className="w-4 h-4 mr-2 text-emerald-600" />
-                <span className="text-sm font-semibold text-emerald-800">SOC 2 Compliant</span>
+                <Shield className="w-4 h-4 mr-2 text-purple-400" />
+                <span className="text-sm font-medium text-gray-700">SOC 2 Compliant</span>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-all duration-300 backdrop-blur-sm">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 hover:bg-white/15 transition-all duration-300">
               <div className="flex items-center">
-                <Zap className="w-4 h-4 mr-2 text-blue-600" />
-                <span className="text-sm font-semibold text-blue-800">99.9% Uptime SLA</span>
+                <Zap className="w-4 h-4 mr-2 text-purple-400" />
+                <span className="text-sm font-medium text-gray-700">99.9% Uptime SLA</span>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-all duration-300 backdrop-blur-sm">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 hover:bg-white/15 transition-all duration-300">
               <div className="flex items-center">
-                <Target className="w-4 h-4 mr-2 text-purple-600" />
-                <span className="text-sm font-semibold text-purple-800">Enterprise Ready</span>
+                <Target className="w-4 h-4 mr-2 text-purple-400" />
+                <span className="text-sm font-medium text-gray-700">Enterprise Ready</span>
               </div>
             </div>
           </div>
