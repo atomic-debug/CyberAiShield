@@ -49,13 +49,13 @@ export default function Hero() {
             <span className="text-4xl md:text-6xl">Through AI-Driven Automation</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Experience the future of cybersecurity and IT management. RactorIX delivers{' '}
-            <span className="text-indigo-400 font-semibold">proactive, predictive solutions</span>{' '}
-            that transform your infrastructure into an unbreachable digital fortress.
+            Transform manual IT operations into intelligent, self-executing workflows. RactorIX identifies{' '}
+            <span className="text-indigo-400 font-semibold">automation opportunities</span>{' '}
+            and programmatically handles tasks like user provisioning, access management, and system changes.
           </p>
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-            Our proprietary AI technology doesn't just respond to threats—it prevents them entirely,{' '}
-            delivering unprecedented operational efficiency and cost savings.
+            Our AI doesn't just monitor—it actively optimizes your processes, turning repetitive{' '}
+            manual work into seamless, automated workflows that scale with your business.
           </p>
           
           {/* Primary CTA */}

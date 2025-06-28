@@ -19,16 +19,16 @@ export default function Services() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-4 text-white">Managed IT Services</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white">AI-Enhanced Managed IT</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Complete infrastructure management with 24/7 monitoring, proactive maintenance,{' '}
-              and rapid issue resolution. Our AI-powered systems predict and prevent problems{' '}
-              before they impact your business operations.
+              Intelligent infrastructure management that identifies opportunities to integrate AI workflows{' '}
+              into routine operations. Programmatically handle user provisioning, access management,{' '}
+              and system changes with unprecedented efficiency and accuracy.
             </p>
             <ul className="space-y-2 text-gray-400">
-              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> 99.9% Uptime Guarantee</li>
-              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Predictive Maintenance</li>
-              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> 24/7 Expert Support</li>
+              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Automated User Provisioning</li>
+              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Intelligent Workflow Integration</li>
+              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Programmatic System Changes</li>
             </ul>
           </div>
           
@@ -59,16 +59,16 @@ export default function Services() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-4 text-white">AI-Driven Automation</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white">Workflow Automation & Optimization</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Revolutionize your workflows with intelligent automation that learns and adapts.{' '}
-              Our proprietary AI optimizes processes, eliminates manual tasks, and delivers{' '}
-              exponential efficiency gains across your entire organization.
+              Transform manual IT processes into intelligent, self-executing workflows. Our AI identifies{' '}
+              repetitive tasks like adding/removing users, permissions management, and system updates,{' '}
+              then creates programmatic solutions that run automatically with precision.
             </p>
             <ul className="space-y-2 text-gray-400">
-              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Intelligent Workflow Optimization</li>
-              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Automated Incident Response</li>
-              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Predictive Analytics</li>
+              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Smart Process Identification</li>
+              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Programmatic Task Execution</li>
+              <li className="flex items-center"><span className="text-green-400 mr-2">✓</span> Continuous Workflow Learning</li>
             </ul>
           </div>
         </div>
