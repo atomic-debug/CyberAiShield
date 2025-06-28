@@ -4,9 +4,6 @@ export default function Services() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const words = ['MSP', 'MSSP', 'IT', 'Admin'];
   
-  // Debug logging
-  console.log('Current word:', words[currentWordIndex]);
-  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWordIndex((prev) => (prev + 1) % words.length);
@@ -21,7 +18,7 @@ export default function Services() {
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
             Next-Generation{' '}
-            <span className="inline-block min-w-[100px] text-center text-indigo-400 transition-opacity duration-500">
+            <span className="inline-block min-w-[120px] text-center text-indigo-400 transition-opacity duration-500">
               {words[currentWordIndex]}
             </span>{' '}
             Automation
