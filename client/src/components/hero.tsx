@@ -44,18 +44,18 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-gradient mb-6 leading-tight">
-            Revolutionizing IT Management
+            Scale Your MSP Operations
             <br />
-            <span className="text-4xl md:text-6xl">Through AI-Driven Automation</span>
+            <span className="text-4xl md:text-6xl">With Custom AI Automation</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Transform manual IT operations into intelligent, self-executing workflows. RactorIX identifies{' '}
-            <span className="text-indigo-400 font-semibold">automation opportunities</span>{' '}
-            and programmatically handles tasks like user provisioning, access management, and system changes.
+            We build intelligent automation solutions that help MSPs efficiently manage{' '}
+            <span className="text-indigo-400 font-semibold">multiple client environments</span>{' '}
+            - from user provisioning across dozens of endpoints to automated software deployments and compliance management.
           </p>
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-            Our AI doesn't just monitor—it actively optimizes your processes, turning repetitive{' '}
-            manual work into seamless, automated workflows that scale with your business.
+            Stop spending hours on repetitive tasks. Our custom AI workflows handle the manual work{' '}
+            so you can focus on growing your MSP business and delivering exceptional client value.
           </p>
           
           {/* Primary CTA */}
