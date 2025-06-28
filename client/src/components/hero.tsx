@@ -40,9 +40,9 @@ export default function Hero() {
           {/* Left Column - Content */}
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
-              Automate it.<br />
               Secure it.<br />
-              <span className="tracking-wider">Dominate</span> it.
+              Automate it.<br />
+              Take Control.
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
               AI-powered automation that handles the{' '}
