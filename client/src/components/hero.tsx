@@ -44,18 +44,38 @@ export default function Hero() {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-24 pb-8 px-4 relative">
-      {/* Glass morphism background */}
-      <div className="absolute inset-0 bg-white/20 backdrop-blur-sm" />
+    <section 
+      className="min-h-screen flex items-center justify-center pt-24 pb-8 px-4 relative"
+      style={{
+        background: 'linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(243, 244, 246) 30%, rgb(209, 213, 219) 100%)',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Background Pattern Effects */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)',
+          backgroundAttachment: 'fixed'
+        }}
+      ></div>
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%)',
+          backgroundAttachment: 'fixed'
+        }}
+      ></div>
+      {/* Glass morphism overlay */}
+      <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-            Security <span className="sm:inline block"><span className="text-purple-600">@</span><br className="sm:hidden" /> Scale</span>{' '}
             <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Solutions.
+              Atomic Solutions.
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
