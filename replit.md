@@ -107,6 +107,14 @@ The application is designed for scalability with a clear separation of concerns,
 - **Removed statistics section**: Eliminated MSP-specific transformation results
 - **Universal positioning**: Appeals to MSPs, MSSPs, IT departments, and service providers
 
+### Layout Standardization (June 28, 2025)
+- **Hero section restructure**: Split layout with content left, visual right (follows natural reading patterns)
+- **Left-aligned sections**: All section headers and content now left-aligned (matches Slack, Notion, Airtable)
+- **Simplified services header**: Removed complex glassmorphism container, clean typography
+- **Clean white headings**: Eliminated all gradient text for professional appearance
+- **Better CTA hierarchy**: Left-aligned buttons with proper visual hierarchy
+- **Streamlined trust indicators**: Smaller, more subtle positioning as part of content flow
+
 ### Technical Features
 - **Rotating text animation**: Cycles through MSP, MSSP, IT, Admin with smooth transitions
 - **Database integration**: PostgreSQL with Drizzle ORM for consultation requests

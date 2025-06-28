@@ -60,13 +60,15 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 px-4 scroll-offset">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            See RactorIX in Action
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Book a personalized demo and discover how our AI-powered automation transforms IT operations at scale.
-          </p>
+        <div className="mb-16">
+          <div className="max-w-4xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              See RactorIX in Action
+            </h2>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Book a personalized demo and discover how our AI-powered automation transforms IT operations at scale.
+            </p>
+          </div>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">
