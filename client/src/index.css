@@ -124,6 +124,123 @@
     );
   }
   
+  /* Modern Button Micro-Interactions 2025 */
+  @keyframes pulse-ring {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(147, 51, 234, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(147, 51, 234, 0); }
+  }
+  
+  @keyframes magnetic-hover {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-2px) scale(1.02); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  
+  @keyframes ripple-effect {
+    to { transform: scale(4); opacity: 0; }
+  }
+  
+  @keyframes liquid-fill {
+    0% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+  }
+  
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.5), 0 0 40px rgba(147, 51, 234, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(147, 51, 234, 0.8), 0 0 60px rgba(147, 51, 234, 0.5); }
+  }
+  
+  /* Button Base with Optimal Click Target */
+  .reactive-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    min-height: 48px; /* Mobile touch target */
+    cursor: pointer;
+    will-change: transform;
+  }
+  
+  .reactive-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  .reactive-button:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .reactive-button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 40px rgba(147, 51, 234, 0.3);
+    animation: magnetic-hover 0.5s ease-in-out;
+  }
+  
+  .reactive-button:active {
+    transform: scale(0.98);
+    transition: transform 0.1s;
+  }
+  
+  /* Pulse Animation for Primary CTAs */
+  .pulse-button {
+    animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  }
+  
+  /* Glow Effect for Power Buttons */
+  .glow-button {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+  
+  /* Ripple Click Effect */
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-effect 0.6s ease-out;
+  }
+  
+  /* Lightning Slide Effect */
+  @keyframes slide-right {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  /* Holographic Effect */
+  @keyframes holographic {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .holographic-button {
+    background-size: 200% 200%;
+    animation: holographic 3s ease infinite;
+  }
+  
+  /* Mobile Thumb Zone Optimization */
+  @media (max-width: 768px) {
+    .thumb-zone-cta {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      width: calc(100% - 40px);
+      max-width: 400px;
+    }
+  }
+  
   /* Feature icon styling */
   .feature-icon {
     @apply w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600;

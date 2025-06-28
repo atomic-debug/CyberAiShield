@@ -141,9 +141,17 @@ export default function AIChat() {
         <Button
           onClick={handleStartChat}
           size="lg"
-          className="rounded-full shadow-lg bg-purple-600 hover:bg-purple-700 text-white"
+          className="reactive-button rounded-full shadow-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-4 font-bold transition-all duration-300 group"
+          onMouseEnter={(e) => {
+            const button = e.currentTarget;
+            button.style.transform = 'scale(1.1) rotate(2deg)';
+          }}
+          onMouseLeave={(e) => {
+            const button = e.currentTarget;
+            button.style.transform = 'scale(1) rotate(0deg)';
+          }}
         >
-          <MessageCircle className="w-5 h-5 mr-2" />
+          <MessageCircle className="w-6 h-6 mr-2 group-hover:animate-bounce" />
           AI Assistant
         </Button>
       </div>

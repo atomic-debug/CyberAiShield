@@ -130,7 +130,18 @@ export default function Services() {
               </ul>
               
               <Button 
-                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-4 text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group/btn border-0"
+                className="reactive-button w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-5 text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group/btn border-0 relative overflow-hidden"
+                onMouseMove={(e) => {
+                  const button = e.currentTarget;
+                  const rect = button.getBoundingClientRect();
+                  const x = ((e.clientX - rect.left) / rect.width) * 100;
+                  const y = ((e.clientY - rect.top) / rect.height) * 100;
+                  button.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.2) 0%, transparent 70%), linear-gradient(to right, #9333ea, #6366f1)`;
+                }}
+                onMouseLeave={(e) => {
+                  const button = e.currentTarget;
+                  button.style.background = '';
+                }}
               >
                 Deploy Solution
                 <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-2 transition-transform duration-300" />
@@ -183,10 +194,32 @@ export default function Services() {
             
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-400 hover:to-indigo-400 text-white px-12 py-6 text-xl font-black rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 group border-0"
+              className="reactive-button glow-button bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-400 hover:to-indigo-400 text-white px-12 py-6 text-xl font-black rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 group border-0 relative"
+              onMouseEnter={(e) => {
+                const button = e.currentTarget;
+                button.style.transform = 'translateY(-4px) scale(1.05)';
+                button.style.filter = 'brightness(1.1)';
+              }}
+              onMouseLeave={(e) => {
+                const button = e.currentTarget;
+                button.style.transform = 'translateY(0) scale(1)';
+                button.style.filter = 'brightness(1)';
+              }}
+              onClick={(e) => {
+                // Lightning effect
+                const button = e.currentTarget;
+                const lightning = document.createElement('div');
+                lightning.className = 'absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent';
+                lightning.style.animation = 'slide-right 0.3s ease-out';
+                button.appendChild(lightning);
+                setTimeout(() => lightning.remove(), 300);
+                
+                const element = document.getElementById('contact');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Command Your Infrastructure
-              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-3 transition-transform duration-300" />
             </Button>
           </div>
         </div>

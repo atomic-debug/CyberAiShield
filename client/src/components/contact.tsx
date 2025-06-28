@@ -192,18 +192,28 @@ export default function Contact() {
                   type="submit" 
                   disabled={submitConsultation.isPending}
                   size="lg"
-                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-6 text-xl font-black rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 disabled:opacity-50 group border-0"
+                  className="reactive-button w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-6 text-xl font-black rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 disabled:opacity-50 group border-0 relative md:w-full thumb-zone-cta"
+                  onClick={(e) => {
+                    if (!submitConsultation.isPending) {
+                      // Create expanding circle effect
+                      const button = e.currentTarget;
+                      const circle = document.createElement('span');
+                      circle.classList.add('absolute', 'inset-0', 'bg-white/20', 'rounded-3xl', 'animate-ping');
+                      button.appendChild(circle);
+                      setTimeout(() => circle.remove(), 1000);
+                    }
+                  }}
                 >
                   {submitConsultation.isPending ? (
-                    <div className="flex items-center">
+                    <div className="flex items-center justify-center">
                       <div className="animate-spin rounded-full h-6 w-6 border-3 border-white border-t-transparent mr-3"></div>
                       Deploying Access...
                     </div>
                   ) : (
-                    <>
+                    <span className="flex items-center justify-center">
                       Claim Command Center Access
-                      <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
-                    </>
+                      <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-3 transition-transform duration-300" />
+                    </span>
                   )}
                 </Button>
               </form>
