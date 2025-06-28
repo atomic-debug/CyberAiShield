@@ -48,15 +48,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          {/* Dynamic Subtitle */}
-          <div className="text-2xl md:text-3xl text-gray-700 mb-3 max-w-4xl mx-auto font-medium">
-            Built for{' '}
-            <span className="font-bold text-purple-700 transition-all duration-500 relative">
-              {roles[currentRole]}
-              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 to-indigo-600"></div>
-            </span>
-            {' '}who demand excellence
-          </div>
+          
 
           
 
