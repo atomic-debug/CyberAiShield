@@ -37,17 +37,12 @@ export default function About() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(167,139,250,0.2),transparent_50%)]"></div>
           
           <div className="max-w-5xl mx-auto text-center relative z-10">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
+              Built for <span className="bg-gradient-to-r from-purple-300 via-indigo-300 to-blue-300 bg-clip-text text-transparent">Enterprise Scale</span>
+            </h2>
             
-            
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 text-white leading-[0.9] tracking-tight">
-              Built for Dominance.{' '}
-              <span className="bg-gradient-to-r from-purple-300 via-indigo-300 to-blue-300 bg-clip-text text-transparent">
-                Engineered for Victory.
-              </span>
-            </h3>
-            
-            <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto font-medium">
-              We <span className="text-purple-300 font-bold">obliterate limitations</span>. Nuclear precision. Total supremacy.
+            <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto">
+              Professional IT automation and cybersecurity solutions designed for organizations that demand excellence.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mb-12">
