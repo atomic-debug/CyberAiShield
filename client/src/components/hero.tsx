@@ -47,8 +47,9 @@ export default function Hero() {
             Automate it. Secure it. Scale it.
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            AI-powered automation that handles the routine work across your entire infrastructure,{' '}
-            <span className="text-indigo-400 font-semibold">so you can focus on what matters most</span>.
+            AI-powered automation that handles the{' '}
+            <span className="text-indigo-400 font-semibold">routine work</span>{' '}
+            across your entire infrastructure, so you can focus on what matters most.
           </p>
           
           {/* Primary CTA */}
