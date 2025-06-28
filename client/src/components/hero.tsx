@@ -56,12 +56,6 @@ export default function Hero() {
               >
                 Get started
               </button>
-              <button 
-                onClick={() => window.location.href = '/api/login'}
-                className="border-2 border-gray-300 text-gray-700 bg-transparent px-8 py-4 rounded-xl font-medium text-lg hover:border-rose-300 hover:text-rose-600 hover:font-semibold transition-all duration-300"
-              >
-                Log in
-              </button>
             </div>
             
             {/* Trust indicators */}
