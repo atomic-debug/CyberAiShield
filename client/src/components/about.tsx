@@ -53,11 +53,11 @@ export default function About() {
           ></div>
           
           <div className="max-w-5xl mx-auto text-center relative z-10">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight" style={{ WebkitTextStroke: '0.5px black' }}>
-              ReactorIX <span className="bg-gradient-to-r from-purple-300 via-indigo-300 to-blue-300 bg-clip-text text-transparent" style={{ WebkitTextStroke: '0.5px black' }}>Command Center</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
+              ReactorIX <span className="bg-gradient-to-r from-purple-300 via-indigo-300 to-blue-300 bg-clip-text text-transparent" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>Command Center</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto" style={{ WebkitTextStroke: '0.25px black' }}>
+            <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.7)' }}>
               Advanced cybersecurity and IT automation engineered for enterprise organizations that demand operational supremacy.
             </p>
             
