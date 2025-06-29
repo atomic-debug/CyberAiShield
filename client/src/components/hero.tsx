@@ -46,7 +46,7 @@ const Hero = memo(function Hero() {
     <section className="min-h-screen flex items-center justify-center pt-24 pb-8 px-4 relative bg-white">
       <div className="max-w-7xl mx-auto relative z-10 px-4">
         <div 
-          className="text-center max-w-4xl mx-auto rounded-3xl p-12 border border-gray-200/50 shadow-xl relative overflow-hidden"
+          className="text-center max-w-5xl mx-auto rounded-3xl p-12 border border-gray-200/50 shadow-xl relative overflow-hidden"
           style={{
             background: 'linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(243, 244, 246) 30%, rgb(209, 213, 219) 100%)',
             backgroundAttachment: 'fixed'
@@ -79,12 +79,12 @@ const Hero = memo(function Hero() {
               Atomic Solutions.
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto">
             Enterprise-grade cybersecurity and IT automation engineered for organizations that demand excellence.
           </p>
 
           {/* Key Features */}
-          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-8">
+          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-8">
             <div className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200/60 rounded-xl px-4 py-2.5 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 group">
               <Shield className="w-4 h-4 text-purple-600 mr-2.5 group-hover:scale-110 transition-transform" />
               <span className="text-sm font-semibold text-purple-800 tracking-wide">Fortress-Grade Security</span>
