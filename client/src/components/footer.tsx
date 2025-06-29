@@ -12,9 +12,9 @@ export default function Footer() {
   ];
   
   return (
-    <footer className="bg-gray-50 px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-1 sm:py-1 md:py-2 lg:py-2">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 shadow-lg border border-gray-200 max-w-5xl mx-auto">
+    <footer className="bg-gray-50 py-2">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-200 max-w-5xl mx-auto">
           {/* Main Footer Content */}
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-5 mb-2 sm:mb-3 md:mb-4">
           {/* Brand Section */}

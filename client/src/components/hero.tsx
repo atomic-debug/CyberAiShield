@@ -44,9 +44,9 @@ const Hero = memo(function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center py-1 sm:py-1 md:py-2 lg:py-2 relative bg-white">
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div 
-          className="text-center max-w-5xl mx-auto rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 border border-gray-200/50 shadow-xl relative overflow-hidden"
+          className="text-center max-w-5xl mx-auto rounded-3xl p-8 md:p-12 border border-gray-200/50 shadow-xl relative overflow-hidden"
           style={{
             background: 'linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(243, 244, 246) 30%, rgb(209, 213, 219) 100%)',
             backgroundAttachment: 'fixed'
@@ -72,33 +72,33 @@ const Hero = memo(function Hero() {
           
           <div className="relative z-10">
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 leading-tight">
             <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
               Atomic Solutions.
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl text-gray-600 mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 max-w-4xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 max-w-4xl mx-auto">
             Enterprise-grade cybersecurity and IT automation engineered for organizations that demand excellence.
           </p>
 
           {/* Key Features */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 max-w-4xl mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8">
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto mb-6">
             <Button
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-sm sm:text-base md:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
             >
-              <Shield className="w-4 sm:w-5 md:w-5 lg:w-6 h-4 sm:h-5 md:h-5 lg:h-6 mr-2 sm:mr-2.5 md:mr-3 group-hover:scale-110 transition-transform" />
+              <Shield className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
               Fortress-Grade Security
             </Button>
             <Button
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-sm sm:text-base md:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
             >
-              <Cpu className="w-4 sm:w-5 md:w-5 lg:w-6 h-4 sm:h-5 md:h-5 lg:h-6 mr-2 sm:mr-2.5 md:mr-3 group-hover:scale-110 transition-transform" />
+              <Cpu className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
               Atomic Precision
             </Button>
             <Button
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-sm sm:text-base md:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
             >
-              <Target className="w-4 sm:w-5 md:w-5 lg:w-6 h-4 sm:h-5 md:h-5 lg:h-6 mr-2 sm:mr-2.5 md:mr-3 group-hover:scale-110 transition-transform" />
+              <Target className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
               Enterprise Scale
             </Button>
           </div>

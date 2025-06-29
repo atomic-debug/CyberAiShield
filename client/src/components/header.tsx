@@ -65,9 +65,9 @@ const Header = memo(function Header() {
           isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <div 
-            className="rounded-2xl sm:rounded-3xl mx-2 sm:mx-3 md:mx-4 mt-0.5 sm:mt-1 md:mt-1 mb-0.5 sm:mb-0.5 md:mb-1 border border-gray-200/50 shadow-lg relative overflow-hidden max-w-5xl mx-auto"
+            className="rounded-3xl mx-4 mt-1 mb-1 border border-gray-200/50 shadow-lg relative overflow-hidden max-w-5xl mx-auto"
             style={{
               background: 'linear-gradient(135deg, rgb(17, 24, 39) 0%, rgb(88, 28, 135) 50%, rgb(67, 56, 202) 100%)',
               backgroundAttachment: 'fixed'
