@@ -36,31 +36,30 @@ export default function Header() {
         />
       </div>
       
-      <header 
-        className="fixed top-1 left-0 right-0 z-50 transition-all duration-300"
-        style={{
-          background: 'linear-gradient(135deg, rgb(17, 24, 39) 0%, rgb(88, 28, 135) 50%, rgb(67, 56, 202) 100%)',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        {/* Background Pattern Effects */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'radial-gradient(circle at 30% 40%, rgba(120,119,198,0.3) 0%, transparent 50%)',
-            backgroundAttachment: 'fixed'
-          }}
-        ></div>
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'radial-gradient(circle at 70% 60%, rgba(167,139,250,0.2) 0%, transparent 50%)',
-            backgroundAttachment: 'fixed'
-          }}
-        ></div>
-        
+      <header className="fixed top-1 left-0 right-0 z-50 transition-all duration-300 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-white/10 backdrop-blur-md rounded-3xl mx-4 mt-2 mb-1 border border-white/20 shadow-lg">
+          <div 
+            className="rounded-3xl mx-4 mt-2 mb-1 border border-gray-200/50 shadow-lg relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, rgb(17, 24, 39) 0%, rgb(88, 28, 135) 50%, rgb(67, 56, 202) 100%)',
+              backgroundAttachment: 'fixed'
+            }}
+          >
+            {/* Background Pattern Effects */}
+            <div 
+              className="absolute inset-0"
+              style={{
+                background: 'radial-gradient(circle at 30% 40%, rgba(120,119,198,0.3) 0%, transparent 50%)',
+                backgroundAttachment: 'fixed'
+              }}
+            ></div>
+            <div 
+              className="absolute inset-0"
+              style={{
+                background: 'radial-gradient(circle at 70% 60%, rgba(167,139,250,0.2) 0%, transparent 50%)',
+                backgroundAttachment: 'fixed'
+              }}
+            ></div>
             <div className="flex items-center justify-between h-16 px-6">
               {/* Logo */}
               <div className="flex items-center">
