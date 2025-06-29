@@ -26,11 +26,11 @@ function AnimatedStat({ value, label, icon: Icon }: AnimatedStatProps) {
 export default function About() {
 
   return (
-    <section className="py-8 px-4 relative">
+    <section className="py-4 px-4 relative">
       <div className="max-w-7xl mx-auto">
         <div 
           id="about" 
-          className="scroll-offset relative py-12 px-8 rounded-3xl overflow-hidden max-w-5xl mx-auto"
+          className="scroll-offset relative py-8 px-6 rounded-3xl overflow-hidden max-w-5xl mx-auto"
           style={{
             background: 'linear-gradient(135deg, rgb(17, 24, 39) 0%, rgb(88, 28, 135) 50%, rgb(67, 56, 202) 100%)',
             backgroundAttachment: 'fixed'
@@ -57,11 +57,11 @@ export default function About() {
               ReactorIX <span className="bg-gradient-to-r from-purple-300 via-indigo-300 to-blue-300 bg-clip-text text-transparent">Command Center</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-4xl mx-auto">
               Advanced cybersecurity and IT automation engineered for enterprise organizations that demand operational supremacy.
             </p>
             
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
               <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors">
                 <span className="font-bold text-purple-200">99.99%</span> Security Coverage
               </div>
