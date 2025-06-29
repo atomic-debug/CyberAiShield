@@ -126,6 +126,7 @@ The application is designed for scalability with a clear separation of concerns,
 - **Hero section rounded edges**: Removed hard edges by adding white background and containing content in rounded container, matching design pattern of other sections
 - **Header auto-hide behavior**: Implemented smooth header that hides immediately when scrolling down and only returns when scrolling up past 50% of page height for optimal UX
 - **Header transition cleanup**: Removed white background artifacts and optimized animation duration for clean slide transitions without lingering white lines
+- **Scroll-to-top positioning**: Moved scroll button lower on screen (bottom-8) for better accessibility and natural user expectations
 
 ### UI Standardization (June 28, 2025)
 - **Hero section redesign**: Removed decorative floating illustration, replaced with trust indicators

@@ -213,7 +213,7 @@ export default function Home() {
       
       {/* Optimized Scroll to Top Button */}
       {showScrollTop && (
-        <div className="fixed bottom-24 left-6 z-40">
+        <div className="fixed bottom-8 left-6 z-40">
           <Button
             onClick={scrollToTop}
             className="rounded-full p-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg transition-all duration-500 hover:scale-105 will-change-transform"
