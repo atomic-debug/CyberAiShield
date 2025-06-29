@@ -54,25 +54,25 @@ export default function About() {
           
           <div className="max-w-5xl mx-auto text-center relative z-10">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
-              Built for <span className="bg-gradient-to-r from-purple-300 via-indigo-300 to-blue-300 bg-clip-text text-transparent">Enterprise Scale</span>
+              ReactorIX <span className="bg-gradient-to-r from-purple-300 via-indigo-300 to-blue-300 bg-clip-text text-transparent">Command Center</span>
             </h2>
             
             <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto">
-              Professional IT automation and cybersecurity solutions designed for organizations that demand excellence.
+              Advanced cybersecurity and IT automation engineered for enterprise organizations that demand operational supremacy.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
-                <span className="font-bold text-purple-300">99.99%</span> Threat Prevention
+              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors">
+                <span className="font-bold text-purple-200">99.99%</span> Security Coverage
               </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
-                <span className="font-bold text-purple-300">1000x</span> Scale Multiplier
+              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors">
+                <span className="font-bold text-purple-200">Reactor</span> Speed
               </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
-                <span className="font-bold text-purple-300">400%</span> Efficiency Gain
+              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors">
+                <span className="font-bold text-purple-200">10x</span> Efficiency
               </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
-                <span className="font-bold text-purple-300">99.9%</span> Uptime
+              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors">
+                <span className="font-bold text-purple-200">99.9%</span> Uptime
               </div>
             </div>
             

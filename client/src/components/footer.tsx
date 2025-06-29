@@ -21,9 +21,10 @@ export default function Footer() {
           <div className="col-span-2">
             <div className="flex items-center mb-4">
               <Shield className="w-8 h-8 mr-3 text-purple-600" />
-              <h3 className="text-2xl font-bold text-gray-900">
-                ReactorIX
-              </h3>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900">ReactorIX</h3>
+                <p className="text-sm text-purple-600 font-medium">Reactor Solutions</p>
+              </div>
             </div>
             
             <div className="flex gap-4">
