@@ -43,15 +43,8 @@ const Hero = memo(function Hero() {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-1 sm:py-1 md:py-2 lg:py-2 relative bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div 
-          className="text-center max-w-5xl mx-auto rounded-3xl p-8 md:p-12 border border-gray-200/50 shadow-xl relative overflow-hidden"
-          style={{
-            background: 'linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(243, 244, 246) 30%, rgb(209, 213, 219) 100%)',
-            backgroundAttachment: 'fixed'
-          }}
-        >
+    <section className="min-h-screen flex items-center justify-center py-16 md:py-20 relative bg-white">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
           {/* Background Pattern Effects */}
           <div 
             className="absolute inset-0"
