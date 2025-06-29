@@ -55,7 +55,7 @@ export default function Header() {
       </div>
       
       <header 
-        className={`fixed top-1 left-0 right-0 z-50 transition-all duration-500 ease-in-out bg-white ${
+        className={`fixed top-1 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
           isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
