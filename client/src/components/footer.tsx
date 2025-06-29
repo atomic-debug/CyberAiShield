@@ -12,15 +12,15 @@ export default function Footer() {
   ];
   
   return (
-    <footer className="bg-gray-50 px-4 py-6">
+    <footer className="bg-gray-50 px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 py-3 sm:py-4 md:py-5 lg:py-6">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-200 max-w-5xl mx-auto">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8 shadow-lg border border-gray-200 max-w-5xl mx-auto">
           {/* Main Footer Content */}
-          <div className="grid md:grid-cols-4 gap-4 mb-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-5 mb-2 sm:mb-3 md:mb-4">
           {/* Brand Section */}
           <div className="col-span-2">
-            <div className="flex items-center mb-4">
-              <Shield className="w-8 h-8 mr-3 text-purple-600" />
+            <div className="flex items-center mb-2 sm:mb-3 md:mb-4">
+              <Shield className="w-5 sm:w-6 md:w-7 lg:w-8 h-5 sm:h-6 md:h-7 lg:h-8 mr-2 sm:mr-2.5 md:mr-3 text-purple-600" />
               <div>
                 <h3 className="text-2xl font-bold text-gray-900">ReactorIX</h3>
                 <p className="text-sm text-purple-600 font-medium">Atomic Solutions</p>
