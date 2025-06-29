@@ -71,15 +71,13 @@ const Hero = memo(function Hero() {
           <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
           
           <div className="relative z-10">
-          
-
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 leading-tight">
             <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
               Atomic Solutions.
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-6 max-w-4xl mx-auto">
+          <p className="text-xl text-gray-600 mb-4 max-w-4xl mx-auto">
             Enterprise-grade cybersecurity and IT automation engineered for organizations that demand excellence.
           </p>
 
