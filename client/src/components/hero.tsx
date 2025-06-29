@@ -82,19 +82,25 @@ const Hero = memo(function Hero() {
           </p>
 
           {/* Key Features */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8">
-            <div className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200/60 rounded-lg sm:rounded-xl px-2 sm:px-3 md:px-4 lg:px-5 py-1.5 sm:py-2 md:py-2.5 lg:py-3 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 group">
-              <Shield className="w-3 sm:w-4 md:w-4 lg:w-5 h-3 sm:h-4 md:h-4 lg:h-5 text-purple-600 mr-1.5 sm:mr-2 md:mr-2.5 lg:mr-3 group-hover:scale-110 transition-transform" />
-              <span className="text-xs sm:text-sm md:text-sm lg:text-base font-semibold text-purple-800 tracking-wide">Fortress-Grade Security</span>
-            </div>
-            <div className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200/60 rounded-lg sm:rounded-xl px-2 sm:px-3 md:px-4 lg:px-5 py-1.5 sm:py-2 md:py-2.5 lg:py-3 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 group">
-              <Cpu className="w-3 sm:w-4 md:w-4 lg:w-5 h-3 sm:h-4 md:h-4 lg:h-5 text-purple-600 mr-1.5 sm:mr-2 md:mr-2.5 lg:mr-3 group-hover:scale-110 transition-transform" />
-              <span className="text-xs sm:text-sm md:text-sm lg:text-base font-semibold text-purple-800 tracking-wide">Atomic Precision</span>
-            </div>
-            <div className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200/60 rounded-lg sm:rounded-xl px-2 sm:px-3 md:px-4 lg:px-5 py-1.5 sm:py-2 md:py-2.5 lg:py-3 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 group">
-              <Target className="w-3 sm:w-4 md:w-4 lg:w-5 h-3 sm:h-4 md:h-4 lg:h-5 text-purple-600 mr-1.5 sm:mr-2 md:mr-2.5 lg:mr-3 group-hover:scale-110 transition-transform" />
-              <span className="text-xs sm:text-sm md:text-sm lg:text-base font-semibold text-purple-800 tracking-wide">Enterprise Scale</span>
-            </div>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 max-w-4xl mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8">
+            <Button
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-sm sm:text-base md:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
+            >
+              <Shield className="w-4 sm:w-5 md:w-5 lg:w-6 h-4 sm:h-5 md:h-5 lg:h-6 mr-2 sm:mr-2.5 md:mr-3 group-hover:scale-110 transition-transform" />
+              Fortress-Grade Security
+            </Button>
+            <Button
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-sm sm:text-base md:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
+            >
+              <Cpu className="w-4 sm:w-5 md:w-5 lg:w-6 h-4 sm:h-5 md:h-5 lg:h-6 mr-2 sm:mr-2.5 md:mr-3 group-hover:scale-110 transition-transform" />
+              Atomic Precision
+            </Button>
+            <Button
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-sm sm:text-base md:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
+            >
+              <Target className="w-4 sm:w-5 md:w-5 lg:w-6 h-4 sm:h-5 md:h-5 lg:h-6 mr-2 sm:mr-2.5 md:mr-3 group-hover:scale-110 transition-transform" />
+              Enterprise Scale
+            </Button>
           </div>
         </div>
         </div>
