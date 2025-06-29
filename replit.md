@@ -124,6 +124,7 @@ The application is designed for scalability with a clear separation of concerns,
 - **Header rounded container**: Added rounded glass morphism container (rounded-3xl) with backdrop blur and border to maintain design consistency across all sections
 - **Header background flow**: Updated header to have white background outside the rounded container for proper visual flow consistency with other sections
 - **Hero section rounded edges**: Removed hard edges by adding white background and containing content in rounded container, matching design pattern of other sections
+- **Header auto-hide behavior**: Implemented smooth header that hides immediately when scrolling down and only returns when scrolling up past 50% of page height for optimal UX
 
 ### UI Standardization (June 28, 2025)
 - **Hero section redesign**: Removed decorative floating illustration, replaced with trust indicators

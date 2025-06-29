@@ -6,10 +6,28 @@ import { useScrollDirection, useScrollPosition, useScrollProgress } from '@/hook
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const scrollDirection = useScrollDirection();
   const scrollPosition = useScrollPosition();
   const scrollProgress = useScrollProgress();
   const isScrolled = scrollPosition > 50;
+
+  // Hide immediately on scroll down, show only when scrolling up past 50%
+  useEffect(() => {
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollPosition / documentHeight) * 100;
+    
+    if (scrollDirection === 'down' && scrollPosition > 100) {
+      // Hide immediately when scrolling down
+      setIsHeaderVisible(false);
+    } else if (scrollDirection === 'up' && scrollPercent > 50) {
+      // Only show when scrolling up and past 50% of page
+      setIsHeaderVisible(true);
+    } else if (scrollPosition <= 100) {
+      // Always show at top of page
+      setIsHeaderVisible(true);
+    }
+  }, [scrollDirection, scrollPosition]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -36,7 +54,11 @@ export default function Header() {
         />
       </div>
       
-      <header className="fixed top-1 left-0 right-0 z-50 transition-all duration-300 bg-white">
+      <header 
+        className={`fixed top-1 left-0 right-0 z-50 transition-all duration-500 ease-in-out bg-white ${
+          isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div 
             className="rounded-3xl mx-4 mt-2 mb-1 border border-gray-200/50 shadow-lg relative overflow-hidden"
