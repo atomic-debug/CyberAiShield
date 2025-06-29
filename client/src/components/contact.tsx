@@ -8,7 +8,7 @@ export default function Contact() {
         <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200 text-center">
           <div className="mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-              Deploy <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Reactor Solutions</span>
+              Deploy <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Atomic Solutions</span>
             </h2>
             <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
               Transform your infrastructure with enterprise-grade cybersecurity and IT automation.

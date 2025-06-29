@@ -76,7 +76,7 @@ const Hero = memo(function Hero() {
           {/* Main Headline */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
             <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Reactor Solutions.
+              Atomic Solutions.
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -91,7 +91,7 @@ const Hero = memo(function Hero() {
             </div>
             <div className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200/60 rounded-xl px-4 py-2.5 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 group">
               <Cpu className="w-4 h-4 text-purple-600 mr-2.5 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-purple-800 tracking-wide">Reactor Precision</span>
+              <span className="text-sm font-semibold text-purple-800 tracking-wide">Atomic Precision</span>
             </div>
             <div className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200/60 rounded-xl px-4 py-2.5 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 group">
               <Target className="w-4 h-4 text-purple-600 mr-2.5 group-hover:scale-110 transition-transform" />
