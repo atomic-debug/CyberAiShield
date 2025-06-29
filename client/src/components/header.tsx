@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Home, Shield, Building, Phone, Menu, X, Zap, Sparkles, Cpu, Target, Lock } from 'lucide-react';
+import { Home, Shield, Building, Phone, Menu, X, Zap, LogIn, Cpu, Target, Lock } from 'lucide-react';
 import { useScrollDirection, useScrollPosition, useScrollProgress } from '@/hooks/use-scroll';
 
 export default function Header() {
@@ -35,6 +35,12 @@ export default function Header() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
+  };
+
+  const handleLogin = () => {
+    // Future: Redirect to secure login page
+    console.log('Redirecting to secure login...');
+    // window.location.href = '/api/login';
   };
 
   const navItems = [
@@ -126,11 +132,11 @@ export default function Header() {
               {/* Right side CTAs */}
               <div className="hidden md:flex items-center space-x-3">
                 <Button 
-                  onClick={() => scrollToSection('contact')}
+                  onClick={handleLogin}
                   className="bg-white/20 hover:bg-white/30 text-white font-medium px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-md border border-white/30"
                 >
-                  Get Started
-                  <Sparkles className="w-4 h-4 ml-2 group-hover:text-purple-200 transition-colors" />
+                  Log In
+                  <LogIn className="w-4 h-4 ml-2 group-hover:text-purple-200 transition-colors" />
                 </Button>
               </div>
 
@@ -164,10 +170,11 @@ export default function Header() {
                   ))}
                   <div className="border-t border-white/20 pt-3 mt-3 space-y-2">
                     <Button 
-                      onClick={() => scrollToSection('contact')}
+                      onClick={handleLogin}
                       className="w-full bg-white/20 hover:bg-white/30 text-white backdrop-blur-md border border-white/30"
                     >
-                      Get Started
+                      <LogIn className="w-4 h-4 mr-2" />
+                      Log In
                     </Button>
                   </div>
                 </div>
