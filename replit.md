@@ -121,6 +121,7 @@ The application is designed for scalability with a clear separation of concerns,
 - **Hero container styling**: Added rounded glass morphism container (rounded-3xl) with backdrop blur and subtle border for modern card appearance
 - **Footer container styling**: Added rounded container (rounded-3xl) with white background, shadow, and border on gray background for consistent card design
 - **Header theme consistency**: Updated header to match About section's dark gradient background with fixed attachment, radial patterns, and white text/button styling for visual cohesion
+- **Header rounded container**: Added rounded glass morphism container (rounded-3xl) with backdrop blur and border to maintain design consistency across all sections
 
 ### UI Standardization (June 28, 2025)
 - **Hero section redesign**: Removed decorative floating illustration, replaced with trust indicators
