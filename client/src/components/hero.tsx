@@ -44,32 +44,34 @@ export default function Hero() {
   ];
 
   return (
-    <section 
-      className="min-h-screen flex items-center justify-center pt-24 pb-8 px-4 relative"
-      style={{
-        background: 'linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(243, 244, 246) 30%, rgb(209, 213, 219) 100%)',
-        backgroundAttachment: 'fixed'
-      }}
-    >
-      {/* Background Pattern Effects */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: 'radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)',
-          backgroundAttachment: 'fixed'
-        }}
-      ></div>
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: 'radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%)',
-          backgroundAttachment: 'fixed'
-        }}
-      ></div>
-      {/* Glass morphism overlay */}
-      <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
+    <section className="min-h-screen flex items-center justify-center pt-24 pb-8 px-4 relative bg-white">
       <div className="max-w-7xl mx-auto relative z-10 px-4">
-        <div className="text-center max-w-4xl mx-auto bg-white/40 backdrop-blur-md rounded-3xl p-12 border border-white/50 shadow-xl">
+        <div 
+          className="text-center max-w-4xl mx-auto rounded-3xl p-12 border border-gray-200/50 shadow-xl relative overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(243, 244, 246) 30%, rgb(209, 213, 219) 100%)',
+            backgroundAttachment: 'fixed'
+          }}
+        >
+          {/* Background Pattern Effects */}
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)',
+              backgroundAttachment: 'fixed'
+            }}
+          ></div>
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%)',
+              backgroundAttachment: 'fixed'
+            }}
+          ></div>
+          {/* Glass morphism overlay */}
+          <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
+          
+          <div className="relative z-10">
           
 
           {/* Main Headline */}
@@ -97,6 +99,7 @@ export default function Hero() {
               <span className="text-sm font-semibold text-gray-800 tracking-wide">Infinite Scale</span>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
