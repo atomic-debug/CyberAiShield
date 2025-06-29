@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 export default function Contact() {
   return (
     <section id="contact" className="py-16 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200 text-center">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200 text-center max-w-5xl mx-auto">
           <div className="mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               Deploy <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Atomic Solutions</span>
