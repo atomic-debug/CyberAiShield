@@ -3,14 +3,14 @@ import { Button } from '@/components/ui/button';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 bg-gray-50">
+    <section id="contact" className="py-8 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200 text-center max-w-5xl mx-auto">
-          <div className="mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-200 text-center max-w-5xl mx-auto">
+          <div className="mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
               Deploy <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Atomic Solutions</span>
             </h2>
-            <p className="text-lg text-gray-600 mb-6 max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 mb-4 max-w-4xl mx-auto">
               Transform your infrastructure with enterprise-grade cybersecurity and IT automation.
             </p>
             

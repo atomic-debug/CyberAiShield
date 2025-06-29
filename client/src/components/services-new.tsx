@@ -66,7 +66,7 @@ export default function Services() {
     };
   };
   return (
-    <section ref={sectionRef} id="services" className="py-12 px-4 scroll-offset relative">
+    <section ref={sectionRef} id="services" className="py-6 px-4 scroll-offset relative">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-5xl mx-auto">
           {/* Services section content removed */}
