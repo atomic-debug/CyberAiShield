@@ -43,8 +43,8 @@ const Hero = memo(function Hero() {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 sm:pt-18 md:pt-20 lg:pt-22 xl:pt-24 pb-2 sm:pb-3 md:pb-4 lg:pb-6 px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 relative bg-white">
-      <div className="max-w-7xl mx-auto relative z-10 px-2 sm:px-3 md:px-4 lg:px-6">
+    <section className="min-h-screen flex items-center justify-center py-2 sm:py-3 md:py-4 lg:py-6 px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 relative bg-white">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div 
           className="text-center max-w-5xl mx-auto rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 border border-gray-200/50 shadow-xl relative overflow-hidden"
           style={{
@@ -77,12 +77,12 @@ const Hero = memo(function Hero() {
               Atomic Solutions.
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl text-gray-600 mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl text-gray-600 mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 max-w-4xl mx-auto">
             Enterprise-grade cybersecurity and IT automation engineered for organizations that demand excellence.
           </p>
 
           {/* Key Features */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8">
             <div className="flex items-center bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200/60 rounded-lg sm:rounded-xl px-2 sm:px-3 md:px-4 lg:px-5 py-1.5 sm:py-2 md:py-2.5 lg:py-3 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 group">
               <Shield className="w-3 sm:w-4 md:w-4 lg:w-5 h-3 sm:h-4 md:h-4 lg:h-5 text-purple-600 mr-1.5 sm:mr-2 md:mr-2.5 lg:mr-3 group-hover:scale-110 transition-transform" />
               <span className="text-xs sm:text-sm md:text-sm lg:text-base font-semibold text-purple-800 tracking-wide">Fortress-Grade Security</span>
