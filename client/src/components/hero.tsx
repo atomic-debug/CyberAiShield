@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, memo } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, Shield, Zap, Target, FileCheck, Lock, Cpu } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Zap, Target, FileCheck, Lock, Cpu, Server } from 'lucide-react';
 import { useParallax } from '@/hooks/use-scroll';
 
 const Hero = memo(function Hero() {
@@ -43,59 +43,69 @@ const Hero = memo(function Hero() {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-16 md:py-20 relative bg-white">
-      <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
-          {/* Background Pattern Effects */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)',
-              backgroundAttachment: 'fixed'
-            }}
-          ></div>
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%)',
-              backgroundAttachment: 'fixed'
-            }}
-          ></div>
-          {/* Glass morphism overlay */}
-          <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
-          
-          <div className="relative z-10">
-          {/* Main Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 leading-tight">
-            <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Atomic Solutions.
-            </span>
-          </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 max-w-4xl mx-auto">
-            Enterprise-grade cybersecurity and IT automation engineered for organizations that demand excellence.
-          </p>
+    <section className="pt-24 pb-16 md:pt-32 md:pb-24 relative bg-white">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 text-center">
+        {/* Main Headline - ClickUp style */}
+        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-[1.1]">
+          <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            Atomic Solutions.
+          </span>
+        </h1>
+        
+        {/* Subheading */}
+        <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          Enterprise-grade cybersecurity and IT automation engineered for organizations that demand excellence.
+        </p>
 
-          {/* Key Features */}
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto mb-6">
-            <Button
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
-            >
-              <Shield className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
-              Fortress-Grade Security
-            </Button>
-            <Button
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
-            >
-              <Cpu className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
-              Atomic Precision
-            </Button>
-            <Button
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
-            >
-              <Target className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
-              Enterprise Scale
-            </Button>
+        {/* CTA Button - ClickUp style */}
+        <div className="mb-8">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+          >
+            Deploy Now
+          </Button>
+          <p className="text-sm text-gray-500 mt-3">Free consultation. No commitments.</p>
+        </div>
+
+        {/* Feature Pills - ClickUp style horizontal scroll */}
+        <div className="mb-12 overflow-x-auto pb-4">
+          <div className="flex gap-3 justify-center min-w-max">
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full">
+              <Shield className="w-4 h-4 text-purple-600" />
+              <span className="text-sm font-medium">Fortress-Grade Security</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full">
+              <Cpu className="w-4 h-4 text-purple-600" />
+              <span className="text-sm font-medium">Atomic Precision</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full">
+              <Target className="w-4 h-4 text-purple-600" />
+              <span className="text-sm font-medium">Enterprise Scale</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full">
+              <Zap className="w-4 h-4 text-purple-600" />
+              <span className="text-sm font-medium">AI Automation</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full">
+              <Lock className="w-4 h-4 text-purple-600" />
+              <span className="text-sm font-medium">Zero Trust</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full">
+              <Server className="w-4 h-4 text-purple-600" />
+              <span className="text-sm font-medium">Infrastructure</span>
+            </div>
           </div>
         </div>
+
+        {/* Trust indicator - ClickUp style */}
+        <div className="flex items-center justify-center gap-2 text-gray-600">
+          <div className="flex">
+            {[...Array(5)].map((_, i) => (
+              <Shield key={i} className="w-4 h-4 text-purple-500 fill-current" />
+            ))}
+          </div>
+          <span className="text-sm">Trusted by 10,000+ organizations</span>
         </div>
       </div>
     </section>

@@ -26,16 +26,16 @@ function AnimatedStat({ value, label, icon: Icon }: AnimatedStatProps) {
 export default function About() {
 
   return (
-    <section className="py-2 relative">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div 
-          id="about" 
-          className="scroll-offset relative py-8 md:py-12 px-8 md:px-12 rounded-3xl overflow-hidden max-w-5xl mx-auto"
-          style={{
-            background: 'linear-gradient(135deg, rgb(17, 24, 39) 0%, rgb(88, 28, 135) 50%, rgb(67, 56, 202) 100%)',
-            backgroundAttachment: 'fixed'
-          }}
-        >
+    <section className="py-24 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-6 md:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold text-gray-900 mb-6">
+            Do your most important work, <span className="text-purple-600">faster</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            From operations to compliance and more, this is just the tip of the iceberg.
+          </p>
+        </div>
           {/* Background Effects */}
           <div 
             className="absolute inset-0"
