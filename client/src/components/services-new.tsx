@@ -67,7 +67,11 @@ export default function Services() {
   };
   return (
     <section ref={sectionRef} id="services" className="py-12 px-4 scroll-offset relative">
-      {/* Services section content removed */}
+      <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
+          {/* Services section content removed */}
+        </div>
+      </div>
     </section>
   );
 }

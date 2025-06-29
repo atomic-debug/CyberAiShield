@@ -10,7 +10,7 @@ export default function Contact() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               Deploy <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Atomic Solutions</span>
             </h2>
-            <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 mb-6 max-w-4xl mx-auto">
               Transform your infrastructure with enterprise-grade cybersecurity and IT automation.
             </p>
             
