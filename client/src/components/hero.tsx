@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, memo } from 'react';
 import { Button } from '@/components/ui/button';
-
 import { ArrowRight, Sparkles, Shield, Zap, Target, FileCheck, Lock, Cpu } from 'lucide-react';
 import { useParallax } from '@/hooks/use-scroll';
 
-export default function Hero() {
+const Hero = memo(function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentRole, setCurrentRole] = useState(0);
   const parallaxOffset = useParallax(0.1); // Reduced parallax effect
@@ -19,12 +18,12 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
 
   // All 6 available features - choose 3 most impactful
   const allFeatures = [
@@ -104,4 +103,6 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+});
+
+export default Hero;

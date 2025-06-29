@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Home, Shield, Building, Phone, Menu, X, Zap, LogIn, Cpu, Target, Lock } from 'lucide-react';
 import { useScrollDirection, useScrollPosition, useScrollProgress } from '@/hooks/use-scroll';
 
-export default function Header() {
+const Header = memo(function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const scrollDirection = useScrollDirection();
@@ -59,7 +59,8 @@ export default function Header() {
         />
       </div>
       
-      <header 
+      <header
+        role="banner"
         className={`fixed top-1 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
           isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
@@ -185,4 +186,6 @@ export default function Header() {
       </header>
     </>
   );
-}
+});
+
+export default Header;

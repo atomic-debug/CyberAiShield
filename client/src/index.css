@@ -11,16 +11,45 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px; /* Explicit base font size for accessibility */
 }
 
 body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-display: swap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  line-height: 1.5; /* Better readability */
+  margin: 0;
+  padding: 0;
 }
 
-/* GPU-accelerated animations */
+/* Focus management for accessibility */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  padding: 8px;
+  z-index: 1000;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* GPU-accelerated animations with better performance */
 .will-change-transform {
   will-change: transform;
 }
@@ -29,10 +58,71 @@ body {
   will-change: opacity;
 }
 
-/* Optimized transitions */
+.will-change-scroll {
+  will-change: scroll-position;
+}
+
+/* Optimized transitions with hardware acceleration */
 .transition-gpu {
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Smooth animations with reduced complexity */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95);
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+}
+
+/* Design system utilities */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 /* Reduced motion support */
@@ -44,6 +134,50 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile-first responsive optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  /* Touch-friendly interactions */
+  button, 
+  [role="button"], 
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Optimized mobile navigation */
+  .mobile-nav {
+    touch-action: manipulation;
+  }
+  
+  /* Reduce motion on mobile for battery efficiency */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Optimized layout for tablets */
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Sharper borders and shadows for retina displays */
+  .border {
+    border-width: 0.5px;
   }
 }
 
