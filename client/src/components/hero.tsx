@@ -43,10 +43,10 @@ const Hero = memo(function Hero() {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-2 sm:py-3 md:py-4 lg:py-6 px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 relative bg-white">
+    <section className="min-h-screen flex items-center justify-center py-1 sm:py-1 md:py-2 lg:py-2 px-2 sm:px-3 md:px-4 lg:px-6 xl:px-8 relative bg-white">
       <div className="max-w-7xl mx-auto relative z-10">
         <div 
-          className="text-center max-w-5xl mx-auto rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 border border-gray-200/50 shadow-xl relative overflow-hidden"
+          className="text-center max-w-5xl mx-auto rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-7 xl:p-8 border border-gray-200/50 shadow-xl relative overflow-hidden"
           style={{
             background: 'linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(243, 244, 246) 30%, rgb(209, 213, 219) 100%)',
             backgroundAttachment: 'fixed'
