@@ -65,9 +65,9 @@ const Header = memo(function Header() {
           isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 relative z-10">
           <div 
-            className="rounded-3xl mx-4 mt-2 mb-1 border border-gray-200/50 shadow-lg relative overflow-hidden max-w-5xl mx-auto"
+            className="rounded-2xl sm:rounded-3xl mx-2 sm:mx-3 md:mx-4 mt-1 sm:mt-1.5 md:mt-2 mb-0.5 sm:mb-0.5 md:mb-1 border border-gray-200/50 shadow-lg relative overflow-hidden max-w-5xl mx-auto"
             style={{
               background: 'linear-gradient(135deg, rgb(17, 24, 39) 0%, rgb(88, 28, 135) 50%, rgb(67, 56, 202) 100%)',
               backgroundAttachment: 'fixed'
@@ -88,12 +88,12 @@ const Header = memo(function Header() {
                 backgroundAttachment: 'fixed'
               }}
             ></div>
-            <div className="flex items-center justify-between h-16 px-6">
+            <div className="flex items-center justify-between h-12 sm:h-14 md:h-16 lg:h-18 px-3 sm:px-4 md:px-5 lg:px-6">
               {/* Logo */}
               <div className="flex items-center">
-                <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => scrollToSection('hero')}>
+                <div className="flex items-center space-x-2 sm:space-x-2.5 md:space-x-3 group cursor-pointer" onClick={() => scrollToSection('hero')}>
                   <div className="relative">
-                    <svg className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32" fill="none">
+                    <svg className="w-6 sm:w-7 md:w-8 lg:w-9 h-6 sm:h-7 md:h-8 lg:h-9 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32" fill="none">
                       <rect width="32" height="32" rx="8" fill="url(#gradient)"/>
                       <path d="M16 10L10 14L16 18L22 14L16 10Z" fill="white"/>
                       <path d="M10 18L16 22L22 18" stroke="white" strokeWidth="2" strokeLinecap="round"/>
@@ -106,8 +106,8 @@ const Header = memo(function Header() {
                     </svg>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-xl font-bold text-white group-hover:text-purple-200 transition-colors">ReactorIX</span>
-                    <Badge variant="secondary" className="hidden lg:flex text-xs bg-white/20 text-purple-200 border-purple-300/50 px-2 py-0">
+                    <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white group-hover:text-purple-200 transition-colors">ReactorIX</span>
+                    <Badge variant="secondary" className="hidden md:flex text-xs sm:text-xs md:text-xs lg:text-sm bg-white/20 text-purple-200 border-purple-300/50 px-1.5 sm:px-2 py-0">
                       <Zap className="w-3 h-3 mr-1" />
                       Atomic Solutions
                     </Badge>
