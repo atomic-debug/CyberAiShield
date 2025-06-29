@@ -109,7 +109,7 @@ const Header = memo(function Header() {
                     <span className="text-xl font-bold text-white group-hover:text-purple-200 transition-colors">ReactorIX</span>
                     <Badge variant="secondary" className="hidden lg:flex text-xs bg-white/20 text-purple-200 border-purple-300/50 px-2 py-0">
                       <Zap className="w-3 h-3 mr-1" />
-                      Reactor Solution
+                      Atomic Solutions
                     </Badge>
                   </div>
                 </div>

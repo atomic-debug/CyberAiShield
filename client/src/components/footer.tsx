@@ -23,7 +23,7 @@ export default function Footer() {
               <Shield className="w-8 h-8 mr-3 text-purple-600" />
               <div>
                 <h3 className="text-2xl font-bold text-gray-900">ReactorIX</h3>
-                <p className="text-sm text-purple-600 font-medium">Reactor Solutions</p>
+                <p className="text-sm text-purple-600 font-medium">Atomic Solutions</p>
               </div>
             </div>
             

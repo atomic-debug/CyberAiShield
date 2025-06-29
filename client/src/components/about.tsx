@@ -66,7 +66,7 @@ export default function About() {
                 <span className="font-bold text-purple-200">99.99%</span> Security Coverage
               </div>
               <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors">
-                <span className="font-bold text-purple-200">Reactor</span> Speed
+                <span className="font-bold text-purple-200">Atomic</span> Speed
               </div>
               <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors">
                 <span className="font-bold text-purple-200">10x</span> Efficiency
