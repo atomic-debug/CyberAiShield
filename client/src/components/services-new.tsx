@@ -75,41 +75,37 @@ export default function Services() {
         </h2>
         
         {/* Clean Text-Based Services with Dynamic Shadows */}
-        <div className="text-left relative">
-          
-          <div 
-            className="border-l-4 border-purple-600 pl-8 py-4 rounded-l-xl bg-white/50 backdrop-blur-sm relative"
-            style={getItemStyle(0)}
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Fortress Security</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Military-grade protection that adapts, learns, and eliminates threats before they reach your infrastructure. 
-              <span className="font-semibold text-purple-700"> Zero-compromise defense.</span>
-            </p>
-          </div>
-          
-          <div 
-            className="border-l-4 border-purple-600 pl-8 py-4 rounded-l-xl bg-white/50 backdrop-blur-sm relative"
-            style={getItemStyle(1)}
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Infinite Scale</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Seamless expansion that grows with your ambitions. From startup to enterprise, 
-              <span className="font-semibold text-purple-700"> scale without limits or compromise.</span>
-            </p>
-          </div>
-          
-          <div 
-            className="border-l-4 border-purple-600 pl-8 py-4 rounded-l-xl bg-white/50 backdrop-blur-sm relative"
-            style={getItemStyle(2)}
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Total Automation</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              AI-powered systems that operate your infrastructure with precision and intelligence. 
-              <span className="font-semibold text-purple-700"> Like having 1000 experts on your team.</span>
-            </p>
-          </div>
-          
+        <div 
+          className="border-l-4 border-purple-600 pl-8 py-4 rounded-l-xl bg-white/50 backdrop-blur-sm relative text-left"
+          style={getItemStyle(0)}
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Fortress Security</h3>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Military-grade protection that adapts, learns, and eliminates threats before they reach your infrastructure. 
+            <span className="font-semibold text-purple-700"> Zero-compromise defense.</span>
+          </p>
+        </div>
+        
+        <div 
+          className="border-l-4 border-purple-600 pl-8 py-4 rounded-l-xl bg-white/50 backdrop-blur-sm relative text-left"
+          style={getItemStyle(1)}
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Infinite Scale</h3>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Seamless expansion that grows with your ambitions. From startup to enterprise, 
+            <span className="font-semibold text-purple-700"> scale without limits or compromise.</span>
+          </p>
+        </div>
+        
+        <div 
+          className="border-l-4 border-purple-600 pl-8 py-4 rounded-l-xl bg-white/50 backdrop-blur-sm relative text-left"
+          style={getItemStyle(2)}
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Total Automation</h3>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            AI-powered systems that operate your infrastructure with precision and intelligence. 
+            <span className="font-semibold text-purple-700"> Like having 1000 experts on your team.</span>
+          </p>
         </div>
         
         
