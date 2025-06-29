@@ -127,6 +127,7 @@ The application is designed for scalability with a clear separation of concerns,
 - **Header auto-hide behavior**: Implemented smooth header that hides immediately when scrolling down and only returns when scrolling up past 50% of page height for optimal UX
 - **Header transition cleanup**: Removed white background artifacts and optimized animation duration for clean slide transitions without lingering white lines
 - **Scroll-to-top positioning**: Moved scroll button lower on screen (bottom-8) for better accessibility and natural user expectations
+- **Header navigation cleanup**: Removed "Home" nav item, removed invisible white "Log In" button, and changed "About" to "Blog" for cleaner navigation
 
 ### UI Standardization (June 28, 2025)
 - **Hero section redesign**: Removed decorative floating illustration, replaced with trust indicators
