@@ -5,34 +5,46 @@ export default function Footer() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   
   const socialLinks = [
-    { icon: Twitter, name: 'Twitter', href: '#', color: 'hover:text-blue-400' },
-    { icon: Linkedin, name: 'LinkedIn', href: '#', color: 'hover:text-blue-600' },
-    { icon: Github, name: 'GitHub', href: '#', color: 'hover:text-gray-600' },
-    { icon: Mail, name: 'Email', href: '#', color: 'hover:text-purple-600' },
+    { icon: Twitter, name: 'Twitter', href: '#' },
+    { icon: Linkedin, name: 'LinkedIn', href: '#' },
+    { icon: Github, name: 'GitHub', href: '#' },
+    { icon: Mail, name: 'Email', href: '#' },
   ];
+
+  const footerLinks = {
+    Product: ['Features', 'Integrations', 'Pricing', 'Changelog'],
+    Company: ['About', 'Blog', 'Careers', 'Press'],
+    Resources: ['Docs', 'Support', 'Community', 'Partners'],
+    Legal: ['Privacy', 'Terms', 'Security', 'Compliance'],
+  };
   
   return (
-    <footer className="bg-gray-50 py-2">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-200 max-w-5xl mx-auto">
-          {/* Main Footer Content */}
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-5 mb-2 sm:mb-3 md:mb-4">
+    <footer className="bg-white border-t border-gray-100">
+      <div className="clickup-container py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           {/* Brand Section */}
           <div className="col-span-2">
-            <div className="flex items-center mb-2 sm:mb-3 md:mb-4">
-              <Shield className="w-5 sm:w-6 md:w-7 lg:w-8 h-5 sm:h-6 md:h-7 lg:h-8 mr-2 sm:mr-2.5 md:mr-3 text-purple-600" />
+            <div className="flex items-center mb-4">
+              <div className="w-10 h-10 clickup-gradient-bg rounded-xl flex items-center justify-center mr-3">
+                <Shield className="w-6 h-6 text-white" />
+              </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900">ReactorIX</h3>
-                <p className="text-sm text-purple-600 font-medium">Atomic Solutions</p>
+                <h3 className="text-xl font-bold text-gray-900">ReactorIX</h3>
+                <p className="text-sm text-gray-600">Atomic Solutions</p>
               </div>
             </div>
+            
+            <p className="text-gray-600 mb-6 max-w-xs">
+              Enterprise-grade cybersecurity and IT automation for organizations that demand excellence.
+            </p>
             
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="text-gray-400 hover:text-purple-600 transition-colors duration-200"
+                  className="text-gray-400 hover:text-primary transition-colors"
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />
@@ -41,54 +53,49 @@ export default function Footer() {
             </div>
           </div>
           
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wide">Solutions</h4>
-            <div className="space-y-2">
-              {['AI Automation', 'Cybersecurity', 'Cloud Infrastructure', 'Managed Services'].map((link) => (
-                <a
-                  key={link}
-                  href="#"
-                  className="block text-gray-600 hover:text-purple-600 transition-colors duration-200 text-sm"
-                >
-                  {link}
-                </a>
-              ))}
+          {/* Links Columns */}
+          {Object.entries(footerLinks).map(([category, links]) => (
+            <div key={category}>
+              <h4 className="font-semibold text-gray-900 mb-4">{category}</h4>
+              <ul className="space-y-3">
+                {links.map((link) => (
+                  <li key={link}>
+                    <a
+                      href="#"
+                      onMouseEnter={() => setHoveredLink(link)}
+                      onMouseLeave={() => setHoveredLink(null)}
+                      className="text-gray-600 hover:text-primary transition-colors flex items-center group"
+                    >
+                      {link}
+                      {hoveredLink === link && (
+                        <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-          
-          {/* Support */}
-          <div>
-            <h4 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wide">Support</h4>
-            <div className="space-y-2">
-              {['Documentation', 'Contact', 'Status', 'Security'].map((link) => (
-                <a
-                  key={link}
-                  href="#"
-                  className="block text-gray-600 hover:text-purple-600 transition-colors duration-200 text-sm"
-                >
-                  {link}
-                </a>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
         
-          {/* Bottom Bar */}
-          <div className="border-t border-gray-200 pt-4 flex flex-col md:flex-row justify-between items-center">
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-100 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-500 text-sm">
               © 2025 ReactorIX. All rights reserved.
             </p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors duration-200 text-sm">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors duration-200 text-sm">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors duration-200 text-sm">
-                Cookies
-              </a>
+            
+            {/* Trust Badges */}
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">SOC 2 Compliant</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">ISO 27001</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">GDPR Ready</span>
+              </div>
             </div>
           </div>
         </div>
