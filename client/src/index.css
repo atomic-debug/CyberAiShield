@@ -182,38 +182,49 @@ body {
 }
 
 :root {
-  /* ClickUp-inspired clean design system */
+  /* ClickUp's exact design system */
   --background: hsl(0, 0%, 100%);
-  --foreground: hsl(220, 26%, 14%);
-  --muted: hsl(210, 40%, 98%);
-  --muted-foreground: hsl(215, 16%, 47%);
+  --foreground: hsl(240, 10%, 3.9%);
+  --muted: hsl(240, 4.8%, 95.9%);
+  --muted-foreground: hsl(240, 3.8%, 46.1%);
   --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(220, 26%, 14%);
+  --popover-foreground: hsl(240, 10%, 3.9%);
   --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(220, 26%, 14%);
-  --border: hsl(214, 32%, 91%);
-  --input: hsl(214, 32%, 91%);
-  --primary: hsl(262, 83%, 58%);
+  --card-foreground: hsl(240, 10%, 3.9%);
+  --border: hsl(240, 5.9%, 90%);
+  --input: hsl(240, 5.9%, 90%);
+  --primary: hsl(263, 90%, 51%); /* ClickUp purple #7C3AED */
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(210, 40%, 98%);
-  --secondary-foreground: hsl(220, 26%, 14%);
-  --accent: hsl(210, 40%, 98%);
-  --accent-foreground: hsl(220, 26%, 14%);
+  --secondary: hsl(240, 5.9%, 96.1%);
+  --secondary-foreground: hsl(240, 5.2%, 33.9%);
+  --accent: hsl(263, 90%, 51%);
+  --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(262, 83%, 58%);
-  --radius: 0.5rem;
+  --ring: hsl(263, 90%, 51%);
+  --radius: 0.75rem;
   
   /* ClickUp brand colors */
-  --purple-50: hsl(254, 92%, 97%);
-  --purple-100: hsl(254, 88%, 94%);
-  --purple-500: hsl(262, 83%, 58%);
-  --purple-600: hsl(262, 83%, 53%);
-  --purple-700: hsl(262, 83%, 48%);
-  --gray-50: hsl(210, 40%, 98%);
-  --gray-100: hsl(210, 40%, 96%);
-  --gray-500: hsl(215, 16%, 47%);
-  --gray-900: hsl(220, 26%, 14%);
+  --purple-50: hsl(263, 90%, 97%);
+  --purple-100: hsl(263, 90%, 94%);
+  --purple-200: hsl(263, 90%, 88%);
+  --purple-300: hsl(263, 90%, 78%);
+  --purple-400: hsl(263, 90%, 65%);
+  --purple-500: hsl(263, 90%, 51%);
+  --purple-600: hsl(263, 90%, 41%);
+  --purple-700: hsl(263, 90%, 31%);
+  --purple-800: hsl(263, 90%, 21%);
+  --purple-900: hsl(263, 90%, 11%);
+  --gray-50: hsl(240, 4.8%, 95.9%);
+  --gray-100: hsl(240, 5.9%, 90%);
+  --gray-200: hsl(240, 5.2%, 83.9%);
+  --gray-300: hsl(240, 4.9%, 73.9%);
+  --gray-400: hsl(240, 4.8%, 53.9%);
+  --gray-500: hsl(240, 3.8%, 46.1%);
+  --gray-600: hsl(240, 5.2%, 33.9%);
+  --gray-700: hsl(240, 5.3%, 26.1%);
+  --gray-800: hsl(240, 10%, 13.5%);
+  --gray-900: hsl(240, 10%, 3.9%);
 }
 
 .dark {
@@ -246,7 +257,7 @@ body {
 
   body {
     @apply font-sans antialiased bg-white text-gray-900;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   }
   
   html {
@@ -566,5 +577,128 @@ body {
   
   .hover-lift:hover {
     transform: translateY(-2px);
+  }
+}
+
+/* ClickUp-specific design patterns */
+@layer components {
+  /* ClickUp typography styles */
+  .clickup-heading {
+    @apply font-bold tracking-tight leading-[1.1];
+  }
+  
+  .clickup-heading-1 {
+    @apply text-5xl md:text-6xl lg:text-7xl clickup-heading;
+  }
+  
+  .clickup-heading-2 {
+    @apply text-4xl md:text-5xl lg:text-6xl clickup-heading;
+  }
+  
+  .clickup-heading-3 {
+    @apply text-3xl md:text-4xl clickup-heading;
+  }
+  
+  .clickup-subtitle {
+    @apply text-xl md:text-2xl text-gray-600 leading-relaxed;
+  }
+  
+  /* ClickUp button styles */
+  .clickup-button {
+    @apply inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .clickup-button-primary {
+    @apply clickup-button bg-primary text-primary-foreground hover:bg-purple-600 px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl;
+  }
+  
+  .clickup-button-secondary {
+    @apply clickup-button bg-gray-100 text-gray-700 hover:bg-gray-200 px-6 py-3 rounded-lg;
+  }
+  
+  /* ClickUp feature pills */
+  .clickup-pill {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors;
+  }
+  
+  .clickup-pill-icon {
+    @apply w-4 h-4 text-primary;
+  }
+  
+  /* ClickUp cards */
+  .clickup-card {
+    @apply bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100;
+  }
+  
+  .clickup-card-hover {
+    @apply hover:-translate-y-1 hover:shadow-xl;
+  }
+  
+  /* ClickUp sections */
+  .clickup-section {
+    @apply py-20 md:py-32;
+  }
+  
+  .clickup-container {
+    @apply max-w-6xl mx-auto px-6 md:px-8;
+  }
+  
+  /* ClickUp gradients */
+  .clickup-gradient-text {
+    @apply bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  .clickup-gradient-bg {
+    @apply bg-gradient-to-r from-primary to-purple-600;
+  }
+  
+  /* ClickUp trust badges */
+  .clickup-trust-logos {
+    @apply flex items-center justify-center gap-8 opacity-60 grayscale;
+  }
+  
+  .clickup-trust-logo {
+    @apply h-8 w-auto;
+  }
+  
+  /* ClickUp feature grid */
+  .clickup-feature-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3;
+  }
+  
+  .clickup-feature-item {
+    @apply flex flex-col items-center gap-2 p-4 text-center;
+  }
+  
+  .clickup-feature-icon {
+    @apply w-8 h-8 text-primary;
+  }
+  
+  /* ClickUp animations */
+  @keyframes clickup-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .clickup-float {
+    animation: clickup-float 3s ease-in-out infinite;
+  }
+  
+  /* ClickUp CTA patterns */
+  .clickup-cta {
+    @apply text-center space-y-6;
+  }
+  
+  .clickup-cta-disclaimer {
+    @apply text-sm text-gray-500 mt-3;
+  }
+  
+  /* ClickUp rating stars */
+  .clickup-stars {
+    @apply flex items-center gap-1;
+  }
+  
+  .clickup-star {
+    @apply w-5 h-5 text-yellow-400 fill-current;
   }
 }
