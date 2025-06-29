@@ -126,12 +126,6 @@ export default function Header() {
               {/* Right side CTAs */}
               <div className="hidden md:flex items-center space-x-3">
                 <Button 
-                  variant="ghost"
-                  className="text-white hover:text-purple-200 hover:bg-white/10 font-medium transition-all duration-200"
-                >
-                  Log In
-                </Button>
-                <Button 
                   onClick={() => scrollToSection('contact')}
                   className="bg-white/20 hover:bg-white/30 text-white font-medium px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-md border border-white/30"
                 >
@@ -169,12 +163,6 @@ export default function Header() {
                     </Button>
                   ))}
                   <div className="border-t border-white/20 pt-3 mt-3 space-y-2">
-                    <Button 
-                      variant="ghost"
-                      className="w-full text-white hover:text-purple-200 hover:bg-white/10"
-                    >
-                      Log In
-                    </Button>
                     <Button 
                       onClick={() => scrollToSection('contact')}
                       className="w-full bg-white/20 hover:bg-white/30 text-white backdrop-blur-md border border-white/30"
