@@ -32,7 +32,7 @@ export default function About() {
           id="about" 
           className="scroll-offset relative py-12 px-8 rounded-3xl overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, rgb(17, 24, 39) 0%, rgb(88, 28, 135) 50%, rgb(67, 56, 202) 100%)',
+            background: 'linear-gradient(135deg, rgb(30, 41, 59) 0%, rgb(71, 85, 105) 30%, rgb(88, 28, 135) 70%, rgb(67, 56, 202) 100%)',
             backgroundAttachment: 'fixed'
           }}
         >
@@ -53,25 +53,25 @@ export default function About() {
           ></div>
           
           <div className="max-w-5xl mx-auto text-center relative z-10">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight" style={{ textShadow: '0 0 1px rgba(0,0,0,0.8)' }}>
-              ReactorIX <span className="bg-gradient-to-r from-purple-300 via-indigo-300 to-blue-300 bg-clip-text text-transparent" style={{ textShadow: '0 0 1px rgba(0,0,0,0.6)' }}>Command Center</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
+              ReactorIX <span className="bg-gradient-to-r from-purple-300 via-indigo-300 to-blue-300 bg-clip-text text-transparent">Command Center</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto" style={{ textShadow: '0 0 1px rgba(0,0,0,0.7)' }}>
+            <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto">
               Advanced cybersecurity and IT automation engineered for enterprise organizations that demand operational supremacy.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors" style={{ textShadow: '0 0 1px rgba(0,0,0,0.6)' }}>
+              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors">
                 <span className="font-bold text-purple-200">99.99%</span> Security Coverage
               </div>
-              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors" style={{ textShadow: '0 0 1px rgba(0,0,0,0.6)' }}>
+              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors">
                 <span className="font-bold text-purple-200">Atomic</span> Speed
               </div>
-              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors" style={{ textShadow: '0 0 1px rgba(0,0,0,0.6)' }}>
+              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors">
                 <span className="font-bold text-purple-200">10x</span> Efficiency
               </div>
-              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors" style={{ textShadow: '0 0 1px rgba(0,0,0,0.6)' }}>
+              <div className="bg-white/15 backdrop-blur-md border border-purple-300/30 rounded-xl px-5 py-3 text-sm text-gray-200 hover:bg-white/20 transition-colors">
                 <span className="font-bold text-purple-200">99.9%</span> Uptime
               </div>
             </div>
