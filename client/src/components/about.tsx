@@ -53,26 +53,26 @@ export default function About() {
           ></div>
           
           <div className="max-w-5xl mx-auto text-center relative z-10">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
-              Built for <span className="bg-gradient-to-r from-purple-300 via-indigo-300 to-blue-300 bg-clip-text text-transparent">Enterprise Scale</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white leading-tight">
+              Why ReactorIX?
             </h2>
             
-            <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto">
-              Professional IT automation and cybersecurity solutions designed for organizations that demand excellence.
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
-                <span className="font-bold text-purple-300">99.99%</span> Threat Prevention
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-white mb-3">Tailored Protection</h3>
+                <p className="text-gray-300 text-sm">Security solutions built around your business needs.</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
-                <span className="font-bold text-purple-300">1000x</span> Scale Multiplier
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-white mb-3">Rapid Response</h3>
+                <p className="text-gray-300 text-sm">Detect, contain, and neutralize cyber threats fast.</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
-                <span className="font-bold text-purple-300">400%</span> Efficiency Gain
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-white mb-3">Unbiased Expertise</h3>
+                <p className="text-gray-300 text-sm">No vendor lock-in, just solutions that work for you.</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2 text-sm text-gray-200">
-                <span className="font-bold text-purple-300">99.9%</span> Uptime
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-white mb-3">Scalable & Adaptive</h3>
+                <p className="text-gray-300 text-sm">Security strategies that evolve with your organization.</p>
               </div>
             </div>
             
