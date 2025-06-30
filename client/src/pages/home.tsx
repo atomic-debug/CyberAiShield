@@ -8,7 +8,6 @@ const Header = lazy(() => import('@/components/header'));
 const Hero = lazy(() => import('@/components/hero'));
 const About = lazy(() => import('@/components/about'));
 const Services = lazy(() => import('@/components/services-new'));
-const Testimonials = lazy(() => import('@/components/testimonials'));
 const Contact = lazy(() => import('@/components/contact'));
 const Footer = lazy(() => import('@/components/footer'));
 const AIChat = lazy(() => import('@/components/ai-chat'));
@@ -189,12 +188,6 @@ export default function Home() {
       <Suspense fallback={<LoadingFallback className="h-96" />}>
         <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">About unavailable</div>}>
           <About />
-        </ErrorBoundary>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingFallback className="h-96" />}>
-        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Testimonials unavailable</div>}>
-          <Testimonials />
         </ErrorBoundary>
       </Suspense>
       
