@@ -75,29 +75,46 @@ export default function Hero() {
           
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+            Cut through complexity —<br />
             <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Atomic Solutions.
+              get atomic precision that works.
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Enterprise-grade IT automation and cybersecurity that scales with your organization.
+          <p className="text-lg text-gray-600 mb-2 max-w-2xl mx-auto font-medium">
+            No bloat. No vendor agendas.
+          </p>
+          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+            Custom IT automation and cybersecurity solutions tailored to your size, budget, and maturity—delivering the right protection at the right time.
           </p>
 
-          {/* Key Features */}
-          <div className="flex justify-center gap-4 max-w-2xl mx-auto mb-8">
-            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
-              <Shield className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">Fortress-Grade Protection</span>
+          {/* Key Features - Loki Labs Style */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
+            <div className="text-center">
+              <Shield className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Tailored Protection</h3>
+              <p className="text-gray-600 text-sm">Security solutions built around your business needs.</p>
             </div>
-            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
-              <Zap className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">Atomic Precision</span>
+            <div className="text-center">
+              <Zap className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Rapid Response</h3>
+              <p className="text-gray-600 text-sm">Detect, contain, and neutralize threats fast.</p>
             </div>
-            <div className="flex items-center bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-md border border-gray-300/50 rounded-2xl px-4 py-3 shadow-sm hover:shadow-md transition-all duration-300 group">
-              <Target className="w-5 h-5 text-purple-600 mr-3 group-hover:scale-105 transition-transform" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">Infinite Scale</span>
+            <div className="text-center">
+              <Target className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Unbiased Expertise</h3>
+              <p className="text-gray-600 text-sm">No vendor lock-in, just solutions that work for you.</p>
             </div>
+          </div>
+
+          {/* CTA Button - Loki Labs Style */}
+          <div className="text-center">
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="inline-flex items-center px-8 py-3 text-lg font-semibold text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
+              Learn More
+            </button>
           </div>
         </div>
         </div>
