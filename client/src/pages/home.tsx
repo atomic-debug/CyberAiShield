@@ -113,16 +113,10 @@ export default function Home() {
       style={backgroundStyle}
       onClick={handlePageClick}
     >
-      {/* Skip to main content link for accessibility */}
-      <a href="#main-content" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:rounded focus:shadow-lg">
-        Skip to main content
-      </a>
-      
       {/* Dynamic Background Overlay - Optimized */}
       <div 
         className="fixed inset-0 pointer-events-none transition-opacity duration-1000"
         style={overlayStyle}
-        aria-hidden="true"
       />
       
       {/* Interactive Particles - Optimized and Reduced */}
@@ -178,45 +172,38 @@ export default function Home() {
         />
       </div>
       
-      {/* Navigation Header */}
+      {/* Lazy-loaded components with error boundaries */}
       <Suspense fallback={<LoadingFallback className="h-20" />}>
-        <ErrorBoundary fallback={<div className="h-20 bg-gray-100 flex items-center justify-center" role="banner">Header unavailable</div>}>
+        <ErrorBoundary fallback={<div className="h-20 bg-gray-100 flex items-center justify-center">Header unavailable</div>}>
           <Header />
         </ErrorBoundary>
       </Suspense>
       
-      {/* Main Content Area */}
-      <main id="main-content" role="main" className="relative z-10">
-        <Suspense fallback={<LoadingFallback className="h-screen" />}>
-          <ErrorBoundary fallback={<div className="h-screen bg-gray-100 flex items-center justify-center">Hero section unavailable</div>}>
-            <Hero />
-          </ErrorBoundary>
-        </Suspense>
-        
-        <Suspense fallback={<LoadingFallback className="h-96" />}>
-          <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">About section unavailable</div>}>
-            <About />
-          </ErrorBoundary>
-        </Suspense>
-        
-        <Suspense fallback={<LoadingFallback className="h-96" />}>
-          <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Services section unavailable</div>}>
-            <Services />
-          </ErrorBoundary>
-        </Suspense>
-        
-        <Suspense fallback={<LoadingFallback className="h-96" />}>
-          <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Contact unavailable</div>}>
-            <Contact />
-          </ErrorBoundary>
-        </Suspense>
-        
-        <Suspense fallback={<LoadingFallback className="h-32" />}>
-          <ErrorBoundary fallback={<div className="h-32 bg-gray-100 flex items-center justify-center">Footer unavailable</div>}>
-            <Footer />
-          </ErrorBoundary>
-        </Suspense>
-      </main>
+      <Suspense fallback={<LoadingFallback className="h-screen" />}>
+        <ErrorBoundary fallback={<div className="h-screen bg-gray-100 flex items-center justify-center">Hero unavailable</div>}>
+          <Hero />
+        </ErrorBoundary>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback className="h-96" />}>
+        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">About unavailable</div>}>
+          <About />
+        </ErrorBoundary>
+      </Suspense>
+      
+
+      
+      <Suspense fallback={<LoadingFallback className="h-96" />}>
+        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Contact unavailable</div>}>
+          <Contact />
+        </ErrorBoundary>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback className="h-32" />}>
+        <ErrorBoundary fallback={<div className="h-32 bg-gray-100 flex items-center justify-center">Footer unavailable</div>}>
+          <Footer />
+        </ErrorBoundary>
+      </Suspense>
       
       <Suspense fallback={<LoadingFallback className="h-16" />}>
         <ErrorBoundary fallback={<div className="fixed bottom-6 right-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">AI unavailable</div>}>
