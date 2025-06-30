@@ -59,20 +59,20 @@ export default function About() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-white mb-3">Tailored Protection</h3>
-                <p className="text-gray-300 text-sm">Security solutions built around your business needs.</p>
+                <h3 className="text-xl font-semibold text-white mb-3">Battle-Tested Methodology</h3>
+                <p className="text-gray-300 text-sm">Security frameworks proven across Fortune 500 and high-stakes environments.</p>
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-white mb-3">Rapid Response</h3>
-                <p className="text-gray-300 text-sm">Detect, contain, and neutralize cyber threats fast.</p>
+                <h3 className="text-xl font-semibold text-white mb-3">Autonomous Response</h3>
+                <p className="text-gray-300 text-sm">AI-driven threat neutralization that outpaces human-speed attacks.</p>
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-white mb-3">Unbiased Expertise</h3>
-                <p className="text-gray-300 text-sm">No vendor lock-in, just solutions that work for you.</p>
+                <h3 className="text-xl font-semibold text-white mb-3">Zero Vendor Dependency</h3>
+                <p className="text-gray-300 text-sm">Technology-agnostic solutions that eliminate single points of failure.</p>
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-white mb-3">Scalable & Adaptive</h3>
-                <p className="text-gray-300 text-sm">Security strategies that evolve with your organization.</p>
+                <h3 className="text-xl font-semibold text-white mb-3">Future-Proof Architecture</h3>
+                <p className="text-gray-300 text-sm">Security postures designed to adapt to emerging threats and business evolution.</p>
               </div>
             </div>
             

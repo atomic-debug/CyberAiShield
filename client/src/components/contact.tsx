@@ -8,16 +8,18 @@ export default function Contact() {
         <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200 text-center">
           <div className="mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-              Ready to Get <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Started?</span>
+              Ready to Eliminate <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Security Uncertainty?</span>
             </h2>
-            
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Get a comprehensive security assessment and custom protection strategy designed for your unique threat profile.
+            </p>
           </div>
           
           <Button
             size="lg"
             className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
           >
-            Contact Us
+            Get Your Security Assessment
             <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
           </Button>
         </div>

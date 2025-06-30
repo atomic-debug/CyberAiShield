@@ -76,34 +76,34 @@ export default function Hero() {
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-            Cut through complexity —<br />
+            Enterprise cybersecurity that<br />
             <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              get atomic precision that works.
+              eliminates uncertainty.
             </span>
           </h1>
           <p className="text-lg text-gray-600 mb-2 max-w-2xl mx-auto font-medium">
-            No bloat. No vendor agendas.
+            No vendor lock-in. No one-size-fits-all solutions.
           </p>
           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            Custom IT automation and cybersecurity solutions tailored to your size, budget, and maturity—delivering the right protection at the right time.
+            Adaptive cybersecurity and IT automation engineered for your exact business requirements, threat landscape, and growth trajectory.
           </p>
 
-          {/* Key Features - Loki Labs Style */}
+          {/* Key Features - Enhanced Messaging */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
             <div className="text-center">
               <Shield className="w-8 h-8 text-purple-600 mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Tailored Protection</h3>
-              <p className="text-gray-600 text-sm">Security solutions built around your business needs.</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Precision-Engineered Defense</h3>
+              <p className="text-gray-600 text-sm">Security architectures designed to your exact threat profile and business requirements.</p>
             </div>
             <div className="text-center">
               <Zap className="w-8 h-8 text-purple-600 mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Rapid Response</h3>
-              <p className="text-gray-600 text-sm">Detect, contain, and neutralize threats fast.</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Lightning-Fast Response</h3>
+              <p className="text-gray-600 text-sm">Autonomous threat detection and containment in seconds, not hours.</p>
             </div>
             <div className="text-center">
               <Target className="w-8 h-8 text-purple-600 mx-auto mb-3" />
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Unbiased Expertise</h3>
-              <p className="text-gray-600 text-sm">No vendor lock-in, just solutions that work for you.</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Vendor-Agnostic Excellence</h3>
+              <p className="text-gray-600 text-sm">Technology-neutral solutions that prioritize your outcomes over vendor relationships.</p>
             </div>
           </div>
 

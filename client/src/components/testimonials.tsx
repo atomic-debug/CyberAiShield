@@ -3,16 +3,16 @@ import { Quote } from 'lucide-react';
 export default function Testimonials() {
   const testimonials = [
     {
-      content: "ReactorIX has been an exceptional partner over the past three years. In the high-stakes fintech industry, where we face constant threats, their dedication, technical expertise, and responsiveness have been critical to our success. From ransomware prevention to daily monitoring, they consistently go above and beyond to protect our business. We trust them completely and value their unwavering commitment to our mission.",
-      author: "CTO",
-      company: "Fortune 500 Financial Services",
+      content: "ReactorIX transformed our security posture from reactive to predictive. Their autonomous threat detection caught a sophisticated APT that our previous tools missed completely. The precision of their response eliminated the threat before it could establish persistence. In aerospace defense, this level of protection isn't optional—it's mission critical.",
+      author: "CISO",
+      company: "U.S. Aerospace Defense Contractor",
       role: ""
     },
     {
-      content: "As a fully remote organization providing consulting services, data security is critical to everything we do. The MDR, SOCaaS, and Incident Response team has been an incredible partner—proactive, responsive, and deeply knowledgeable. Their support gives us real peace of mind that our systems are secure and our client data is protected 24/7.",
-      author: "Managing Director",
-      company: "Global Technology Consulting Firm",
-      role: "IT Operations and Security"
+      content: "What sets ReactorIX apart is their refusal to oversell. They analyzed our infrastructure, identified exactly what we needed, and delivered a solution that integrates seamlessly with our existing investments. No vendor lock-in, no unnecessary complexity—just bulletproof security that adapts as we scale.",
+      author: "VP of Engineering",
+      company: "Series B SaaS Platform",
+      role: "Infrastructure & Security"
     }
   ];
 
