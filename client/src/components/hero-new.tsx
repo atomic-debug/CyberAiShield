@@ -1,24 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-
-import { ArrowRight, Sparkles, Shield, Zap, Target, FileCheck, Lock, Cpu } from 'lucide-react';
-import { useParallax } from '@/hooks/use-scroll';
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [currentRole, setCurrentRole] = useState(0);
-  const parallaxOffset = useParallax(0.1); // Reduced parallax effect
-  
-  const roles = ['MSPs', 'MSSPs', 'IT Teams', 'Admins'];
-
-  useEffect(() => {
-    setIsVisible(true);
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -26,30 +8,13 @@ export default function Hero() {
     }
   };
 
-  // All 6 available features - choose 3 most impactful
-  const allFeatures = [
-    { icon: Shield, text: 'Enterprise Security' },
-    { icon: Zap, text: 'AI Automation' },
-    { icon: Target, text: 'Precision Monitoring' },
-    { icon: Lock, text: 'Zero-Trust Architecture' },
-    { icon: Cpu, text: 'Real-Time Intelligence' },
-    { icon: FileCheck, text: 'Compliance Ready' }
-  ];
-  
-  // Select the 3 most impactful features
-  const features = [
-    { icon: Shield, text: 'Enterprise Security' },
-    { icon: Zap, text: 'AI Automation' },
-    { icon: Target, text: 'Precision Monitoring' }
-  ];
-
   return (
     <section className="relative min-h-screen flex items-center justify-center">
       {/* Hero Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="%23161b22"/><circle cx="400" cy="300" r="200" fill="%23321b47" opacity="0.3"/><circle cx="1200" cy="600" r="300" fill="%234c1d95" opacity="0.2"/><polygon points="600,200 800,400 600,600 400,400" fill="%236366f1" opacity="0.15"/></svg>')`
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="%23161b22"/><circle cx="400" cy="300" r="200" fill="%23321b47" opacity="0.3"/><circle cx="1200" cy="600" r="300" fill="%234c1d95" opacity="0.2"/><polygon points="600,200 800,400 600,600 400,400" fill="%236366f1" opacity="0.15"/></svg>')`
         }}
       />
       

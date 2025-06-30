@@ -5,10 +5,10 @@ import { useDynamicBackground } from '@/hooks/use-dynamic-background';
 
 // Lazy load components for better performance
 const Header = lazy(() => import('@/components/header'));
-const Hero = lazy(() => import('@/components/hero'));
-const About = lazy(() => import('@/components/about'));
-const Services = lazy(() => import('@/components/services-new'));
-const Contact = lazy(() => import('@/components/contact'));
+const Hero = lazy(() => import('@/components/hero-new'));
+const About = lazy(() => import('@/components/about-new'));
+const ThreatProtection = lazy(() => import('@/components/threat-protection'));
+const Contact = lazy(() => import('@/components/contact-new'));
 const Footer = lazy(() => import('@/components/footer'));
 const AIChat = lazy(() => import('@/components/ai-chat'));
 const ErrorBoundary = lazy(() => import('@/components/error-boundary'));
@@ -188,6 +188,12 @@ export default function Home() {
       <Suspense fallback={<LoadingFallback className="h-96" />}>
         <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">About unavailable</div>}>
           <About />
+        </ErrorBoundary>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback className="h-96" />}>
+        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Threat Protection unavailable</div>}>
+          <ThreatProtection />
         </ErrorBoundary>
       </Suspense>
       
