@@ -178,13 +178,14 @@ export default function AIChat() {
       <div className={`fixed bottom-6 right-6 z-50 transition-all duration-500 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
       }`}>
-        <button
+        <Button
           onClick={handleStartChat}
-          className="clickup-btn clickup-btn-primary rounded-full shadow-xl"
+          size="lg"
+          className="clickup-button-primary clickup-gradient-bg rounded-full shadow-lg hover:shadow-xl group"
         >
           <MessageCircle className="w-5 h-5 mr-2" />
           AI Assistant
-        </button>
+        </Button>
       </div>
     );
   }

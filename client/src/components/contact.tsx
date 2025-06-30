@@ -1,24 +1,32 @@
 import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function Contact() {
   return (
-    <section id="contact" className="clickup-section bg-purple-600 text-white">
-      <div className="clickup-container text-center">
-        <h2 className="clickup-hero-title text-white mb-8">
-          Ready to unlock productivity?
-        </h2>
-        <p className="clickup-hero-subtitle text-white/90 max-w-3xl mx-auto mb-12">
-          Join millions of teams who trust ClickUp to get more done.
-        </p>
-        
-        <button className="clickup-btn bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-          Get Started. It's FREE
-          <ArrowRight className="w-5 h-5 ml-2" />
-        </button>
-        
-        <p className="clickup-body-small text-white/80 mt-6">
-          Free Forever. No credit card required.
-        </p>
+    <section id="contact" className="clickup-section bg-gray-50">
+      <div className="clickup-container">
+        <div className="clickup-card text-center max-w-4xl mx-auto">
+          <div className="clickup-cta">
+            <h2 className="clickup-heading-2 text-gray-900 mb-6">
+              Deploy <span className="clickup-gradient-text">Atomic Solutions</span>
+            </h2>
+            <p className="clickup-subtitle max-w-3xl mx-auto mb-8">
+              Transform your infrastructure with enterprise-grade cybersecurity and IT automation.
+            </p>
+            
+            <Button
+              size="lg"
+              className="clickup-button-primary clickup-gradient-bg group"
+            >
+              Deploy Now
+              <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            
+            <p className="clickup-cta-disclaimer">
+              Free consultation. No credit card required.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
