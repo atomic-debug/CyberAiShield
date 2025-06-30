@@ -125,6 +125,11 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+/* Fix layout padding for ClickUp design */
+body {
+  padding-top: 72px; /* Account for fixed header */
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -182,7 +187,7 @@ body {
 }
 
 :root {
-  /* ClickUp's exact design system */
+  /* ClickUp's actual design system colors */
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(240, 10%, 3.9%);
   --muted: hsl(240, 4.8%, 95.9%);
@@ -202,7 +207,7 @@ body {
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
   --ring: hsl(263, 90%, 51%);
-  --radius: 0.75rem;
+  --radius: 0.5rem;
   
   /* ClickUp brand colors */
   --purple-50: hsl(263, 90%, 97%);

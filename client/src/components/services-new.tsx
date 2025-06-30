@@ -1,104 +1,152 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { Shield, Zap, Target, ChevronRight, Lock, Cloud, Brain } from 'lucide-react';
+import { Rocket, Settings, CheckCircle, ArrowRight, BarChart, Users, Target } from 'lucide-react';
 
 export default function Services() {
-  const [activeService, setActiveService] = useState(0);
-  
-  const services = [
+  const [activeTab, setActiveTab] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const useCases = [
     {
-      icon: Shield,
-      title: 'Fortress Security',
-      tagline: 'Zero-Trust Architecture',
-      description: 'Military-grade encryption and real-time threat detection that evolves faster than attackers.',
-      features: ['24/7 SOC Monitoring', 'AI Threat Detection', 'Instant Response'],
+      title: 'Launch any campaign',
+      description: 'From idea to execution, effortlessly plan, organize, and track campaigns that deliver results.',
+      icon: Rocket,
+      image: '/api/placeholder/600/400',
     },
     {
-      icon: Brain,
-      title: 'AI Automation',
-      tagline: 'Intelligence at Scale',
-      description: 'Autonomous systems that learn, adapt, and optimize your entire infrastructure.',
-      features: ['Self-Healing Systems', 'Predictive Analytics', 'Smart Orchestration'],
+      title: 'Triage product issues',
+      description: 'Quickly identify, prioritize, and resolve product issues to maintain quality and customer satisfaction.',
+      icon: Settings,
+      image: '/api/placeholder/600/400',
     },
     {
-      icon: Cloud,
-      title: 'Infinite Scale',
-      tagline: 'Limitless Infrastructure',
-      description: 'Cloud architecture that scales instantly, costs less, and never fails.',
-      features: ['Auto-Scaling', 'Multi-Region', 'Cost Optimization'],
+      title: 'Maintain flawless operations',
+      description: 'Keep your operations running smoothly with real-time visibility and automated workflows.',
+      icon: CheckCircle,
+      image: '/api/placeholder/600/400',
     },
   ];
 
   return (
-    <section id="services" className="clickup-section bg-white">
+    <section ref={ref} id="services" className="clickup-section bg-gray-50">
       <div className="clickup-container">
-        <div className="text-center mb-16">
-          <h2 className="clickup-heading-2 text-gray-900 mb-6">
-            Three Core Pillars
+        {/* Header */}
+        <div className={`text-center mb-16 ${isVisible ? 'clickup-animate-fade-in' : 'opacity-0'}`}>
+          <h2 className="clickup-h2 mb-6">
+            Do your most important work, faster
           </h2>
-          <p className="clickup-subtitle max-w-3xl mx-auto">
-            Everything you need to dominate your industry, integrated in one powerful platform.
+          <p className="clickup-body text-gray-700 max-w-3xl mx-auto">
+            From campaigns to operations and more, this is just the tip of the iceberg.
           </p>
+          <a href="#" className="inline-flex items-center gap-2 mt-4 text-purple-600 font-semibold hover:underline">
+            See all use cases
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
 
-        {/* Services Grid - ClickUp style */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
+        {/* Tab Navigation */}
+        <div className={`flex flex-wrap justify-center gap-4 mb-12 ${isVisible ? 'clickup-animate-fade-in' : 'opacity-0'}`}
+          style={{ animationDelay: '0.1s' }}>
+          {useCases.map((useCase, index) => (
+            <button
               key={index}
-              className={`clickup-card clickup-card-hover cursor-pointer ${
-                activeService === index ? 'ring-2 ring-primary' : ''
-              }`}
-              onClick={() => setActiveService(index)}
+              onClick={() => setActiveTab(index)}
+              className={`clickup-btn ${
+                activeTab === index 
+                  ? 'clickup-btn-primary' 
+                  : 'clickup-btn-secondary'
+              } flex items-center gap-2`}
             >
-              <div className="w-16 h-16 clickup-gradient-bg rounded-2xl flex items-center justify-center mb-6">
-                <service.icon className="w-8 h-8 text-white" />
-              </div>
-              
-              <h3 className="clickup-heading-3 text-gray-900 mb-2">
-                {service.title}
-              </h3>
-              
-              <p className="text-primary font-semibold mb-4">
-                {service.tagline}
-              </p>
-              
-              <p className="text-gray-600 mb-6">
-                {service.description}
-              </p>
-              
-              <ul className="space-y-3">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-gray-700">
-                    <ChevronRight className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
-                    <span className="text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Button
-                variant="ghost"
-                className="mt-6 text-primary hover:text-purple-700 p-0 group"
-              >
-                Learn more
-                <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
+              <useCase.icon className="w-5 h-5" />
+              {useCase.title}
+            </button>
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <Button
-            size="lg"
-            className="clickup-button-primary clickup-gradient-bg"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Deploy All Solutions
-          </Button>
-          <p className="clickup-cta-disclaimer">
-            Start with one, scale to all. No lock-in.
-          </p>
+        {/* Content Display */}
+        <div className={`max-w-5xl mx-auto ${isVisible ? 'clickup-animate-fade-in' : 'opacity-0'}`}
+          style={{ animationDelay: '0.2s' }}>
+          <div className="clickup-feature-card">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="clickup-h3 mb-4">
+                  {useCases[activeTab].title}
+                </h3>
+                <p className="clickup-body text-gray-700 mb-6">
+                  {useCases[activeTab].description}
+                </p>
+                <button className="clickup-btn clickup-btn-primary">
+                  Learn more
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </button>
+              </div>
+              <div>
+                <img 
+                  src={useCases[activeTab].image} 
+                  alt={useCases[activeTab].title}
+                  className="w-full rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Features */}
+        <div className={`mt-20 ${isVisible ? 'clickup-animate-fade-in' : 'opacity-0'}`}
+          style={{ animationDelay: '0.3s' }}>
+          <h3 className="clickup-h3 text-center mb-12">
+            10x your work with smarter tools
+          </h3>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-purple-600" />
+              </div>
+              <h4 className="clickup-h4 mb-2">Focused Work</h4>
+              <p className="clickup-body-small text-gray-600">
+                Eliminate distractions with purpose-built tools
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <BarChart className="w-8 h-8 text-purple-600" />
+              </div>
+              <h4 className="clickup-h4 mb-2">Data Insights</h4>
+              <p className="clickup-body-small text-gray-600">
+                Make informed decisions with real-time analytics
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-purple-600" />
+              </div>
+              <h4 className="clickup-h4 mb-2">Team Alignment</h4>
+              <p className="clickup-body-small text-gray-600">
+                Keep everyone on the same page effortlessly
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

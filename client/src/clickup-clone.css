@@ -1,0 +1,370 @@
+/* ClickUp Clone - Exact Design System */
+
+/* Font Import - ClickUp uses a custom font similar to Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* CSS Variables - ClickUp's Actual Colors */
+:root {
+  /* Primary Colors */
+  --clickup-purple: #7b68ee;
+  --clickup-purple-dark: #5d4fc9;
+  --clickup-pink: #ff00bf;
+  --clickup-orange: #ff9500;
+  --clickup-blue: #049be5;
+  
+  /* Grays */
+  --clickup-black: #2c2e33;
+  --clickup-gray-900: #3c4043;
+  --clickup-gray-800: #5f6368;
+  --clickup-gray-700: #6e7681;
+  --clickup-gray-600: #9aa0a6;
+  --clickup-gray-500: #bdc1c6;
+  --clickup-gray-400: #dadce0;
+  --clickup-gray-300: #e8eaed;
+  --clickup-gray-200: #f1f3f4;
+  --clickup-gray-100: #f8f9fa;
+  --clickup-white: #ffffff;
+  
+  /* Shadows */
+  --clickup-shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --clickup-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  --clickup-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --clickup-shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --clickup-shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+  
+  /* Border Radius */
+  --clickup-radius-sm: 6px;
+  --clickup-radius: 8px;
+  --clickup-radius-md: 10px;
+  --clickup-radius-lg: 12px;
+  --clickup-radius-xl: 16px;
+  --clickup-radius-full: 9999px;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: var(--clickup-black);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography - ClickUp Style */
+.clickup-h1 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--clickup-black);
+}
+
+.clickup-h2 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--clickup-black);
+}
+
+.clickup-h3 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--clickup-black);
+}
+
+.clickup-h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--clickup-black);
+}
+
+.clickup-body {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--clickup-gray-800);
+}
+
+.clickup-body-small {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--clickup-gray-700);
+}
+
+/* Buttons - ClickUp Exact Style */
+.clickup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  border: none;
+  border-radius: var(--clickup-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  padding: 16px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.clickup-btn-primary {
+  background: var(--clickup-purple);
+  color: white;
+}
+
+.clickup-btn-primary:hover {
+  background: var(--clickup-purple-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--clickup-shadow-lg);
+}
+
+.clickup-btn-secondary {
+  background: var(--clickup-gray-100);
+  color: var(--clickup-black);
+  border: 1px solid var(--clickup-gray-300);
+}
+
+.clickup-btn-secondary:hover {
+  background: var(--clickup-gray-200);
+  border-color: var(--clickup-gray-400);
+}
+
+.clickup-btn-ghost {
+  background: transparent;
+  color: var(--clickup-gray-800);
+}
+
+.clickup-btn-ghost:hover {
+  background: var(--clickup-gray-100);
+}
+
+/* Feature Pills - ClickUp Style */
+.clickup-feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--clickup-gray-100);
+  border-radius: var(--clickup-radius-full);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--clickup-gray-800);
+  transition: all 0.2s ease;
+}
+
+.clickup-feature-pill:hover {
+  background: var(--clickup-gray-200);
+  transform: translateY(-1px);
+}
+
+.clickup-feature-pill img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Cards - ClickUp Style */
+.clickup-feature-card {
+  background: white;
+  border: 1px solid var(--clickup-gray-300);
+  border-radius: var(--clickup-radius-lg);
+  padding: 32px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.clickup-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--clickup-shadow-xl);
+  border-color: var(--clickup-purple);
+}
+
+/* Navigation - ClickUp Style */
+.clickup-nav {
+  background: white;
+  border-bottom: 1px solid var(--clickup-gray-300);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.clickup-nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clickup-nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--clickup-black);
+  text-decoration: none;
+}
+
+.clickup-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.clickup-nav-link {
+  color: var(--clickup-gray-800);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.clickup-nav-link:hover {
+  color: var(--clickup-purple);
+}
+
+/* Hero Section - ClickUp Style */
+.clickup-hero {
+  padding: 120px 24px 80px;
+  text-align: center;
+  background: var(--clickup-gray-100);
+  background-image: radial-gradient(circle at 20% 80%, rgba(123, 104, 238, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255, 0, 191, 0.05) 0%, transparent 50%);
+}
+
+.clickup-hero-title {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, var(--clickup-black) 0%, var(--clickup-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.clickup-hero-subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--clickup-gray-700);
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Feature Grid - ClickUp Style */
+.clickup-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto 48px;
+}
+
+/* Sections */
+.clickup-section {
+  padding: 80px 24px;
+}
+
+.clickup-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Trust Logos */
+.clickup-trust-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  opacity: 0.4;
+  filter: grayscale(100%);
+  margin-top: 48px;
+}
+
+.clickup-trust-logo {
+  height: 32px;
+  width: auto;
+}
+
+/* Star Rating */
+.clickup-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--clickup-gray-600);
+}
+
+.clickup-star {
+  width: 16px;
+  height: 16px;
+  fill: #fbbf24;
+}
+
+/* Animations */
+@keyframes clickup-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes clickup-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.clickup-animate-float {
+  animation: clickup-float 3s ease-in-out infinite;
+}
+
+.clickup-animate-fade-in {
+  animation: clickup-fade-in 0.6s ease-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .clickup-hero-title {
+    font-size: 48px;
+  }
+  
+  .clickup-hero-subtitle {
+    font-size: 20px;
+  }
+  
+  .clickup-h1 {
+    font-size: 40px;
+  }
+  
+  .clickup-h2 {
+    font-size: 32px;
+  }
+  
+  .clickup-feature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+  }
+  
+  .clickup-trust-logos {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
