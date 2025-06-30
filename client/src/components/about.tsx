@@ -26,18 +26,18 @@ function AnimatedStat({ value, label, icon: Icon }: AnimatedStatProps) {
 
 export default function About() {
   return (
-    <section className="clickup-section bg-gray-50">
+    <section id="about" className="clickup-section bg-gray-50">
       <div className="clickup-container">
         <div className="text-center mb-16">
           <h2 className="clickup-heading-2 text-gray-900 mb-6">
-            ReactorIX Command Center
+            ReactorIX <span className="clickup-gradient-text">Command Center</span>
           </h2>
           <p className="clickup-subtitle max-w-3xl mx-auto">
             We obliterate limitations. Nuclear precision. Total supremacy.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <AnimatedStat
             value="99.9%"
             label="Security Coverage"
@@ -60,16 +60,19 @@ export default function About() {
           />
         </div>
         
-        {/* Performance Badges - ClickUp style */}
-        <div className="flex flex-wrap justify-center gap-3 mt-12">
-          <div className="clickup-pill">
-            <span className="font-bold text-primary">Zero</span> Downtime
+        {/* Performance Badges - ClickUp style with icons */}
+        <div className="flex flex-wrap justify-center gap-4 mt-16">
+          <div className="clickup-pill clickup-pill-large">
+            <Shield className="clickup-pill-icon text-primary" />
+            <span><span className="font-bold text-primary">Zero</span> Downtime</span>
           </div>
-          <div className="clickup-pill">
-            <span className="font-bold text-primary">10x</span> Efficiency
+          <div className="clickup-pill clickup-pill-large">
+            <Zap className="clickup-pill-icon text-primary" />
+            <span><span className="font-bold text-primary">10x</span> Efficiency</span>
           </div>
-          <div className="clickup-pill">
-            <span className="font-bold text-primary">99.9%</span> Uptime
+          <div className="clickup-pill clickup-pill-large">
+            <Target className="clickup-pill-icon text-primary" />
+            <span><span className="font-bold text-primary">99.9%</span> Uptime</span>
           </div>
         </div>
       </div>
