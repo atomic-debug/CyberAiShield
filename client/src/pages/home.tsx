@@ -8,7 +8,10 @@ import { useUserBehavior } from '@/hooks/use-user-behavior';
 const Header = lazy(() => import('@/components/header'));
 const Hero = lazy(() => import('@/components/hero-new'));
 const About = lazy(() => import('@/components/about-new'));
+const ServicesDetailed = lazy(() => import('@/components/services-detailed'));
+const CompanyCredentials = lazy(() => import('@/components/company-credentials'));
 const ThreatProtection = lazy(() => import('@/components/threat-protection'));
+const TestimonialsSection = lazy(() => import('@/components/testimonials-section'));
 const Contact = lazy(() => import('@/components/contact-new'));
 const Footer = lazy(() => import('@/components/footer'));
 const AIChat = lazy(() => import('@/components/ai-chat'));
@@ -209,8 +212,26 @@ export default function Home() {
       </Suspense>
       
       <Suspense fallback={<LoadingFallback className="h-96" />}>
+        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Services unavailable</div>}>
+          <ServicesDetailed />
+        </ErrorBoundary>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback className="h-96" />}>
+        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Company info unavailable</div>}>
+          <CompanyCredentials />
+        </ErrorBoundary>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback className="h-96" />}>
         <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Threat Protection unavailable</div>}>
           <ThreatProtection />
+        </ErrorBoundary>
+      </Suspense>
+      
+      <Suspense fallback={<LoadingFallback className="h-96" />}>
+        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Testimonials unavailable</div>}>
+          <TestimonialsSection />
         </ErrorBoundary>
       </Suspense>
       
