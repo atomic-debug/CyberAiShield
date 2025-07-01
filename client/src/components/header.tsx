@@ -44,7 +44,7 @@ export default function Header() {
   };
 
   const navItems = [
-    { name: 'Blog', icon: Shield, action: () => scrollToSection('about') },
+    { name: 'About', icon: Shield, action: () => scrollToSection('about') },
     { name: 'Services', icon: Building, action: () => scrollToSection('services') },
     { name: 'Contact', icon: Phone, action: () => scrollToSection('contact') },
   ];
