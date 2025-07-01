@@ -7,6 +7,7 @@ import {
   tutorialSteps,
   type User, 
   type InsertUser, 
+  type RegisterUser,
   type InsertConsultationRequest, 
   type ConsultationRequest,
   type ChatSession,
@@ -20,11 +21,17 @@ import {
 } from "@shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
+import bcrypt from "bcryptjs";
 
 export interface IStorage {
+  // User authentication methods
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
+  registerUser(userData: RegisterUser): Promise<User>;
+  verifyPassword(username: string, password: string): Promise<User | null>;
+  
+  // Other methods
   createConsultationRequest(request: InsertConsultationRequest): Promise<ConsultationRequest>;
   getConsultationRequests(): Promise<ConsultationRequest[]>;
   createChatSession(session: InsertChatSession): Promise<ChatSession>;
@@ -59,6 +66,36 @@ export class DatabaseStorage implements IStorage {
       .insert(users)
       .values(insertUser)
       .returning();
+    return user;
+  }
+
+  async registerUser(userData: RegisterUser): Promise<User> {
+    // Hash the password before storing
+    const saltRounds = 12;
+    const hashedPassword = await bcrypt.hash(userData.password, saltRounds);
+    
+    const [user] = await db
+      .insert(users)
+      .values({
+        username: userData.username,
+        password: hashedPassword,
+        email: userData.email || null,
+      })
+      .returning();
+    return user;
+  }
+
+  async verifyPassword(username: string, password: string): Promise<User | null> {
+    const user = await this.getUserByUsername(username);
+    if (!user) {
+      return null;
+    }
+
+    const isValidPassword = await bcrypt.compare(password, user.password);
+    if (!isValidPassword) {
+      return null;
+    }
+
     return user;
   }
 

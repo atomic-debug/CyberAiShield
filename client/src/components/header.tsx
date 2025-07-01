@@ -1,12 +1,16 @@
 import { useState, useEffect, useCallback, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Home, Shield, Building, Phone, Menu, X, Zap, LogIn, Cpu, Target, Lock, GraduationCap } from 'lucide-react';
+import { Home, Shield, Building, Phone, Menu, X, Zap, LogIn, Cpu, Target, Lock, GraduationCap, User, LogOut } from 'lucide-react';
 import { useScrollDirection, useScrollPosition, useScrollProgress } from '@/hooks/use-scroll';
+import { useAuth } from '@/hooks/useAuth';
+import { useLocation } from 'wouter';
 
 const Header = memo(function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [, navigate] = useLocation();
+  const { user, isAuthenticated, logout } = useAuth();
   const scrollDirection = useScrollDirection();
   const scrollPosition = useScrollPosition();
   const scrollProgress = useScrollProgress();
@@ -30,12 +34,31 @@ const Header = memo(function Header() {
   };
 
   const handleLogin = () => {
-    console.log('Redirecting to secure login...');
+    navigate('/login');
+  };
+
+  const handleRegister = () => {
+    navigate('/register');
+  };
+
+  const handleDashboard = () => {
+    navigate('/dashboard');
+  };
+
+  const handleLogout = () => {
+    logout(undefined, {
+      onSuccess: () => {
+        navigate('/');
+      },
+    });
   };
 
   const handleStartOnboarding = () => {
-    // Navigate to onboarding page
-    window.location.href = '/onboarding';
+    if (isAuthenticated) {
+      navigate('/onboarding');
+    } else {
+      navigate('/register');
+    }
   };
 
   const navItems = [
@@ -96,19 +119,46 @@ const Header = memo(function Header() {
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center space-x-4">
-              <Button
-                variant="ghost"
-                onClick={handleLogin}
-                className="text-gray-700 hover:text-primary"
-              >
-                Log in
-              </Button>
-              <Button
-                onClick={() => scrollToSection('contact')}
-                className="clickup-button-primary"
-              >
-                Get started
-              </Button>
+              {isAuthenticated ? (
+                <>
+                  <div className="flex items-center text-sm text-gray-700 mr-2">
+                    <User className="h-4 w-4 mr-1" />
+                    {user?.username}
+                  </div>
+                  <Button
+                    variant="ghost"
+                    onClick={handleDashboard}
+                    className="text-gray-700 hover:text-primary"
+                  >
+                    Dashboard
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    onClick={handleLogout}
+                    className="text-gray-700 hover:text-primary"
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    variant="ghost"
+                    onClick={handleLogin}
+                    className="text-gray-700 hover:text-primary"
+                  >
+                    <LogIn className="h-4 w-4 mr-2" />
+                    Log in
+                  </Button>
+                  <Button
+                    onClick={handleRegister}
+                    className="clickup-button-primary"
+                  >
+                    Get started
+                  </Button>
+                </>
+              )}
             </div>
 
             {/* Mobile menu button */}
@@ -138,19 +188,45 @@ const Header = memo(function Header() {
                   </button>
                 ))}
                 <div className="border-t border-gray-100 pt-4 space-y-2">
-                  <Button 
-                    variant="ghost"
-                    onClick={handleLogin}
-                    className="w-full justify-center"
-                  >
-                    Log in
-                  </Button>
-                  <Button 
-                    onClick={() => scrollToSection('contact')}
-                    className="w-full clickup-button-primary"
-                  >
-                    Get started
-                  </Button>
+                  {isAuthenticated ? (
+                    <>
+                      <div className="text-center text-sm text-gray-700 mb-2">
+                        Welcome, {user?.username}
+                      </div>
+                      <Button 
+                        variant="ghost"
+                        onClick={handleDashboard}
+                        className="w-full justify-center"
+                      >
+                        Dashboard
+                      </Button>
+                      <Button 
+                        variant="ghost"
+                        onClick={handleLogout}
+                        className="w-full justify-center"
+                      >
+                        <LogOut className="h-4 w-4 mr-2" />
+                        Logout
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button 
+                        variant="ghost"
+                        onClick={handleLogin}
+                        className="w-full justify-center"
+                      >
+                        <LogIn className="h-4 w-4 mr-2" />
+                        Log in
+                      </Button>
+                      <Button 
+                        onClick={handleRegister}
+                        className="w-full clickup-button-primary"
+                      >
+                        Get started
+                      </Button>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
