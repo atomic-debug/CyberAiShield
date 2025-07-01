@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import type { ChatMessage } from "@shared/schema";
+import type { ChatMessage, InsertOnboardingProfile } from "@shared/schema";
 
 // the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -84,6 +84,58 @@ You provide practical, actionable advice tailored to IT professionals, MSPs, and
     } catch (error) {
       console.error("Sentiment Analysis Error:", error);
       return { rating: 3, confidence: 0.5 };
+    }
+  }
+
+  async generatePersonalizedOnboarding(profile: InsertOnboardingProfile): Promise<any> {
+    try {
+      const prompt = `Generate personalized onboarding content for a user with the following profile:
+      
+User Type: ${profile.userType}
+Company Size: ${profile.companySize || 'Not specified'}
+Industry: ${profile.industry || 'Not specified'}
+Primary Goals: ${profile.primaryGoals?.join(', ') || 'Not specified'}
+Experience Level: ${profile.experienceLevel}
+
+Create personalized recommendations, custom tutorial paths, and relevant content suggestions. 
+Respond with JSON in this format:
+{
+  "welcomeMessage": "Personalized welcome message",
+  "recommendedTutorials": ["tutorial1", "tutorial2", "tutorial3"],
+  "customTips": ["tip1", "tip2", "tip3"],
+  "relevantFeatures": ["feature1", "feature2"],
+  "estimatedCompletionTime": "X minutes",
+  "personalizedGoals": ["goal1", "goal2"]
+}`;
+
+      const response = await openai.chat.completions.create({
+        model: "gpt-4o",
+        messages: [
+          {
+            role: "system",
+            content: "You are an expert onboarding consultant for ReactorIX, specializing in cybersecurity and IT automation solutions. Create highly personalized onboarding experiences based on user profiles.",
+          },
+          {
+            role: "user",
+            content: prompt,
+          },
+        ],
+        response_format: { type: "json_object" },
+      });
+
+      const result = JSON.parse(response.choices[0].message.content || "{}");
+      return result;
+    } catch (error) {
+      console.error("Personalized Onboarding Generation Error:", error);
+      // Return fallback personalized content
+      return {
+        welcomeMessage: `Welcome to ReactorIX! Let's get you started with ${profile.userType} solutions.`,
+        recommendedTutorials: ["getting-started", "security-basics", "automation-intro"],
+        customTips: ["Start with the basics", "Focus on your primary goals", "Take your time to learn"],
+        relevantFeatures: ["Security Dashboard", "Automation Tools"],
+        estimatedCompletionTime: "15 minutes",
+        personalizedGoals: ["Enhanced Security", "Improved Efficiency"]
+      };
     }
   }
 }

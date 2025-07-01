@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertConsultationRequestSchema, insertChatSessionSchema, insertChatMessageSchema } from "@shared/schema";
+import { insertConsultationRequestSchema, insertChatSessionSchema, insertChatMessageSchema, insertOnboardingProfileSchema, insertTutorialStepSchema } from "@shared/schema";
 import { z } from "zod";
 import { aiService } from "./ai-service";
 import { randomUUID } from "crypto";
@@ -145,6 +145,126 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ 
         success: false, 
         message: "Failed to fetch chat history" 
+      });
+    }
+  });
+
+  // Create onboarding profile
+  app.post("/api/onboarding/profile", async (req, res) => {
+    try {
+      const sessionId = randomUUID();
+      const profileData = { ...req.body, sessionId };
+      const validatedData = insertOnboardingProfileSchema.parse(profileData);
+      
+      // Generate personalized content using AI
+      const personalizedContent = await aiService.generatePersonalizedOnboarding(validatedData);
+      
+      const profile = await storage.createOnboardingProfile({
+        ...validatedData,
+        personalizedContent: JSON.stringify(personalizedContent)
+      });
+      
+      res.json({ 
+        success: true, 
+        profile,
+        sessionId 
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ 
+          success: false, 
+          message: "Invalid profile data", 
+          errors: error.errors 
+        });
+      } else {
+        console.error("Create onboarding profile error:", error);
+        res.status(500).json({ 
+          success: false, 
+          message: "Failed to create onboarding profile" 
+        });
+      }
+    }
+  });
+
+  // Get onboarding profile
+  app.get("/api/onboarding/profile/:sessionId", async (req, res) => {
+    try {
+      const { sessionId } = req.params;
+      const profile = await storage.getOnboardingProfile(sessionId);
+      
+      if (!profile) {
+        return res.status(404).json({ 
+          success: false, 
+          message: "Onboarding profile not found" 
+        });
+      }
+      
+      res.json({ success: true, profile });
+    } catch (error) {
+      console.error("Get onboarding profile error:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch onboarding profile" 
+      });
+    }
+  });
+
+  // Update onboarding progress
+  app.patch("/api/onboarding/progress/:sessionId", async (req, res) => {
+    try {
+      const { sessionId } = req.params;
+      const { currentStep, completedSteps, isCompleted } = req.body;
+      
+      const updates: any = {};
+      if (currentStep !== undefined) updates.currentStep = currentStep;
+      if (completedSteps !== undefined) updates.completedSteps = completedSteps;
+      if (isCompleted !== undefined) updates.isCompleted = isCompleted;
+      
+      const profile = await storage.updateOnboardingProfile(sessionId, updates);
+      res.json({ success: true, profile });
+    } catch (error) {
+      console.error("Update onboarding progress error:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to update onboarding progress" 
+      });
+    }
+  });
+
+  // Get tutorial steps
+  app.get("/api/tutorial/steps", async (req, res) => {
+    try {
+      const { userType } = req.query;
+      const steps = await storage.getTutorialSteps(userType as string);
+      res.json({ success: true, steps });
+    } catch (error) {
+      console.error("Get tutorial steps error:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch tutorial steps" 
+      });
+    }
+  });
+
+  // Get specific tutorial step
+  app.get("/api/tutorial/step/:stepKey", async (req, res) => {
+    try {
+      const { stepKey } = req.params;
+      const step = await storage.getTutorialStep(stepKey);
+      
+      if (!step) {
+        return res.status(404).json({ 
+          success: false, 
+          message: "Tutorial step not found" 
+        });
+      }
+      
+      res.json({ success: true, step });
+    } catch (error) {
+      console.error("Get tutorial step error:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch tutorial step" 
       });
     }
   });

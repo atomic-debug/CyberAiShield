@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, memo } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, Shield, Zap, Target, FileCheck, Lock, Cpu, Server } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Zap, Target, FileCheck, Lock, Cpu, Server, GraduationCap } from 'lucide-react';
 import { useParallax } from '@/hooks/use-scroll';
 
 const Hero = memo(function Hero() {
@@ -66,18 +66,19 @@ const Hero = memo(function Hero() {
           <Button
             size="lg"
             className="clickup-button-primary clickup-gradient-bg group"
-            onClick={() => scrollToSection('contact')}
+            onClick={() => window.location.href = '/onboarding'}
           >
-            Get Started Free
-            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            <GraduationCap className="w-5 h-5 mr-2" />
+            Start Personal Tutorial
           </Button>
           <Button
             size="lg"
             variant="outline"
             className="clickup-button-secondary"
-            onClick={() => scrollToSection('services')}
+            onClick={() => scrollToSection('contact')}
           >
-            View Demo
+            Deploy Now
+            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
 
