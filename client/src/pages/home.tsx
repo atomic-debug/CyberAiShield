@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useDynamicBackground } from '@/hooks/use-dynamic-background';
 
 // Lazy load components for better performance
-const Header = lazy(() => import('@/components/header'));
+const Header = lazy(() => import('@/components/header-clickup'));
 const Hero = lazy(() => import('@/components/hero-new'));
 const About = lazy(() => import('@/components/about-new'));
 const ThreatProtection = lazy(() => import('@/components/threat-protection'));
