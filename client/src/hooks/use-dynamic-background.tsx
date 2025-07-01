@@ -9,24 +9,24 @@ interface TimeOfDayColors {
 
 const timeColors: TimeOfDayColors = {
   morning: { 
-    from: 'rgb(139, 69, 19)',   // Warm brown
-    to: 'rgb(255, 140, 0)',     // Orange
-    accent: 'rgb(255, 215, 0)'  // Gold
+    from: 'rgb(255, 253, 250)', // Very subtle warm
+    to: 'rgb(254, 252, 251)',   // Almost white pink
+    accent: 'rgb(254, 249, 243)'  // Pale cream
   },
   afternoon: { 
-    from: 'rgb(30, 144, 255)',  // Dodger blue
-    to: 'rgb(135, 206, 250)',   // Light sky blue
-    accent: 'rgb(173, 216, 230)' // Light blue
+    from: 'rgb(250, 251, 254)', // Very subtle blue
+    to: 'rgb(249, 250, 254)',   // Almost white lavender
+    accent: 'rgb(248, 248, 253)'  // Pale blue
   },
   evening: { 
-    from: 'rgb(75, 0, 130)',    // Indigo
-    to: 'rgb(138, 43, 226)',    // Blue violet
-    accent: 'rgb(147, 112, 219)' // Medium purple
+    from: 'rgb(254, 251, 252)', // Very subtle pink
+    to: 'rgb(253, 251, 254)',   // Almost white purple
+    accent: 'rgb(252, 250, 254)'  // Pale purple
   },
   night: { 
-    from: 'rgb(25, 25, 112)',   // Midnight blue
-    to: 'rgb(72, 61, 139)',     // Dark slate blue
-    accent: 'rgb(106, 90, 205)' // Slate blue
+    from: 'rgb(248, 248, 252)',  // Very subtle blue
+    to: 'rgb(249, 248, 252)',    // Almost white purple
+    accent: 'rgb(250, 248, 254)'  // Pale lavender
   }
 };
 
@@ -36,7 +36,6 @@ export function useDynamicBackground() {
   const [isInteracting, setIsInteracting] = useState(false);
   const [colorShift, setColorShift] = useState({ hue: 0, saturation: 0, lightness: 0 });
   const [manualTimeOverride, setManualTimeOverride] = useState<keyof TimeOfDayColors | null>(null);
-  const [animationCycle, setAnimationCycle] = useState(0);
 
   // Determine time of day
   const getTimeOfDay = useCallback(() => {
@@ -61,15 +60,6 @@ export function useDynamicBackground() {
     return () => clearInterval(interval);
   }, [getTimeOfDay]);
 
-  // Add automatic color animation cycle
-  useEffect(() => {
-    const animationInterval = setInterval(() => {
-      setAnimationCycle(prev => (prev + 1) % 360);
-    }, 100); // Update every 100ms for smooth animation
-
-    return () => clearInterval(animationInterval);
-  }, []);
-
   // Handle mouse movement for interactive color shifts
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -78,19 +68,15 @@ export function useDynamicBackground() {
       
       setMousePosition({ x, y });
       
-      // Calculate color shift based on mouse position and animation cycle
-      const mouseHueShift = (x - 0.5) * 60; // -30 to +30 degrees
-      const mouseSaturationShift = (y - 0.5) * 30; // -15% to +15%
-      const mouseLightnessShift = Math.sqrt(Math.pow(x - 0.5, 2) + Math.pow(y - 0.5, 2)) * 20; // 0% to 20%
-      
-      // Add automatic animation cycle
-      const animationHueShift = Math.sin(animationCycle * Math.PI / 180) * 20;
-      const animationSaturationShift = Math.cos(animationCycle * Math.PI / 180) * 10;
+      // Calculate color shift based on mouse position
+      const hueShift = (x - 0.5) * 20; // -10 to +10 degrees
+      const saturationShift = (y - 0.5) * 10; // -5% to +5%
+      const lightnessShift = Math.sqrt(Math.pow(x - 0.5, 2) + Math.pow(y - 0.5, 2)) * 5; // 0% to 5%
       
       setColorShift({
-        hue: mouseHueShift + animationHueShift,
-        saturation: mouseSaturationShift + animationSaturationShift,
-        lightness: mouseLightnessShift
+        hue: hueShift,
+        saturation: saturationShift,
+        lightness: lightnessShift
       });
     };
 
@@ -106,7 +92,7 @@ export function useDynamicBackground() {
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [animationCycle]);
+  }, []);
 
   // Apply color shifts to base colors
   const applyColorShift = useCallback((color: string) => {

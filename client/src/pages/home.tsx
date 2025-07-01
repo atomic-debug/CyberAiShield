@@ -2,20 +2,15 @@ import { useState, useEffect, useCallback, useMemo, lazy, Suspense } from 'react
 import { ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useDynamicBackground } from '@/hooks/use-dynamic-background';
-import { useUserBehavior } from '@/hooks/use-user-behavior';
 
 // Lazy load components for better performance
 const Header = lazy(() => import('@/components/header'));
-const Hero = lazy(() => import('@/components/hero-new'));
-const About = lazy(() => import('@/components/about-new'));
-const ServicesDetailed = lazy(() => import('@/components/services-detailed'));
-const CompanyCredentials = lazy(() => import('@/components/company-credentials'));
-const ThreatProtection = lazy(() => import('@/components/threat-protection'));
-const TestimonialsSection = lazy(() => import('@/components/testimonials-section'));
-const Contact = lazy(() => import('@/components/contact-new'));
+const Hero = lazy(() => import('@/components/hero'));
+const About = lazy(() => import('@/components/about'));
+const Services = lazy(() => import('@/components/services-new'));
+const Contact = lazy(() => import('@/components/contact'));
 const Footer = lazy(() => import('@/components/footer'));
 const AIChat = lazy(() => import('@/components/ai-chat'));
-
 const ErrorBoundary = lazy(() => import('@/components/error-boundary'));
 
 // Loading fallback component
@@ -30,9 +25,7 @@ export default function Home() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isHoveringInteractive, setIsHoveringInteractive] = useState(false);
   const [ripples, setRipples] = useState<Array<{ x: number; y: number; id: number }>>([]);
-  const [currentSection, setCurrentSection] = useState('hero');
   const { colors, mousePosition } = useDynamicBackground();
-  const { behavior, engagementScore, userIntent, isHighlyEngaged } = useUserBehavior();
   
   useEffect(() => {
     let ticking = false;
@@ -41,19 +34,6 @@ export default function Home() {
       if (!ticking) {
         requestAnimationFrame(() => {
           setShowScrollTop(window.scrollY > 400);
-          
-          // Track current section
-          const sections = ['hero', 'about', 'contact'];
-          sections.forEach(sectionId => {
-            const element = document.getElementById(sectionId);
-            if (element) {
-              const rect = element.getBoundingClientRect();
-              if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                setCurrentSection(sectionId);
-              }
-            }
-          });
-          
           ticking = false;
         });
         ticking = true;
@@ -133,10 +113,16 @@ export default function Home() {
       style={backgroundStyle}
       onClick={handlePageClick}
     >
+      {/* Skip to main content link for accessibility */}
+      <a href="#main-content" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:rounded focus:shadow-lg">
+        Skip to main content
+      </a>
+      
       {/* Dynamic Background Overlay - Optimized */}
       <div 
         className="fixed inset-0 pointer-events-none transition-opacity duration-1000"
         style={overlayStyle}
+        aria-hidden="true"
       />
       
       {/* Interactive Particles - Optimized and Reduced */}
@@ -192,67 +178,51 @@ export default function Home() {
         />
       </div>
       
-      {/* Lazy-loaded components with error boundaries */}
+      {/* Navigation Header */}
       <Suspense fallback={<LoadingFallback className="h-20" />}>
-        <ErrorBoundary fallback={<div className="h-20 bg-gray-100 flex items-center justify-center">Header unavailable</div>}>
+        <ErrorBoundary fallback={<div className="h-20 bg-gray-100 flex items-center justify-center" role="banner">Header unavailable</div>}>
           <Header />
         </ErrorBoundary>
       </Suspense>
       
-      <Suspense fallback={<LoadingFallback className="h-screen" />}>
-        <ErrorBoundary fallback={<div className="h-screen bg-gray-100 flex items-center justify-center">Hero unavailable</div>}>
-          <Hero />
-        </ErrorBoundary>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingFallback className="h-96" />}>
-        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">About unavailable</div>}>
-          <About />
-        </ErrorBoundary>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingFallback className="h-96" />}>
-        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Services unavailable</div>}>
-          <ServicesDetailed />
-        </ErrorBoundary>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingFallback className="h-96" />}>
-        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Company info unavailable</div>}>
-          <CompanyCredentials />
-        </ErrorBoundary>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingFallback className="h-96" />}>
-        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Threat Protection unavailable</div>}>
-          <ThreatProtection />
-        </ErrorBoundary>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingFallback className="h-96" />}>
-        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Testimonials unavailable</div>}>
-          <TestimonialsSection />
-        </ErrorBoundary>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingFallback className="h-96" />}>
-        <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Contact unavailable</div>}>
-          <Contact />
-        </ErrorBoundary>
-      </Suspense>
-      
-      <Suspense fallback={<LoadingFallback className="h-32" />}>
-        <ErrorBoundary fallback={<div className="h-32 bg-gray-100 flex items-center justify-center">Footer unavailable</div>}>
-          <Footer />
-        </ErrorBoundary>
-      </Suspense>
+      {/* Main Content Area */}
+      <main id="main-content" role="main" className="relative z-10">
+        <Suspense fallback={<LoadingFallback className="h-screen" />}>
+          <ErrorBoundary fallback={<div className="h-screen bg-gray-100 flex items-center justify-center">Hero section unavailable</div>}>
+            <Hero />
+          </ErrorBoundary>
+        </Suspense>
+        
+        <Suspense fallback={<LoadingFallback className="h-96" />}>
+          <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">About section unavailable</div>}>
+            <About />
+          </ErrorBoundary>
+        </Suspense>
+        
+        <Suspense fallback={<LoadingFallback className="h-96" />}>
+          <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Services section unavailable</div>}>
+            <Services />
+          </ErrorBoundary>
+        </Suspense>
+        
+        <Suspense fallback={<LoadingFallback className="h-96" />}>
+          <ErrorBoundary fallback={<div className="h-96 bg-gray-100 flex items-center justify-center">Contact unavailable</div>}>
+            <Contact />
+          </ErrorBoundary>
+        </Suspense>
+        
+        <Suspense fallback={<LoadingFallback className="h-32" />}>
+          <ErrorBoundary fallback={<div className="h-32 bg-gray-100 flex items-center justify-center">Footer unavailable</div>}>
+            <Footer />
+          </ErrorBoundary>
+        </Suspense>
+      </main>
       
       <Suspense fallback={<LoadingFallback className="h-16" />}>
         <ErrorBoundary fallback={<div className="fixed bottom-6 right-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">AI unavailable</div>}>
           <AIChat />
         </ErrorBoundary>
       </Suspense>
-      
       
       {/* Optimized Scroll to Top Button */}
       {showScrollTop && (

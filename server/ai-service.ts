@@ -21,45 +21,6 @@ export class AIService {
 
 You provide practical, actionable advice tailored to IT professionals, MSPs, and business leaders. Keep responses professional, informative, and focused on delivering reactor solutions that scale.`;
 
-  async generateContextualSuggestions(userBehavior: any, context: string): Promise<string[]> {
-    try {
-      const response = await openai.chat.completions.create({
-        model: "gpt-4o", // the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
-        messages: [
-          {
-            role: "system",
-            content: `You are an AI that generates contextual suggestions for ReactorIX cybersecurity platform. 
-            Based on user behavior data and current context, suggest 3 relevant actions.
-            
-            Context: ${context}
-            User Behavior: ${JSON.stringify(userBehavior)}
-            
-            Generate suggestions that are:
-            - Actionable and specific
-            - Relevant to cybersecurity/IT automation
-            - Tailored to the user's current engagement level
-            - Brief (under 6 words each)
-            
-            Return as JSON object with 'suggestions' array of strings.`
-          }
-        ],
-        response_format: { type: "json_object" },
-        temperature: 0.7,
-        max_tokens: 200
-      });
-
-      const result = JSON.parse(response.choices[0].message.content || '{"suggestions": []}');
-      return result.suggestions || [];
-    } catch (error) {
-      console.error('Failed to generate contextual suggestions:', error);
-      return [
-        'Get Security Assessment',
-        'Schedule Consultation', 
-        'View Threat Protection'
-      ];
-    }
-  }
-
   async generateResponse(messages: ChatMessage[]): Promise<AIChatResponse> {
     try {
       // Convert our chat messages to OpenAI format
