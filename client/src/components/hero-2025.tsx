@@ -34,7 +34,7 @@ const Hero2025 = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="clickup-hero relative overflow-hidden">
       {/* Background with galaxy gradient */}
       <div className="absolute inset-0 gradient-galaxy opacity-90" />
       
@@ -45,7 +45,7 @@ const Hero2025 = () => {
         <div className="absolute top-1/2 left-1/4 w-64 h-64 rounded-full bg-white/5 blur-2xl anti-design-element" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="clickup-container relative z-10 text-center">
         {/* Big block with galaxy contrast - 2025 trend */}
         <div className={`trend-2025-block-galaxy micro-interaction ${isVisible ? 'scroll-reveal visible' : 'scroll-reveal'}`}>
           

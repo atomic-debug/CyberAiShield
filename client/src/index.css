@@ -663,53 +663,357 @@ body {
   --radius: 0.5rem;
 }
 
-/* ClickUp-style component classes for consistency */
+/* ClickUp Exact Design System - 8-Point Grid */
+:root {
+  /* ClickUp 8-Point Grid System */
+  --cu-space-xs: 4px;    /* Tight spacing */
+  --cu-space-sm: 8px;    /* Base unit */
+  --cu-space-md: 16px;   /* Medium spacing */
+  --cu-space-lg: 24px;   /* Large spacing */
+  --cu-space-xl: 32px;   /* Extra large */
+  --cu-space-2xl: 48px;  /* Section breaks */
+  --cu-space-3xl: 64px;  /* Major divisions */
+  
+  /* ClickUp Container System */
+  --cu-container-padding-mobile: 16px;
+  --cu-container-padding-tablet: 24px;
+  --cu-container-padding-desktop: 32px;
+  --cu-container-max-width: 1440px;
+  
+  /* ClickUp Typography Scale */
+  --cu-text-xs: 12px;
+  --cu-text-sm: 14px;
+  --cu-text-base: 16px;
+  --cu-text-lg: 18px;
+  --cu-text-xl: 20px;
+  --cu-text-2xl: 24px;
+  --cu-text-3xl: 30px;
+  --cu-text-4xl: 36px;
+  --cu-text-5xl: 48px;
+  --cu-text-6xl: 60px;
+  
+  /* ClickUp Border Radius */
+  --cu-radius-sm: 6px;
+  --cu-radius-md: 8px;
+  --cu-radius-lg: 12px;
+  --cu-radius-xl: 16px;
+  --cu-radius-2xl: 20px;
+  
+  /* ClickUp Shadows */
+  --cu-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --cu-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --cu-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --cu-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ClickUp-style component classes - Exact Implementation */
 @layer components {
+  /* Container System - ClickUp Exact */
   .clickup-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    width: 100%;
+    max-width: var(--cu-container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--cu-container-padding-mobile);
+    padding-right: var(--cu-container-padding-mobile);
   }
   
+  @media (min-width: 768px) {
+    .clickup-container {
+      padding-left: var(--cu-container-padding-tablet);
+      padding-right: var(--cu-container-padding-tablet);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .clickup-container {
+      padding-left: var(--cu-container-padding-desktop);
+      padding-right: var(--cu-container-padding-desktop);
+    }
+  }
+  
+  /* Section Spacing - ClickUp Pattern */
   .clickup-section {
-    @apply py-16 md:py-20;
+    padding-top: var(--cu-space-3xl);
+    padding-bottom: var(--cu-space-3xl);
+  }
+  
+  @media (min-width: 768px) {
+    .clickup-section {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .clickup-section {
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+  }
+  
+  /* Typography - ClickUp Exact Scale */
+  .clickup-heading-1 {
+    font-size: var(--cu-text-4xl);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: #1a1a1a;
+  }
+  
+  @media (min-width: 768px) {
+    .clickup-heading-1 {
+      font-size: var(--cu-text-5xl);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .clickup-heading-1 {
+      font-size: var(--cu-text-6xl);
+    }
   }
   
   .clickup-heading-2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-black leading-tight;
+    font-size: var(--cu-text-3xl);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: #1a1a1a;
+  }
+  
+  @media (min-width: 768px) {
+    .clickup-heading-2 {
+      font-size: var(--cu-text-4xl);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .clickup-heading-2 {
+      font-size: var(--cu-text-5xl);
+    }
+  }
+  
+  .clickup-heading-3 {
+    font-size: var(--cu-text-xl);
+    font-weight: 600;
+    line-height: 1.3;
+    color: #1a1a1a;
+  }
+  
+  @media (min-width: 768px) {
+    .clickup-heading-3 {
+      font-size: var(--cu-text-2xl);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .clickup-heading-3 {
+      font-size: var(--cu-text-3xl);
+    }
   }
   
   .clickup-subtitle {
-    @apply text-lg md:text-xl text-gray-600 leading-relaxed;
+    font-size: var(--cu-text-base);
+    line-height: 1.6;
+    color: #6b7280;
   }
   
+  @media (min-width: 768px) {
+    .clickup-subtitle {
+      font-size: var(--cu-text-lg);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .clickup-subtitle {
+      font-size: var(--cu-text-xl);
+    }
+  }
+  
+  /* Card System - ClickUp Style */
+  .clickup-card {
+    background-color: #ffffff;
+    border-radius: var(--cu-radius-xl);
+    padding: var(--cu-space-lg);
+    box-shadow: var(--cu-shadow-sm);
+    border: 1px solid #e5e7eb;
+  }
+  
+  @media (min-width: 768px) {
+    .clickup-card {
+      padding: var(--cu-space-xl);
+    }
+  }
+  
+  .clickup-card-hover {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .clickup-card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--cu-shadow-lg);
+  }
+  
+  /* Button System - ClickUp Primary */
+  .clickup-button-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--cu-space-sm);
+    padding: 12px var(--cu-space-lg);
+    background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: var(--cu-text-base);
+    border-radius: var(--cu-radius-lg);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+  }
+  
+  .clickup-button-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--cu-shadow-lg);
+  }
+  
+  .clickup-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--cu-space-sm);
+    padding: 12px var(--cu-space-lg);
+    background: #ffffff;
+    color: #374151;
+    font-weight: 600;
+    font-size: var(--cu-text-base);
+    border-radius: var(--cu-radius-lg);
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+  }
+  
+  .clickup-button-secondary:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+  }
+  
+  /* Grid System - ClickUp Pattern */
+  .clickup-grid {
+    display: grid;
+    gap: var(--cu-space-lg);
+  }
+  
+  @media (min-width: 768px) {
+    .clickup-grid {
+      gap: var(--cu-space-xl);
+    }
+  }
+  
+  .clickup-grid-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  @media (min-width: 768px) {
+    .clickup-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  .clickup-grid-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  @media (min-width: 768px) {
+    .clickup-grid-3 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .clickup-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  .clickup-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  @media (min-width: 768px) {
+    .clickup-grid-4 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .clickup-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  
+  /* Spacing Utilities - ClickUp 8-Point Grid */
+  .clickup-stack {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .clickup-stack-xs > * + * {
+    margin-top: var(--cu-space-xs);
+  }
+  
+  .clickup-stack-sm > * + * {
+    margin-top: var(--cu-space-sm);
+  }
+  
+  .clickup-stack-md > * + * {
+    margin-top: var(--cu-space-md);
+  }
+  
+  .clickup-stack-lg > * + * {
+    margin-top: var(--cu-space-lg);
+  }
+  
+  .clickup-stack-xl > * + * {
+    margin-top: var(--cu-space-xl);
+  }
+  
+  /* Gradient System */
   .clickup-gradient-bg {
     background: linear-gradient(135deg, hsl(var(--galaxy-purple-600)) 0%, hsl(var(--cosmic-blue)) 100%);
   }
   
   .clickup-gradient-text {
-    background: linear-gradient(135deg, hsl(var(--galaxy-purple-600)) 0%, hsl(var(--cosmic-violet)) 100%);
+    background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  .clickup-card {
-    @apply bg-white rounded-2xl p-6 shadow-sm border border-gray-100;
-  }
-  
-  .clickup-card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
-  }
-  
-  .clickup-button-primary {
-    @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold px-6 py-3 rounded-xl hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300;
-  }
-  
+  /* CTA Components */
   .clickup-cta {
-    @apply space-y-6;
+    text-align: center;
   }
   
   .clickup-cta-disclaimer {
-    @apply text-sm text-gray-500 mt-4;
+    font-size: var(--cu-text-sm);
+    color: #6b7280;
+    margin-top: var(--cu-space-md);
+  }
+  
+  /* Hero Section Specific */
+  .clickup-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  @media (min-width: 768px) {
+    .clickup-hero {
+      min-height: 80vh;
+    }
   }
 }
 

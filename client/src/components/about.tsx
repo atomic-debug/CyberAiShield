@@ -28,16 +28,18 @@ export default function About() {
   return (
     <section id="about" className="clickup-section bg-gray-50">
       <div className="clickup-container">
-        <div className="text-center mb-16">
-          <h2 className="clickup-heading-2 text-gray-900 mb-6">
-            ReactorIX <span className="clickup-gradient-text">Command Center</span>
-          </h2>
-          <p className="clickup-subtitle max-w-3xl mx-auto">
-            We obliterate limitations. Nuclear precision. Total supremacy.
-          </p>
+        <div className="clickup-stack-xl text-center">
+          <div className="clickup-stack-lg">
+            <h2 className="clickup-heading-2 text-gray-900">
+              ReactorIX <span className="clickup-gradient-text">Command Center</span>
+            </h2>
+            <p className="clickup-subtitle max-w-3xl mx-auto">
+              We obliterate limitations. Nuclear precision. Total supremacy.
+            </p>
+          </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="clickup-grid clickup-grid-4">
           <AnimatedStat
             value="99.9%"
             label="Security Coverage"

@@ -46,29 +46,31 @@ const Services2025 = () => {
   ];
 
   return (
-    <section className="py-20 galaxy-bg-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="clickup-section galaxy-bg-light">
+      <div className="clickup-container">
         
         {/* Section header with galaxy typography */}
-        <div className="text-center mb-16">
-          <Badge className="galaxy-border galaxy-text mb-4">
-            <Zap className="w-4 h-4 mr-2" />
-            Complete Galaxy Suite
-          </Badge>
-          
-          <h2 className="trend-2025-heading galaxy-text mb-6">
-            Built for You
-            <span className="block serif-sans-contrast">to Scale</span>
-          </h2>
-          
-          <p className="trend-2025-variable-text galaxy-text text-xl max-w-3xl mx-auto">
-            Three integrated pillars of digital transformation that work seamlessly together 
-            to deliver unprecedented operational supremacy across the cosmos.
-          </p>
+        <div className="clickup-stack-xl text-center">
+          <div className="clickup-stack-lg">
+            <Badge className="galaxy-border galaxy-text">
+              <Zap className="w-4 h-4 mr-2" />
+              Complete Galaxy Suite
+            </Badge>
+            
+            <h2 className="clickup-heading-2 galaxy-text">
+              Built for You
+              <span className="block serif-sans-contrast">to Scale</span>
+            </h2>
+            
+            <p className="clickup-subtitle galaxy-text max-w-3xl mx-auto">
+              Three integrated pillars of digital transformation that work seamlessly together 
+              to deliver unprecedented operational supremacy across the cosmos.
+            </p>
+          </div>
         </div>
 
         {/* Big blocks layout - 2025 trend */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="clickup-grid clickup-grid-3">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (

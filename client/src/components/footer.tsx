@@ -20,9 +20,9 @@ export default function Footer() {
   
   return (
     <footer className="bg-white border-t border-gray-100">
-      <div className="clickup-container py-16">
+      <div className="clickup-container clickup-section">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-6 clickup-grid mb-12">
           {/* Brand Section */}
           <div className="col-span-2">
             <div className="flex items-center mb-4">
