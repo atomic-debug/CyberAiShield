@@ -21,49 +21,49 @@ const Services2025 = () => {
   const services = [
     {
       icon: Shield,
-      title: "Cybersecurity Fortress",
-      description: "AI-powered threat detection and response that adapts in real-time to emerging security landscapes.",
+      title: "Galaxy Security Fortress",
+      description: "AI-powered threat detection and response that adapts in real-time to emerging security landscapes across infinite scale.",
       features: ["Zero-Day Protection", "Behavioral Analysis", "Quantum Encryption"],
       color: "trend-2025-block",
       stats: "99.9% Threat Prevention"
     },
     {
       icon: Bot,
-      title: "Automation Command Center", 
-      description: "Intelligent workflow automation that eliminates manual tasks and accelerates your operations.",
+      title: "Cosmic Automation Hub", 
+      description: "Intelligent workflow automation that eliminates manual tasks and accelerates your operations at light speed.",
       features: ["Smart Orchestration", "Predictive Scaling", "Self-Healing Systems"],
-      color: "trend-2025-block-warm",
+      color: "trend-2025-block-galaxy",
       stats: "85% Time Reduction"
     },
     {
       icon: Activity,
-      title: "Infrastructure Intelligence",
-      description: "Comprehensive monitoring and optimization that keeps your systems running at peak performance.",
+      title: "Stellar Infrastructure",
+      description: "Comprehensive monitoring and optimization that keeps your systems running at peak performance across the galaxy.",
       features: ["Real-time Analytics", "Capacity Planning", "Performance Optimization"],
-      color: "trend-2025-block-contrast",
+      color: "trend-2025-block-midnight",
       stats: "40% Cost Savings"
     }
   ];
 
   return (
-    <section className="py-20 warm-bg">
+    <section className="py-20 galaxy-bg-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section header with 2025 typography */}
+        {/* Section header with galaxy typography */}
         <div className="text-center mb-16">
-          <Badge className="warm-border warm-text mb-4">
+          <Badge className="galaxy-border galaxy-text mb-4">
             <Zap className="w-4 h-4 mr-2" />
-            Complete Solution Suite
+            Complete Galaxy Suite
           </Badge>
           
-          <h2 className="trend-2025-heading warm-text mb-6">
+          <h2 className="trend-2025-heading galaxy-text mb-6">
             Built for You
             <span className="block serif-sans-contrast">to Scale</span>
           </h2>
           
-          <p className="trend-2025-variable-text warm-text text-xl max-w-3xl mx-auto">
+          <p className="trend-2025-variable-text galaxy-text text-xl max-w-3xl mx-auto">
             Three integrated pillars of digital transformation that work seamlessly together 
-            to deliver unprecedented operational supremacy.
+            to deliver unprecedented operational supremacy across the cosmos.
           </p>
         </div>
 
@@ -127,14 +127,14 @@ const Services2025 = () => {
 
         {/* Enhanced CTA section */}
         <div className="mt-20">
-          <div className="trend-2025-block-contrast text-center">
+          <div className="trend-2025-block-midnight text-center">
             <h3 className="trend-2025-subheading text-white mb-6">
-              Ready for Atomic Dominance?
+              Ready for Galaxy Dominance?
             </h3>
             
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
               Join 10,000+ organizations that have transformed their operations 
-              with ReactorIX's enterprise-grade solutions.
+              with ReactorIX's galaxy-grade solutions spanning infinite scale.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -16,7 +16,7 @@ import ErrorBoundary from '@/components/error-boundary';
 const LoadingFallback = ({ className = '' }: { className?: string }) => (
   <div className={`flex items-center justify-center py-8 ${className}`}>
     <div className="sustainable-card">
-      <div className="animate-pulse w-8 h-8 rounded-full gradient-mocha mx-auto"></div>
+      <div className="animate-pulse w-8 h-8 rounded-full gradient-galaxy mx-auto"></div>
     </div>
   </div>
 );
@@ -76,10 +76,10 @@ export default function Home2025() {
 
   return (
     <div className="min-h-screen relative">
-      {/* Progress bar - 2025 trend */}
+      {/* Progress bar - galaxy theme */}
       <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-gray-200">
         <div 
-          className="h-full gradient-mocha transition-all duration-150 ease-out"
+          className="h-full gradient-galaxy transition-all duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
