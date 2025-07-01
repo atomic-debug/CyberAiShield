@@ -4,6 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom utilities for suggestion chips */
+.scale-102 {
+  transform: scale(1.02);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* Performance Optimizations */
 * {
   box-sizing: border-box;

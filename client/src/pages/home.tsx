@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useMemo, lazy, Suspense } from 'react
 import { ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useDynamicBackground } from '@/hooks/use-dynamic-background';
+import { useUserBehavior } from '@/hooks/use-user-behavior';
 
 // Lazy load components for better performance
 const Header = lazy(() => import('@/components/header'));
@@ -11,6 +12,7 @@ const ThreatProtection = lazy(() => import('@/components/threat-protection'));
 const Contact = lazy(() => import('@/components/contact-new'));
 const Footer = lazy(() => import('@/components/footer'));
 const AIChat = lazy(() => import('@/components/ai-chat'));
+const SuggestionChips = lazy(() => import('@/components/suggestion-chips'));
 const ErrorBoundary = lazy(() => import('@/components/error-boundary'));
 
 // Loading fallback component
@@ -25,7 +27,9 @@ export default function Home() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isHoveringInteractive, setIsHoveringInteractive] = useState(false);
   const [ripples, setRipples] = useState<Array<{ x: number; y: number; id: number }>>([]);
+  const [currentSection, setCurrentSection] = useState('hero');
   const { colors, mousePosition } = useDynamicBackground();
+  const { behavior, engagementScore, userIntent, isHighlyEngaged } = useUserBehavior();
   
   useEffect(() => {
     let ticking = false;
@@ -34,6 +38,19 @@ export default function Home() {
       if (!ticking) {
         requestAnimationFrame(() => {
           setShowScrollTop(window.scrollY > 400);
+          
+          // Track current section
+          const sections = ['hero', 'about', 'contact'];
+          sections.forEach(sectionId => {
+            const element = document.getElementById(sectionId);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                setCurrentSection(sectionId);
+              }
+            }
+          });
+          
           ticking = false;
         });
         ticking = true;
@@ -212,6 +229,16 @@ export default function Home() {
       <Suspense fallback={<LoadingFallback className="h-16" />}>
         <ErrorBoundary fallback={<div className="fixed bottom-6 right-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">AI unavailable</div>}>
           <AIChat />
+        </ErrorBoundary>
+      </Suspense>
+      
+      {/* AI-Powered Suggestion Chips */}
+      <Suspense fallback={null}>
+        <ErrorBoundary fallback={null}>
+          <SuggestionChips 
+            context={currentSection as 'hero' | 'about' | 'contact' | 'general'}
+            userBehavior={behavior}
+          />
         </ErrorBoundary>
       </Suspense>
       
