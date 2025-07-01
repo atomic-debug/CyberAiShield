@@ -18,6 +18,7 @@ export const users = pgTable("users", {
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
   email: text("email"),
+  role: text("role").notNull(), // 'client' or 'soc'
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
@@ -75,6 +76,7 @@ export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
   email: true,
+  role: true,
 });
 
 export const loginUserSchema = z.object({
@@ -86,6 +88,10 @@ export const registerUserSchema = insertUserSchema.extend({
   username: z.string().min(3, "Username must be at least 3 characters"),
   password: z.string().min(6, "Password must be at least 6 characters"),
   email: z.string().email("Invalid email address").optional(),
+  role: z.enum(["client", "soc"], {
+    required_error: "Please select a user type",
+    invalid_type_error: "User type must be either Client or SOC",
+  }),
 });
 
 export const insertConsultationRequestSchema = createInsertSchema(consultationRequests).pick({
