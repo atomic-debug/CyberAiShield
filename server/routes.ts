@@ -7,6 +7,18 @@ import { aiService } from "./ai-service";
 import { randomUUID } from "crypto";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // AI Contextual Suggestions
+  app.post('/api/suggestions', async (req, res) => {
+    try {
+      const { userBehavior, context } = req.body;
+      const suggestions = await aiService.generateContextualSuggestions(userBehavior, context);
+      res.json({ success: true, suggestions });
+    } catch (error) {
+      console.error('Error generating suggestions:', error);
+      res.status(500).json({ success: false, error: 'Failed to generate suggestions' });
+    }
+  });
+
   // Create consultation request
   app.post("/api/consultation", async (req, res) => {
     try {
