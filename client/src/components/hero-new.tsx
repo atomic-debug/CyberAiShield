@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useDynamicBackground } from '@/hooks/use-dynamic-background';
 
 export default function Hero() {
+  const { colors, mousePosition, isInteracting, timeOfDay } = useDynamicBackground();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -10,13 +13,18 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center">
-      {/* Hero Background Image */}
+      {/* Dynamic Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 transition-all duration-1000 ease-in-out"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="%23161b22"/><circle cx="400" cy="300" r="200" fill="%23321b47" opacity="0.3"/><circle cx="1200" cy="600" r="300" fill="%234c1d95" opacity="0.2"/><polygon points="600,200 800,400 600,600 400,400" fill="%236366f1" opacity="0.15"/></svg>')`
+          background: `linear-gradient(135deg, ${colors.from} 0%, ${colors.to} 50%, ${colors.accent} 100%)`,
+          transform: `translate(${mousePosition.x * 10 - 5}px, ${mousePosition.y * 10 - 5}px)`,
+          filter: isInteracting ? 'brightness(1.2) saturate(1.3)' : 'brightness(1) saturate(1)'
         }}
       />
+      
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-40" />
       
       {/* Company Logo */}
       <div className="absolute top-8 left-8 z-20">
@@ -36,28 +44,48 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Time of Day Indicator */}
+      <div className="absolute top-4 right-4 z-20">
+        <div className="bg-black bg-opacity-50 backdrop-blur-sm rounded-lg px-4 py-2">
+          <p className="text-white text-sm font-medium capitalize">
+            {timeOfDay} Mode
+          </p>
+          <div className="w-full h-1 bg-white bg-opacity-30 rounded-full mt-1">
+            <div 
+              className="h-full bg-white rounded-full transition-all duration-300"
+              style={{ width: `${(mousePosition.x * 100)}%` }}
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Main Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        <p className="text-xl md:text-2xl mb-4 text-purple-200">
+        <p className="text-xl md:text-2xl mb-4 text-gray-200 transition-all duration-300">
           Adaptive, Client-Focused Cybersecurity
         </p>
         
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight transition-all duration-300">
           Cut through the noise —<br />
           get cybersecurity that works.
         </h1>
         
-        <p className="text-lg md:text-xl mb-4 font-semibold">
+        <p className="text-lg md:text-xl mb-4 font-semibold transition-all duration-300">
           No bloat. No vendor agendas.
         </p>
         
-        <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed transition-all duration-300">
           Custom cybersecurity solutions tailored to your size, budget, and security maturity—delivering the right protection at the right time.
         </p>
 
         <button 
           onClick={() => scrollToSection('about')}
-          className="inline-flex items-center px-8 py-3 text-lg font-semibold text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+          className="inline-flex items-center px-8 py-3 text-lg font-semibold text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+          style={{
+            boxShadow: isInteracting 
+              ? `0 20px 40px rgba(147, 51, 234, 0.4)` 
+              : `0 10px 20px rgba(147, 51, 234, 0.2)`
+          }}
         >
           Learn More
         </button>
