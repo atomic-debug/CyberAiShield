@@ -5,6 +5,7 @@ import { Home, Shield, Building, Phone, Menu, X, Zap, LogIn, Cpu, Target, Lock, 
 import { useScrollDirection, useScrollPosition, useScrollProgress } from '@/hooks/use-scroll';
 import { useAuth } from '@/hooks/useAuth';
 import { useLocation } from 'wouter';
+import MobileNav from '@/components/mobile/mobile-nav';
 
 const Header = memo(function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -174,63 +175,8 @@ const Header = memo(function Header() {
             </div>
           </div>
 
-          {/* Mobile Navigation Menu */}
-          {isMenuOpen && (
-            <div className="md:hidden border-t border-gray-100 bg-white">
-              <div className="px-4 py-4 space-y-2">
-                {navItems.map((item, index) => (
-                  <button
-                    key={index}
-                    onClick={item.action}
-                    className="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition-colors"
-                  >
-                    {item.name}
-                  </button>
-                ))}
-                <div className="border-t border-gray-100 pt-4 space-y-2">
-                  {isAuthenticated ? (
-                    <>
-                      <div className="text-center text-sm text-gray-700 mb-2">
-                        Welcome, {user?.username}
-                      </div>
-                      <Button 
-                        variant="ghost"
-                        onClick={handleDashboard}
-                        className="w-full justify-center"
-                      >
-                        Dashboard
-                      </Button>
-                      <Button 
-                        variant="ghost"
-                        onClick={handleLogout}
-                        className="w-full justify-center"
-                      >
-                        <LogOut className="h-4 w-4 mr-2" />
-                        Logout
-                      </Button>
-                    </>
-                  ) : (
-                    <>
-                      <Button 
-                        variant="ghost"
-                        onClick={handleLogin}
-                        className="w-full justify-center"
-                      >
-                        <LogIn className="h-4 w-4 mr-2" />
-                        Log in
-                      </Button>
-                      <Button 
-                        onClick={handleRegister}
-                        className="w-full clickup-button-primary"
-                      >
-                        Get started
-                      </Button>
-                    </>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
+          {/* Enhanced Mobile Navigation */}
+          <MobileNav isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
         </div>
       </header>
     </>

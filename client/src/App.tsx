@@ -12,6 +12,7 @@ import ClientDashboard from "@/pages/client-dashboard";
 import SOCDashboard from "@/pages/soc-dashboard";
 import OnboardingPage from "@/pages/onboarding";
 import NotFound from "@/pages/not-found";
+import MobileLayout from "@/components/mobile/mobile-layout";
 
 function Router() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -55,8 +56,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Router />
+        <MobileLayout>
+          <Toaster />
+          <Router />
+        </MobileLayout>
       </TooltipProvider>
     </QueryClientProvider>
   );

@@ -137,30 +137,170 @@ body {
   }
 }
 
-/* Mobile-first responsive optimizations */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-    line-height: 1.4;
-  }
+/* Enhanced Mobile Experience */
+@supports (padding: env(safe-area-inset-top)) {
+  .h-safe-top { height: env(safe-area-inset-top); }
+  .h-safe-bottom { height: env(safe-area-inset-bottom); }
+  .pt-safe-top { padding-top: env(safe-area-inset-top); }
+  .pb-safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+/* Mobile Layout Optimizations */
+.mobile-layout {
+  /* iOS Safari viewport fix */
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   
-  /* Touch-friendly interactions */
+  /* Prevent zoom on input focus */
+  font-size: 16px;
+  
+  /* Optimize rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Touch Optimizations */
+@media (max-width: 768px) {
+  /* Increase touch targets */
   button, 
   [role="button"], 
-  a {
+  a,
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px;
+  }
+  
+  /* Optimize text for mobile */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  /* Improve mobile form experience */
+  input, 
+  textarea, 
+  select {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+  
+  /* Touch-friendly navigation */
+  .mobile-nav {
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Optimized mobile animations */
+  * {
+    animation-duration: 0.2s !important;
+    transition-duration: 0.2s !important;
+  }
+  
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Mobile-specific hover states */
+  .touch-hover:active {
+    background-color: rgba(139, 92, 246, 0.1);
+    transform: scale(0.98);
+  }
+  
+  /* iOS-style rubber band effect */
+  .ios-bounce {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* Mobile card shadows */
+  .mobile-card {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+  }
+  
+  /* Mobile spacing adjustments */
+  .mobile-spacing {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  /* Landscape orientation adjustments */
+  @media (orientation: landscape) and (max-height: 500px) {
+    .mobile-layout {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    
+    /* Compact header in landscape */
+    header {
+      height: 56px;
+    }
+  }
+}
+
+/* PWA-specific styles */
+@media (display-mode: standalone) {
+  /* Hide elements that don't make sense in PWA */
+  .pwa-hide {
+    display: none;
+  }
+  
+  /* Adjust for status bar */
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tablet-layout {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  /* Improved touch targets for tablets */
+  button, [role="button"] {
     min-height: 44px;
     min-width: 44px;
   }
-  
-  /* Optimized mobile navigation */
-  .mobile-nav {
-    touch-action: manipulation;
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Sharper borders and shadows */
+  .mobile-card {
+    border-width: 0.5px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Dark mode mobile adjustments */
+@media (prefers-color-scheme: dark) {
+  .mobile-layout {
+    background-color: #000;
+    color: #fff;
   }
   
-  /* Reduce motion on mobile for battery efficiency */
-  * {
-    animation-duration: 0.3s !important;
-    transition-duration: 0.3s !important;
+  .mobile-card {
+    background-color: #1a1a1a;
+    border-color: #333;
   }
 }
 
