@@ -350,10 +350,11 @@ export default function DynamicTutorial({ sessionId, onComplete }: DynamicTutori
                     </Button>
                   )}
                   
-                  {isLastStep && completedSteps.length === stepsWithStatus.length && (
+                  {isLastStep && (
                     <Button
                       onClick={onComplete}
                       className="clickup-button-primary"
+                      disabled={!currentStep?.isCompleted}
                     >
                       <Trophy className="w-4 h-4 mr-2" />
                       Finish Tutorial
