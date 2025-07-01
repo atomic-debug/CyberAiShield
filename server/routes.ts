@@ -1,12 +1,143 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertConsultationRequestSchema, insertChatSessionSchema, insertChatMessageSchema, insertOnboardingProfileSchema, insertTutorialStepSchema } from "@shared/schema";
+import { 
+  insertConsultationRequestSchema, 
+  insertChatSessionSchema, 
+  insertChatMessageSchema, 
+  insertOnboardingProfileSchema, 
+  insertTutorialStepSchema,
+  loginUserSchema,
+  registerUserSchema
+} from "@shared/schema";
 import { z } from "zod";
 import { aiService } from "./ai-service";
 import { randomUUID } from "crypto";
+import { getSessionConfig, requireAuth, optionalAuth } from "./auth";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Setup session middleware
+  app.use(getSessionConfig());
+  app.use(optionalAuth);
+
+  // Authentication routes
+  app.post("/api/auth/register", async (req, res) => {
+    try {
+      const validatedData = registerUserSchema.parse(req.body);
+      
+      // Check if username already exists
+      const existingUser = await storage.getUserByUsername(validatedData.username);
+      if (existingUser) {
+        return res.status(400).json({
+          success: false,
+          message: "Username already exists"
+        });
+      }
+
+      const user = await storage.registerUser(validatedData);
+      
+      // Log the user in automatically after registration
+      req.session.userId = user.id;
+      
+      res.json({
+        success: true,
+        message: "Registration successful",
+        user: {
+          id: user.id,
+          username: user.username,
+          email: user.email
+        }
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({
+          success: false,
+          message: "Invalid registration data",
+          errors: error.errors
+        });
+      } else {
+        console.error("Registration error:", error);
+        res.status(500).json({
+          success: false,
+          message: "Registration failed"
+        });
+      }
+    }
+  });
+
+  app.post("/api/auth/login", async (req, res) => {
+    try {
+      const validatedData = loginUserSchema.parse(req.body);
+      
+      const user = await storage.verifyPassword(validatedData.username, validatedData.password);
+      if (!user) {
+        return res.status(401).json({
+          success: false,
+          message: "Invalid username or password"
+        });
+      }
+
+      // Create session
+      req.session.userId = user.id;
+      
+      res.json({
+        success: true,
+        message: "Login successful",
+        user: {
+          id: user.id,
+          username: user.username,
+          email: user.email
+        }
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({
+          success: false,
+          message: "Invalid login data",
+          errors: error.errors
+        });
+      } else {
+        console.error("Login error:", error);
+        res.status(500).json({
+          success: false,
+          message: "Login failed"
+        });
+      }
+    }
+  });
+
+  app.post("/api/auth/logout", (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error("Logout error:", err);
+        return res.status(500).json({
+          success: false,
+          message: "Logout failed"
+        });
+      }
+      
+      res.clearCookie('connect.sid');
+      res.json({
+        success: true,
+        message: "Logout successful"
+      });
+    });
+  });
+
+  app.get("/api/auth/user", (req, res) => {
+    if (!req.user) {
+      return res.status(401).json({
+        success: false,
+        message: "Not authenticated"
+      });
+    }
+
+    res.json({
+      success: true,
+      user: req.user
+    });
+  });
+
   // Create consultation request
   app.post("/api/consultation", async (req, res) => {
     try {
