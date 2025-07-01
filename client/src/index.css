@@ -1015,6 +1015,60 @@ body {
       min-height: 80vh;
     }
   }
+  
+  /* Pill Components - ClickUp Style */
+  .clickup-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--cu-space-sm);
+    padding: var(--cu-space-sm) var(--cu-space-md);
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--cu-radius-xl);
+    font-size: var(--cu-text-sm);
+    font-weight: 500;
+    color: #374151;
+    box-shadow: var(--cu-shadow-sm);
+  }
+  
+  .clickup-pill-large {
+    padding: var(--cu-space-md) var(--cu-space-lg);
+    font-size: var(--cu-text-base);
+    border-radius: var(--cu-radius-2xl);
+  }
+  
+  .clickup-pill-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .clickup-pill-large .clickup-pill-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Badge System - ClickUp Style */
+  .clickup-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--cu-space-xs);
+    padding: var(--cu-space-xs) var(--cu-space-sm);
+    background: #f3f4f6;
+    color: #374151;
+    font-size: var(--cu-text-xs);
+    font-weight: 500;
+    border-radius: var(--cu-radius-md);
+  }
+  
+  .clickup-badge-primary {
+    background: #eef2ff;
+    color: #7c3aed;
+  }
+  
+  .clickup-badge-success {
+    background: #f0fdf4;
+    color: #16a34a;
+  }
 }
 
 @layer base {

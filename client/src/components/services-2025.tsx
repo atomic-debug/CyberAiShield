@@ -80,77 +80,78 @@ const Services2025 = () => {
                 onMouseEnter={() => setHoveredService(index)}
                 onMouseLeave={() => setHoveredService(null)}
               >
-                {/* Anti-design element */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center anti-design-element">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  
-                  <Badge className="bg-white/20 text-white border-white/30">
-                    {service.stats}
-                  </Badge>
-                </div>
-
-                {/* Bold typography */}
-                <h3 className="trend-2025-subheading text-white mb-4">
-                  {service.title}
-                </h3>
-
-                <p className="text-white/90 text-lg mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-
-                {/* Feature list with micro-interactions */}
-                <div className="space-y-3 mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <div 
-                      key={featureIndex}
-                      className="flex items-center space-x-3 micro-interaction p-2 rounded-lg"
-                    >
-                      <div className="w-2 h-2 rounded-full bg-white/60" />
-                      <span className="text-white/80 font-medium">{feature}</span>
+                <div className="clickup-stack-lg">
+                  {/* Anti-design element */}
+                  <div className="flex items-center justify-between">
+                    <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center anti-design-element">
+                      <Icon className="w-8 h-8 text-white" />
                     </div>
-                  ))}
-                </div>
+                    
+                    <Badge className="bg-white/20 text-white border-white/30">
+                      {service.stats}
+                    </Badge>
+                  </div>
 
-                {/* Action button */}
-                <Button 
-                  className={`w-full bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm transition-all duration-300 ${
+                  {/* Bold typography - ClickUp scale */}
+                  <h3 className="clickup-heading-3 text-white">
+                    {service.title}
+                  </h3>
+
+                  <p className="clickup-subtitle text-white/90">
+                    {service.description}
+                  </p>
+
+                  {/* Feature list with micro-interactions */}
+                  <div className="clickup-stack-sm">
+                    {service.features.map((feature, featureIndex) => (
+                      <div 
+                        key={featureIndex}
+                        className="flex items-center gap-3 micro-interaction p-2 rounded-lg"
+                      >
+                        <div className="w-2 h-2 rounded-full bg-white/60" />
+                        <span className="text-white/80 font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Action button */}
+                  <button className={`clickup-button-secondary w-full bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm ${
                     hoveredService === index ? 'transform translate-y-[-2px]' : ''
-                  }`}
-                >
-                  Deploy Solution
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                  }`}>
+                    Deploy Solution
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Enhanced CTA section */}
-        <div className="mt-20">
+        {/* Enhanced CTA section - ClickUp style */}
+        <div className="clickup-stack-2xl">
           <div className="trend-2025-block-midnight text-center">
-            <h3 className="trend-2025-subheading text-white mb-6">
-              Ready for Galaxy Dominance?
-            </h3>
-            
-            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Join 10,000+ organizations that have transformed their operations 
-              with ReactorIX's galaxy-grade solutions spanning infinite scale.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="btn-2025-primary px-8 py-4 text-lg">
-                <Zap className="w-5 h-5 mr-2" />
-                Start Free Trial
-              </Button>
+            <div className="clickup-stack-lg">
+              <h3 className="clickup-heading-3 text-white">
+                Ready for Galaxy Dominance?
+              </h3>
               
-              <Button 
-                variant="outline" 
-                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg"
-              >
-                Schedule Demo
-              </Button>
+              <p className="clickup-subtitle text-white/90 max-w-2xl mx-auto">
+                Join 10,000+ organizations that have transformed their operations 
+                with ReactorIX's galaxy-grade solutions spanning infinite scale.
+              </p>
+              
+              <div className="clickup-stack-md">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="clickup-button-primary">
+                    <Zap className="w-5 h-5" />
+                    Start Free Trial
+                  </button>
+                  
+                  <button className="clickup-button-secondary border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                    Schedule Demo
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
