@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Home, Shield, Building, Phone, Menu, X, Zap, LogIn, Cpu, Target, Lock } from 'lucide-react';
+import { Home, Shield, Building, Phone, Menu, X, Zap, LogIn, Cpu, Target, Lock, GraduationCap } from 'lucide-react';
 import { useScrollDirection, useScrollPosition, useScrollProgress } from '@/hooks/use-scroll';
 
 const Header = memo(function Header() {
@@ -33,11 +33,17 @@ const Header = memo(function Header() {
     console.log('Redirecting to secure login...');
   };
 
+  const handleStartOnboarding = () => {
+    // Navigate to onboarding page
+    window.location.href = '/onboarding';
+  };
+
   const navItems = [
     { name: 'Product', action: () => scrollToSection('about') },
     { name: 'Solutions', action: () => scrollToSection('services') },
     { name: 'Resources', action: () => scrollToSection('contact') },
     { name: 'Pricing', action: () => scrollToSection('contact') },
+    { name: 'Tutorial', action: handleStartOnboarding, icon: GraduationCap },
   ];
 
   return (
@@ -80,9 +86,10 @@ const Header = memo(function Header() {
                 <button
                   key={index}
                   onClick={item.action}
-                  className="text-gray-700 hover:text-primary font-medium transition-colors"
+                  className="text-gray-700 hover:text-primary font-medium transition-colors flex items-center space-x-2"
                 >
-                  {item.name}
+                  {item.icon && <item.icon className="w-4 h-4" />}
+                  <span>{item.name}</span>
                 </button>
               ))}
             </nav>
