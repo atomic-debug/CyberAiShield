@@ -663,6 +663,56 @@ body {
   --radius: 0.5rem;
 }
 
+/* ClickUp-style component classes for consistency */
+@layer components {
+  .clickup-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .clickup-section {
+    @apply py-16 md:py-20;
+  }
+  
+  .clickup-heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-black leading-tight;
+  }
+  
+  .clickup-subtitle {
+    @apply text-lg md:text-xl text-gray-600 leading-relaxed;
+  }
+  
+  .clickup-gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--galaxy-purple-600)) 0%, hsl(var(--cosmic-blue)) 100%);
+  }
+  
+  .clickup-gradient-text {
+    background: linear-gradient(135deg, hsl(var(--galaxy-purple-600)) 0%, hsl(var(--cosmic-violet)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .clickup-card {
+    @apply bg-white rounded-2xl p-6 shadow-sm border border-gray-100;
+  }
+  
+  .clickup-card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .clickup-button-primary {
+    @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold px-6 py-3 rounded-xl hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300;
+  }
+  
+  .clickup-cta {
+    @apply space-y-6;
+  }
+  
+  .clickup-cta-disclaimer {
+    @apply text-sm text-gray-500 mt-4;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
