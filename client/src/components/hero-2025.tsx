@@ -46,77 +46,79 @@ const Hero2025 = () => {
       </div>
 
       <div className="clickup-container relative z-10 text-center">
-        {/* Big block with galaxy contrast - 2025 trend */}
+        {/* Big block with galaxy contrast - ClickUp style */}
         <div className={`trend-2025-block-galaxy micro-interaction ${isVisible ? 'scroll-reveal visible' : 'scroll-reveal'}`}>
-          
-          {/* Galaxy-themed badge */}
-          <div className="inline-flex items-center space-x-2 mb-6 anti-design-element">
-            <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
-              <Sparkles className="w-3 h-3 mr-1" />
-              Galaxy-Grade Security
-            </Badge>
-            <Badge className="bg-white/10 text-white border-white/20 backdrop-blur-sm">
-              Cosmic Scale
-            </Badge>
-          </div>
-
-          {/* Bold expressive typography - 2025 trend */}
-          <h1 className="trend-2025-heading text-white mb-6">
-            Atomic
-            <span className="block serif-sans-contrast text-white/90">Solutions</span>
-          </h1>
-
-          {/* Variable font subheading */}
-          <p className="trend-2025-variable-text text-white/90 text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Security & scale as if you had <span className="font-bold">1000 of you</span> at your back. 
-            Transform your infrastructure into an unbreachable digital fortress.
-          </p>
-
-          {/* Rotating feature showcase */}
-          <div className="mb-8">
-            <div className="flex justify-center items-center space-x-8 mb-6">
-              {features.map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <div 
-                    key={index}
-                    className={`sustainable-card ${activeFeature === index ? 'scale-110' : 'scale-100'} transition-all duration-500`}
-                  >
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-2`}>
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="text-sm font-medium text-white/80">{feature.text}</p>
-                  </div>
-                );
-              })}
+          <div className="clickup-stack-xl">
+            {/* Galaxy-themed badge */}
+            <div className="clickup-stack-sm flex justify-center items-center anti-design-element">
+              <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                <Sparkles className="w-3 h-3 mr-1" />
+                Galaxy-Grade Security
+              </Badge>
+              <Badge className="bg-white/10 text-white border-white/20 backdrop-blur-sm">
+                Cosmic Scale
+              </Badge>
             </div>
-          </div>
 
-          {/* Modern CTA buttons with refined motion */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button className="btn-2025-primary refined-motion group px-8 py-4 text-lg">
-              Deploy Now
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg refined-motion"
-            >
-              <Shield className="w-5 h-5 mr-2" />
-              Security Demo
-            </Button>
-          </div>
+            {/* Bold expressive typography - ClickUp scale */}
+            <div className="clickup-stack-lg">
+              <h1 className="clickup-heading-1 text-white">
+                Atomic
+                <span className="block serif-sans-contrast text-white/90">Solutions</span>
+              </h1>
 
-          {/* Trust indicators with warm styling */}
-          <div className="mt-12 pt-8 border-t border-white/20">
-            <p className="text-white/70 text-sm mb-4">Trusted by 10,000+ organizations worldwide</p>
-            <div className="flex justify-center items-center space-x-8 opacity-60">
-              {['Microsoft', 'AWS', 'Google Cloud', 'Cisco'].map((company, index) => (
-                <div key={index} className="sustainable-card px-4 py-2">
-                  <span className="text-white font-medium text-sm">{company}</span>
-                </div>
-              ))}
+              {/* Variable font subheading */}
+              <p className="clickup-subtitle text-white/90 max-w-3xl mx-auto">
+                Security & scale as if you had <span className="font-bold">1000 of you</span> at your back. 
+                Transform your infrastructure into an unbreachable digital fortress.
+              </p>
+            </div>
+
+            {/* Rotating feature showcase */}
+            <div className="clickup-stack-md">
+              <div className="flex justify-center items-center gap-8">
+                {features.map((feature, index) => {
+                  const Icon = feature.icon;
+                  return (
+                    <div 
+                      key={index}
+                      className={`sustainable-card ${activeFeature === index ? 'scale-110' : 'scale-100'} transition-all duration-500`}
+                    >
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <p className="text-sm font-medium text-white/80 mt-2">{feature.text}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Modern CTA buttons - ClickUp style */}
+            <div className="clickup-stack-md">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button className="clickup-button-primary group">
+                  Deploy Now
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+                
+                <button className="clickup-button-secondary border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                  <Shield className="w-5 h-5" />
+                  Security Demo
+                </button>
+              </div>
+            </div>
+
+            {/* Trust indicators - ClickUp spacing */}
+            <div className="clickup-stack-md pt-8 border-t border-white/20">
+              <p className="text-white/70 text-sm">Trusted by 10,000+ organizations worldwide</p>
+              <div className="flex justify-center items-center gap-8 opacity-60">
+                {['Microsoft', 'AWS', 'Google Cloud', 'Cisco'].map((company, index) => (
+                  <div key={index} className="clickup-card bg-white/10 border-white/20">
+                    <span className="text-white font-medium text-sm">{company}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
