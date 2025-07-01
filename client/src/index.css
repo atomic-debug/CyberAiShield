@@ -308,21 +308,49 @@ body {
    2025 WEB DESIGN TRENDS
    ================================= */
 
-/* 1. 2025 Color Palette - Mocha Mousse & Warm Tones */
+/* 1. Galaxy Color Palette - Cosmic Purples, Silver Grays, Midnight Blacks */
 :root {
-  --mocha-mousse: 25 100% 65%;
-  --warm-neutral-50: 28 25% 97%;
-  --warm-neutral-100: 28 20% 92%;
-  --warm-neutral-200: 28 15% 85%;
-  --warm-neutral-300: 28 12% 75%;
-  --warm-neutral-400: 28 10% 60%;
-  --warm-neutral-500: 28 8% 45%;
+  /* Galaxy Purple Spectrum */
+  --galaxy-purple-50: 263 100% 98%;
+  --galaxy-purple-100: 263 92% 95%;
+  --galaxy-purple-200: 263 83% 89%;
+  --galaxy-purple-300: 263 83% 80%;
+  --galaxy-purple-400: 263 83% 70%;
+  --galaxy-purple-500: 263 83% 58%;
+  --galaxy-purple-600: 263 83% 48%;
+  --galaxy-purple-700: 263 83% 38%;
+  --galaxy-purple-800: 263 83% 28%;
+  --galaxy-purple-900: 263 83% 18%;
   
-  /* Vivid contrast colors for big blocks */
-  --vibrant-purple: 262 83% 58%;
-  --vibrant-blue: 217 91% 60%;
-  --vibrant-orange: 25 100% 65%;
-  --vibrant-green: 142 76% 36%;
+  /* Silver Gray Spectrum */
+  --silver-gray-50: 220 10% 98%;
+  --silver-gray-100: 220 8% 94%;
+  --silver-gray-200: 220 8% 86%;
+  --silver-gray-300: 220 8% 76%;
+  --silver-gray-400: 220 8% 58%;
+  --silver-gray-500: 220 8% 46%;
+  --silver-gray-600: 220 8% 38%;
+  --silver-gray-700: 220 8% 28%;
+  --silver-gray-800: 220 8% 18%;
+  --silver-gray-900: 220 8% 8%;
+  
+  /* Midnight Black Spectrum */
+  --midnight-black-50: 240 15% 12%;
+  --midnight-black-100: 240 15% 8%;
+  --midnight-black-200: 240 15% 6%;
+  --midnight-black-300: 240 15% 4%;
+  --midnight-black-400: 240 15% 3%;
+  --midnight-black-500: 240 15% 2%;
+  --midnight-black-600: 240 15% 1.5%;
+  --midnight-black-700: 240 15% 1%;
+  --midnight-black-800: 240 15% 0.5%;
+  --midnight-black-900: 240 15% 0%;
+  
+  /* Cosmic Accent Colors */
+  --cosmic-blue: 217 91% 60%;
+  --cosmic-violet: 283 89% 74%;
+  --cosmic-indigo: 243 75% 59%;
+  --cosmic-cyan: 189 85% 68%;
 }
 
 /* 2. Bold Expressive Typography - 2025 Trend */
@@ -354,23 +382,23 @@ body {
   font-variation-settings: 'wght' 700, 'slnt' -2;
 }
 
-/* 3. Big Blocks with Vivid Contrast */
+/* 3. Galaxy Big Blocks with Cosmic Contrast */
 .trend-2025-block {
   position: relative;
   overflow: hidden;
   border-radius: 24px;
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, hsl(var(--vibrant-purple)) 0%, hsl(var(--vibrant-blue)) 100%);
+  background: linear-gradient(135deg, hsl(var(--galaxy-purple-600)) 0%, hsl(var(--cosmic-blue)) 100%);
   color: white;
   transform: translateZ(0);
 }
 
-.trend-2025-block-warm {
-  background: linear-gradient(135deg, hsl(var(--vibrant-orange)) 0%, hsl(var(--mocha-mousse)) 100%);
+.trend-2025-block-galaxy {
+  background: linear-gradient(135deg, hsl(var(--galaxy-purple-700)) 0%, hsl(var(--cosmic-violet)) 50%, hsl(var(--cosmic-indigo)) 100%);
 }
 
-.trend-2025-block-contrast {
-  background: linear-gradient(135deg, #1a1a1a 0%, #4a148c 50%, #6a1b9a 100%);
+.trend-2025-block-midnight {
+  background: linear-gradient(135deg, hsl(var(--midnight-black-200)) 0%, hsl(var(--galaxy-purple-800)) 50%, hsl(var(--midnight-black-100)) 100%);
 }
 
 /* Block hover effects */
@@ -394,11 +422,11 @@ body {
   transform: rotate(0deg) scale(1.05);
 }
 
-/* 5. Sustainable Web Design - Efficient Components */
+/* 5. Galaxy Cards - Efficient Components */
 .sustainable-card {
-  background: hsl(var(--warm-neutral-50) / 0.8);
+  background: hsl(var(--silver-gray-50) / 0.1);
   backdrop-filter: blur(12px);
-  border: 1px solid hsl(var(--warm-neutral-200));
+  border: 1px solid hsl(var(--silver-gray-300) / 0.3);
   border-radius: 16px;
   padding: 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -407,7 +435,7 @@ body {
 
 .sustainable-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px hsl(var(--warm-neutral-300) / 0.15);
+  box-shadow: 0 12px 24px hsl(var(--galaxy-purple-500) / 0.2);
 }
 
 /* 6. Refined Motion Design - Intentional Animations */
@@ -436,23 +464,29 @@ body {
   margin-top: 1rem;
 }
 
-/* 8. Enhanced Gradients with Warm Tones */
-.gradient-mocha {
+/* 8. Galaxy Gradients with Cosmic Tones */
+.gradient-galaxy {
   background: linear-gradient(135deg, 
-    hsl(var(--mocha-mousse)) 0%, 
-    hsl(var(--vibrant-orange)) 50%, 
-    hsl(var(--vibrant-purple)) 100%);
+    hsl(var(--galaxy-purple-600)) 0%, 
+    hsl(var(--cosmic-violet)) 50%, 
+    hsl(var(--cosmic-blue)) 100%);
 }
 
-.gradient-warm-neutral {
+.gradient-midnight {
   background: linear-gradient(135deg, 
-    hsl(var(--warm-neutral-100)) 0%, 
-    hsl(var(--warm-neutral-50)) 100%);
+    hsl(var(--midnight-black-100)) 0%, 
+    hsl(var(--silver-gray-800)) 100%);
 }
 
-/* 9. Modern Button Styles */
+.gradient-silver {
+  background: linear-gradient(135deg, 
+    hsl(var(--silver-gray-200)) 0%, 
+    hsl(var(--silver-gray-100)) 100%);
+}
+
+/* 9. Galaxy Button Styles */
 .btn-2025-primary {
-  background: linear-gradient(135deg, hsl(var(--vibrant-purple)) 0%, hsl(var(--vibrant-blue)) 100%);
+  background: linear-gradient(135deg, hsl(var(--galaxy-purple-600)) 0%, hsl(var(--cosmic-blue)) 100%);
   color: white;
   font-weight: 600;
   padding: 1rem 2rem;
@@ -466,24 +500,32 @@ body {
 
 .btn-2025-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px hsl(var(--vibrant-purple) / 0.3);
+  box-shadow: 0 12px 24px hsl(var(--galaxy-purple-600) / 0.4);
 }
 
 .btn-2025-primary:active {
   transform: translateY(0);
 }
 
-/* 10. Warm Color Integration */
-.warm-bg {
-  background-color: hsl(var(--warm-neutral-50));
+/* 10. Galaxy Color Integration */
+.galaxy-bg {
+  background-color: hsl(var(--midnight-black-50));
 }
 
-.warm-border {
-  border-color: hsl(var(--warm-neutral-200));
+.galaxy-bg-light {
+  background-color: hsl(var(--silver-gray-50));
 }
 
-.warm-text {
-  color: hsl(var(--warm-neutral-500));
+.galaxy-border {
+  border-color: hsl(var(--silver-gray-300));
+}
+
+.galaxy-text {
+  color: hsl(var(--silver-gray-700));
+}
+
+.galaxy-text-light {
+  color: hsl(var(--silver-gray-400));
 }
 
 /* 11. Scrolling Animations - Refined */

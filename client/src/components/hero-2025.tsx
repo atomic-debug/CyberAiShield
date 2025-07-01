@@ -35,8 +35,8 @@ const Hero2025 = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with 2025 warm gradient */}
-      <div className="absolute inset-0 gradient-mocha opacity-90" />
+      {/* Background with galaxy gradient */}
+      <div className="absolute inset-0 gradient-galaxy opacity-90" />
       
       {/* Organic shapes background - 2025 trend */}
       <div className="absolute inset-0 overflow-hidden">
@@ -46,17 +46,17 @@ const Hero2025 = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Big block with vivid contrast - 2025 trend */}
-        <div className={`trend-2025-block-warm micro-interaction ${isVisible ? 'scroll-reveal visible' : 'scroll-reveal'}`}>
+        {/* Big block with galaxy contrast - 2025 trend */}
+        <div className={`trend-2025-block-galaxy micro-interaction ${isVisible ? 'scroll-reveal visible' : 'scroll-reveal'}`}>
           
-          {/* Anti-design badge */}
+          {/* Galaxy-themed badge */}
           <div className="inline-flex items-center space-x-2 mb-6 anti-design-element">
             <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
               <Sparkles className="w-3 h-3 mr-1" />
-              2025 AI Revolution
+              Galaxy-Grade Security
             </Badge>
             <Badge className="bg-white/10 text-white border-white/20 backdrop-blur-sm">
-              Enterprise Ready
+              Cosmic Scale
             </Badge>
           </div>
 
