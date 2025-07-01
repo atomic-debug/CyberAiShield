@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -9,58 +7,70 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center">
-      {/* Hero Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="%23161b22"/><circle cx="400" cy="300" r="200" fill="%23321b47" opacity="0.3"/><circle cx="1200" cy="600" r="300" fill="%234c1d95" opacity="0.2"/><polygon points="600,200 800,400 600,600 400,400" fill="%236366f1" opacity="0.15"/></svg>')`
-        }}
-      />
-      
-      {/* Company Logo */}
-      <div className="absolute top-8 left-8 z-20">
-        <div className="flex items-center space-x-3">
-          <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none">
-            <rect width="40" height="40" rx="10" fill="url(#gradient)"/>
-            <path d="M20 12L12 18L20 24L28 18L20 12Z" fill="white"/>
-            <path d="M12 24L20 30L28 24" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-            <defs>
-              <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
-                <stop stopColor="#7C3AED"/>
-                <stop offset="1" stopColor="#A855F7"/>
-              </linearGradient>
-            </defs>
-          </svg>
-          <span className="text-2xl font-bold text-white">ReactorIX</span>
+    <section className="pt-20 pb-16 bg-gradient-to-br from-purple-50 via-white to-purple-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* ClickUp-style Hero Container */}
+        <div className="text-center max-w-4xl mx-auto">
+          {/* Feature Pills - ClickUp style */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-200">
+              <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+              <span className="text-sm font-medium text-gray-700">Adaptive Security</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-200">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span className="text-sm font-medium text-gray-700">AI-Powered</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-200">
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span className="text-sm font-medium text-gray-700">Zero Vendor Lock-in</span>
+            </div>
+          </div>
+          
+          {/* Main Headline - ClickUp typography */}
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            The cybersecurity platform for work
+          </h1>
+          
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            One platform to secure, monitor, and protect. Designed to eliminate uncertainty and deliver atomic precision.
+          </p>
+
+          {/* CTA Button - ClickUp style */}
+          <button 
+            onClick={() => scrollToSection('about')}
+            className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+          >
+            Get started. It's FREE
+          </button>
+          
+          {/* Subtext */}
+          <p className="text-sm text-gray-500 mt-4">
+            Free Forever. No credit card.
+          </p>
+
+          {/* Feature Grid - ClickUp style */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center">
+            {[
+              { name: 'Tasks', icon: '📋' },
+              { name: 'Chat', icon: '💬' },
+              { name: 'Docs', icon: '📄' },
+              { name: 'AI', icon: '🤖' },
+              { name: 'Forms', icon: '📝' },
+              { name: 'Dashboards', icon: '📊' }
+            ].map((feature) => (
+              <div key={feature.name} className="flex flex-col items-center space-y-2 p-4 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="text-2xl">{feature.icon}</div>
+                <span className="text-sm font-medium text-gray-700">{feature.name}</span>
+              </div>
+            ))}
+          </div>
+          
+          <p className="text-center text-gray-500 mt-6">
+            Start with the basics, 100s of features available in app.
+          </p>
         </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        <p className="text-xl md:text-2xl mb-4 text-purple-200">
-          Adaptive, Client-Focused Cybersecurity
-        </p>
-        
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          Cut through the noise —<br />
-          get cybersecurity that works.
-        </h1>
-        
-        <p className="text-lg md:text-xl mb-4 font-semibold">
-          No bloat. No vendor agendas.
-        </p>
-        
-        <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
-          Custom cybersecurity solutions tailored to your size, budget, and security maturity—delivering the right protection at the right time.
-        </p>
-
-        <button 
-          onClick={() => scrollToSection('about')}
-          className="inline-flex items-center px-8 py-3 text-lg font-semibold text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
-        >
-          Learn More
-        </button>
       </div>
     </section>
   );
