@@ -304,6 +304,237 @@ body {
   }
 }
 
+/* =================================
+   2025 WEB DESIGN TRENDS
+   ================================= */
+
+/* 1. 2025 Color Palette - Mocha Mousse & Warm Tones */
+:root {
+  --mocha-mousse: 25 100% 65%;
+  --warm-neutral-50: 28 25% 97%;
+  --warm-neutral-100: 28 20% 92%;
+  --warm-neutral-200: 28 15% 85%;
+  --warm-neutral-300: 28 12% 75%;
+  --warm-neutral-400: 28 10% 60%;
+  --warm-neutral-500: 28 8% 45%;
+  
+  /* Vivid contrast colors for big blocks */
+  --vibrant-purple: 262 83% 58%;
+  --vibrant-blue: 217 91% 60%;
+  --vibrant-orange: 25 100% 65%;
+  --vibrant-green: 142 76% 36%;
+}
+
+/* 2. Bold Expressive Typography - 2025 Trend */
+.trend-2025-heading {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 8vw, 5rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  font-variation-settings: 'wght' 900;
+}
+
+.trend-2025-subheading {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Variable font support with hover effects */
+.trend-2025-variable-text {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-variation-settings: 'wght' 600, 'slnt' 0;
+  transition: font-variation-settings 0.3s ease;
+}
+
+.trend-2025-variable-text:hover {
+  font-variation-settings: 'wght' 700, 'slnt' -2;
+}
+
+/* 3. Big Blocks with Vivid Contrast */
+.trend-2025-block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, hsl(var(--vibrant-purple)) 0%, hsl(var(--vibrant-blue)) 100%);
+  color: white;
+  transform: translateZ(0);
+}
+
+.trend-2025-block-warm {
+  background: linear-gradient(135deg, hsl(var(--vibrant-orange)) 0%, hsl(var(--mocha-mousse)) 100%);
+}
+
+.trend-2025-block-contrast {
+  background: linear-gradient(135deg, #1a1a1a 0%, #4a148c 50%, #6a1b9a 100%);
+}
+
+/* Block hover effects */
+.trend-2025-block:hover {
+  transform: translateY(-8px) scale(1.02);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Anti-Design Elements - Intentional Imperfection */
+.anti-design-element {
+  transform: rotate(-1.5deg);
+  transition: transform 0.3s ease;
+}
+
+.anti-design-element:nth-child(even) {
+  transform: rotate(1.2deg);
+}
+
+.anti-design-element:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* 5. Sustainable Web Design - Efficient Components */
+.sustainable-card {
+  background: hsl(var(--warm-neutral-50) / 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--warm-neutral-200));
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.sustainable-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px hsl(var(--warm-neutral-300) / 0.15);
+}
+
+/* 6. Refined Motion Design - Intentional Animations */
+.refined-motion {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+.refined-motion:hover {
+  transform: translateY(-2px);
+}
+
+/* 7. Experimental Typography Pairings */
+.serif-sans-contrast {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+
+.serif-sans-contrast + p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* 8. Enhanced Gradients with Warm Tones */
+.gradient-mocha {
+  background: linear-gradient(135deg, 
+    hsl(var(--mocha-mousse)) 0%, 
+    hsl(var(--vibrant-orange)) 50%, 
+    hsl(var(--vibrant-purple)) 100%);
+}
+
+.gradient-warm-neutral {
+  background: linear-gradient(135deg, 
+    hsl(var(--warm-neutral-100)) 0%, 
+    hsl(var(--warm-neutral-50)) 100%);
+}
+
+/* 9. Modern Button Styles */
+.btn-2025-primary {
+  background: linear-gradient(135deg, hsl(var(--vibrant-purple)) 0%, hsl(var(--vibrant-blue)) 100%);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-2025-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px hsl(var(--vibrant-purple) / 0.3);
+}
+
+.btn-2025-primary:active {
+  transform: translateY(0);
+}
+
+/* 10. Warm Color Integration */
+.warm-bg {
+  background-color: hsl(var(--warm-neutral-50));
+}
+
+.warm-border {
+  border-color: hsl(var(--warm-neutral-200));
+}
+
+.warm-text {
+  color: hsl(var(--warm-neutral-500));
+}
+
+/* 11. Scrolling Animations - Refined */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 12. Micro-interactions */
+.micro-interaction {
+  position: relative;
+  overflow: hidden;
+}
+
+.micro-interaction::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.micro-interaction:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* 13. Performance-optimized animations */
+@media (prefers-reduced-motion: reduce) {
+  .trend-2025-block,
+  .anti-design-element,
+  .sustainable-card,
+  .refined-motion,
+  .scroll-reveal {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
 /* Tablet optimizations */
 @media (min-width: 769px) and (max-width: 1024px) {
   /* Optimized layout for tablets */
