@@ -11,8 +11,6 @@ import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 import AIChat from '@/components/ai-chat';
 import ErrorBoundary from '@/components/error-boundary';
-import ExperimentalNav from '@/components/experimental-nav';
-import ThemeController2025 from '@/components/theme-controller-2025';
 
 // Enhanced loading fallback with 2025 styling
 const LoadingFallback = ({ className = '' }: { className?: string }) => (
@@ -113,12 +111,6 @@ export default function Home2025() {
         
         {/* AI Chat with enhanced mobile support */}
         <AIChat />
-        
-        {/* Experimental Navigation */}
-        <ExperimentalNav />
-        
-        {/* AI-Powered Theme Controller */}
-        <ThemeController2025 />
       </ErrorBoundary>
 
       {/* Enhanced scroll to top button */}
