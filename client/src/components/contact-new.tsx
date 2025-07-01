@@ -8,16 +8,31 @@ export default function Contact() {
     email: '',
     message: ''
   });
+  const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
     console.log('Form submitted:', formData);
-    // Handle form submission here
+    setIsSubmitting(false);
+    
+    // Reset form
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      message: ''
+    });
   };
 
   return (
@@ -47,7 +62,11 @@ export default function Contact() {
                   required
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                  onFocus={() => setFocusedField('firstName')}
+                  onBlur={() => setFocusedField(null)}
+                  className={`w-full px-3 py-2 border rounded-md shadow-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transform ${
+                    focusedField === 'firstName' ? 'scale-102 border-purple-400' : 'border-gray-300 hover:border-gray-400'
+                  }`}
                 />
               </div>
               
@@ -61,7 +80,11 @@ export default function Contact() {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                  onFocus={() => setFocusedField('lastName')}
+                  onBlur={() => setFocusedField(null)}
+                  className={`w-full px-3 py-2 border rounded-md shadow-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transform ${
+                    focusedField === 'lastName' ? 'scale-102 border-purple-400' : 'border-gray-300 hover:border-gray-400'
+                  }`}
                 />
               </div>
             </div>
@@ -77,7 +100,11 @@ export default function Contact() {
                 required
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                onFocus={() => setFocusedField('email')}
+                onBlur={() => setFocusedField(null)}
+                className={`w-full px-3 py-2 border rounded-md shadow-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transform ${
+                  focusedField === 'email' ? 'scale-102 border-purple-400' : 'border-gray-300 hover:border-gray-400'
+                }`}
               />
             </div>
 
@@ -91,16 +118,30 @@ export default function Contact() {
                 rows={4}
                 value={formData.message}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 resize-none"
+                onFocus={() => setFocusedField('message')}
+                onBlur={() => setFocusedField(null)}
+                className={`w-full px-3 py-2 border rounded-md shadow-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 resize-none transform ${
+                  focusedField === 'message' ? 'scale-102 border-purple-400' : 'border-gray-300 hover:border-gray-400'
+                }`}
               />
             </div>
 
             <div className="text-center">
               <Button
                 type="submit"
-                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+                disabled={isSubmitting}
+                className={`bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-lg font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 ${
+                  isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                }`}
               >
-                Submit
+                {isSubmitting ? (
+                  <div className="flex items-center space-x-2">
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>Submitting...</span>
+                  </div>
+                ) : (
+                  'Submit'
+                )}
               </Button>
             </div>
           </form>
