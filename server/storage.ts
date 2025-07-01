@@ -80,6 +80,7 @@ export class DatabaseStorage implements IStorage {
         username: userData.username,
         password: hashedPassword,
         email: userData.email || null,
+        role: userData.role,
       })
       .returning();
     return user;

@@ -8,6 +8,8 @@ import Home from "@/pages/home";
 import Login from "@/pages/login";
 import Register from "@/pages/register";
 import Dashboard from "@/pages/dashboard";
+import ClientDashboard from "@/pages/client-dashboard";
+import SOCDashboard from "@/pages/soc-dashboard";
 import OnboardingPage from "@/pages/onboarding";
 import NotFound from "@/pages/not-found";
 
@@ -37,6 +39,8 @@ function Router() {
       {isAuthenticated && (
         <>
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/client-dashboard" component={ClientDashboard} />
+          <Route path="/soc-dashboard" component={SOCDashboard} />
           <Route path="/onboarding" component={OnboardingPage} />
         </>
       )}

@@ -7,6 +7,7 @@ interface User {
   id: number;
   username: string;
   email?: string;
+  role: "client" | "soc";
 }
 
 interface AuthResponse {

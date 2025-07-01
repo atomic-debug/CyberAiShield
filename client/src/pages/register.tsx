@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useAuth } from "@/hooks/useAuth";
 import { registerUserSchema, type RegisterUser } from "@shared/schema";
-import { UserPlus, Shield } from "lucide-react";
+import { UserPlus, Shield, Users, ShieldCheck } from "lucide-react";
 
 export default function Register() {
   const [, navigate] = useLocation();
@@ -19,6 +20,7 @@ export default function Register() {
       username: "",
       password: "",
       email: "",
+      role: undefined,
     },
   });
 
@@ -51,6 +53,37 @@ export default function Register() {
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="role"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Account Type</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isRegisterPending}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select your account type" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="client">
+                          <div className="flex items-center">
+                            <Users className="h-4 w-4 mr-2" />
+                            Client - Customer Access
+                          </div>
+                        </SelectItem>
+                        <SelectItem value="soc">
+                          <div className="flex items-center">
+                            <ShieldCheck className="h-4 w-4 mr-2" />
+                            SOC - Employee Access
+                          </div>
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <FormField
                 control={form.control}
                 name="username"

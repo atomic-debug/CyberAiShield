@@ -11,6 +11,7 @@ declare global {
         id: number;
         username: string;
         email?: string;
+        role: "client" | "soc";
       };
     }
   }
@@ -62,6 +63,7 @@ export async function optionalAuth(req: Request, res: Response, next: NextFuncti
           id: user.id,
           username: user.username,
           email: user.email || undefined,
+          role: user.role,
         };
       }
     } catch (error) {
