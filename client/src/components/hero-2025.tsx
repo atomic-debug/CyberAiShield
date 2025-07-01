@@ -28,9 +28,9 @@ const Hero2025 = () => {
   }, []);
 
   const features = [
-    { icon: Shield, text: "Fortress-Grade Protection", color: "from-emerald-500 to-teal-600" },
-    { icon: Atom, text: "Atomic Precision", color: "from-purple-500 to-violet-600" },
-    { icon: Target, text: "Infinite Scale", color: "from-orange-500 to-red-500" }
+    { icon: Shield, text: "Fortress-Grade Protection", color: "from-purple-500 to-indigo-600" },
+    { icon: Atom, text: "Atomic Precision", color: "from-purple-600 to-violet-600" },
+    { icon: Target, text: "Infinite Scale", color: "from-indigo-500 to-purple-600" }
   ];
 
   return (
