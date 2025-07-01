@@ -199,7 +199,7 @@ export default function AIChat() {
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center text-lg">
               <Bot className="w-6 h-6 mr-2" />
-              RactorIX AI Assistant
+              ReactorIX AI Assistant
             </CardTitle>
             <Button
               variant="ghost"
@@ -217,7 +217,7 @@ export default function AIChat() {
             {messages.length === 0 && currentSessionId && (
               <div className="text-center text-gray-500 py-8">
                 <Sparkles className="w-12 h-12 mx-auto mb-4 text-purple-300" />
-                <p className="text-lg font-medium mb-2">Welcome to RactorIX AI!</p>
+                <p className="text-lg font-medium mb-2">Welcome to ReactorIX AI!</p>
                 <p className="text-sm">
                   Ask me about cybersecurity, IT automation, or any technical questions.
                 </p>
