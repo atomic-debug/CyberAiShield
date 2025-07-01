@@ -67,72 +67,48 @@ const Services2025 = () => {
           </p>
         </div>
 
-        {/* Big blocks layout with advanced 2025 trends */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 smart-reveal-container">
+        {/* Big blocks layout - 2025 trend */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={index}
-                className={`${service.color} refined-motion group cursor-pointer trend-3d-card liquid-morphing energy-flow scroll-triggered-animation delayed-${index + 1} smart-reveal-item`}
+                className={`${service.color} refined-motion group cursor-pointer`}
                 onMouseEnter={() => setHoveredService(index)}
                 onMouseLeave={() => setHoveredService(null)}
               >
-                {/* Enhanced anti-design element with depth */}
-                <div className="flex items-center justify-between mb-6 interactive-depth">
-                  <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center anti-design-element neomorphism-2025 depth-layer-2">
+                {/* Anti-design element */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center anti-design-element">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   
-                  <div className="achievement-badge depth-layer-1">
+                  <Badge className="bg-white/20 text-white border-white/30">
                     {service.stats}
-                  </div>
+                  </Badge>
                 </div>
 
-                {/* Bold typography with holographic effect */}
-                <h3 className="trend-2025-subheading text-white mb-4 depth-layer-1">
-                  <span className="holographic">{service.title.split(' ')[0]}</span>
-                  <span className="text-white/90"> {service.title.split(' ').slice(1).join(' ')}</span>
+                {/* Bold typography */}
+                <h3 className="trend-2025-subheading text-white mb-4">
+                  {service.title}
                 </h3>
 
                 <p className="text-white/90 text-lg mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
-                {/* Feature list with advanced micro-interactions */}
+                {/* Feature list with micro-interactions */}
                 <div className="space-y-3 mb-8">
                   {service.features.map((feature, featureIndex) => (
                     <div 
                       key={featureIndex}
-                      className={`flex items-center space-x-3 micro-interaction p-2 rounded-lg neomorphism-2025 scroll-triggered-animation delayed-${featureIndex + 1} ${
-                        hoveredService === index ? 'micro-bounce' : ''
-                      }`}
-                      style={{ animationDelay: `${featureIndex * 100}ms` }}
+                      className="flex items-center space-x-3 micro-interaction p-2 rounded-lg"
                     >
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-white/80 to-white/40 achievement-badge" style={{ padding: '2px' }} />
-                      <span className="text-white/80 font-medium trend-2025-variable-text">{feature}</span>
-                      {hoveredService === index && (
-                        <div className="ml-auto">
-                          <Sparkles className="w-3 h-3 text-white/60" />
-                        </div>
-                      )}
+                      <div className="w-2 h-2 rounded-full bg-white/60" />
+                      <span className="text-white/80 font-medium">{feature}</span>
                     </div>
                   ))}
-                  
-                  {/* Gamification progress for features */}
-                  {hoveredService === index && (
-                    <div className="mt-4 gamification-progress">
-                      <div 
-                        style={{ 
-                          width: '100%',
-                          height: '100%',
-                          background: 'linear-gradient(90deg, hsl(var(--vibrant-purple)), hsl(var(--vibrant-blue)), hsl(var(--vibrant-orange)))',
-                          borderRadius: '20px',
-                          animation: 'progressGlow 2s ease-in-out infinite alternate'
-                        }}
-                      />
-                    </div>
-                  )}
                 </div>
 
                 {/* Action button */}

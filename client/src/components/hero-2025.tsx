@@ -46,8 +46,8 @@ const Hero2025 = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Big block with vivid contrast + 3D effects - 2025 trend */}
-        <div className={`trend-2025-block-warm micro-interaction trend-3d-card interactive-depth immersive-parallax ${isVisible ? 'scroll-reveal visible' : 'scroll-reveal'}`}>
+        {/* Big block with vivid contrast - 2025 trend */}
+        <div className={`trend-2025-block-warm micro-interaction ${isVisible ? 'scroll-reveal visible' : 'scroll-reveal'}`}>
           
           {/* Anti-design badge */}
           <div className="inline-flex items-center space-x-2 mb-6 anti-design-element">
@@ -60,10 +60,10 @@ const Hero2025 = () => {
             </Badge>
           </div>
 
-          {/* Bold expressive typography with holographic effects - 2025 trend */}
-          <h1 className="trend-2025-heading text-white mb-6 depth-layer-2">
-            <span className="holographic">Atomic</span>
-            <span className="block serif-sans-contrast text-white/90 depth-layer-1">Solutions</span>
+          {/* Bold expressive typography - 2025 trend */}
+          <h1 className="trend-2025-heading text-white mb-6">
+            Atomic
+            <span className="block serif-sans-contrast text-white/90">Solutions</span>
           </h1>
 
           {/* Variable font subheading */}
@@ -72,7 +72,7 @@ const Hero2025 = () => {
             Transform your infrastructure into an unbreachable digital fortress.
           </p>
 
-          {/* Rotating feature showcase with 3D and gamification */}
+          {/* Rotating feature showcase */}
           <div className="mb-8">
             <div className="flex justify-center items-center space-x-8 mb-6">
               {features.map((feature, index) => {
@@ -80,35 +80,16 @@ const Hero2025 = () => {
                 return (
                   <div 
                     key={index}
-                    className={`neomorphism-2025 liquid-morphing energy-flow depth-layer-${index + 1} ${
-                      activeFeature === index ? 'scale-110 micro-bounce' : 'scale-100'
-                    } transition-all duration-500`}
+                    className={`sustainable-card ${activeFeature === index ? 'scale-110' : 'scale-100'} transition-all duration-500`}
                   >
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-2`}>
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <p className="text-sm font-medium text-white/80">{feature.text}</p>
-                    {activeFeature === index && (
-                      <div className="achievement-badge mt-2">
-                        <Sparkles className="w-3 h-3" />
-                        Active
-                      </div>
-                    )}
                   </div>
                 );
               })}
             </div>
-            
-            {/* Gamification progress bar */}
-            <div className="gamification-progress mb-4">
-              <div 
-                className="gamification-progress::before"
-                style={{ width: `${((activeFeature + 1) / features.length) * 100}%` }}
-              />
-            </div>
-            <p className="text-white/60 text-sm">
-              Feature {activeFeature + 1} of {features.length} • Auto-rotating every 3s
-            </p>
           </div>
 
           {/* Modern CTA buttons with refined motion */}
