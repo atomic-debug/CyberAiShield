@@ -12,7 +12,7 @@ const ThreatProtection = lazy(() => import('@/components/threat-protection'));
 const Contact = lazy(() => import('@/components/contact-new'));
 const Footer = lazy(() => import('@/components/footer'));
 const AIChat = lazy(() => import('@/components/ai-chat'));
-const SuggestionChips = lazy(() => import('@/components/suggestion-chips'));
+
 const ErrorBoundary = lazy(() => import('@/components/error-boundary'));
 
 // Loading fallback component
@@ -232,15 +232,6 @@ export default function Home() {
         </ErrorBoundary>
       </Suspense>
       
-      {/* AI-Powered Suggestion Chips */}
-      <Suspense fallback={null}>
-        <ErrorBoundary fallback={null}>
-          <SuggestionChips 
-            context={currentSection as 'hero' | 'about' | 'contact' | 'general'}
-            userBehavior={behavior}
-          />
-        </ErrorBoundary>
-      </Suspense>
       
       {/* Optimized Scroll to Top Button */}
       {showScrollTop && (

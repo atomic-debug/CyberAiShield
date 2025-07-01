@@ -21,7 +21,6 @@ interface SuggestionChipsProps {
 
 export default function SuggestionChips({ context = 'general', userBehavior }: SuggestionChipsProps) {
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
-  const [activeSuggestions, setActiveSuggestions] = useState<Suggestion[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const { timeOfDay } = useDynamicBackground();
 
@@ -136,19 +135,17 @@ export default function SuggestionChips({ context = 'general', userBehavior }: S
     generateSuggestions();
   }, [generateSuggestions]);
 
-  // Animate suggestions in
+  // Show suggestions after a brief delay
   useEffect(() => {
     if (suggestions.length > 0) {
-      setIsVisible(false);
       const timer = setTimeout(() => {
-        setActiveSuggestions(suggestions);
         setIsVisible(true);
-      }, 500);
+      }, 1000);
       return () => clearTimeout(timer);
     }
   }, [suggestions]);
 
-  if (activeSuggestions.length === 0) return null;
+  if (suggestions.length === 0) return null;
 
   return (
     <div className={`fixed bottom-6 right-6 z-50 transition-all duration-500 transform ${
@@ -161,7 +158,7 @@ export default function SuggestionChips({ context = 'general', userBehavior }: S
         </div>
         
         <div className="space-y-2">
-          {activeSuggestions.map((suggestion, index) => (
+          {suggestions.map((suggestion, index) => (
             <button
               key={suggestion.id}
               onClick={suggestion.action}
@@ -212,18 +209,4 @@ export default function SuggestionChips({ context = 'general', userBehavior }: S
   );
 }
 
-// Add CSS animations
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes slideInRight {
-    from {
-      transform: translateX(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-`;
-document.head.appendChild(style);
+// CSS animations are now in index.css
